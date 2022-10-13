@@ -1,0 +1,3 @@
+{
+  "path": "../../Data_Wrangling/penguins_EDA.ipynb"
+}
