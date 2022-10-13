@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.internal_composite &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.internal_composite</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Submodule internal_utils.py includes the following functions: &lt;br&gt;</span>
+<span class="sd">- **construct_composite_score():** Construct composite score with flexible type of aggregation. &lt;br&gt;</span>
+<span class="sd">- **construct_composite_score_multicore():** Construct composite score function with multiprocessing. &lt;br&gt;</span>
+<span class="sd">- **_apply_composite_score():** The worker function used in the construct_composite_score() function. &lt;br&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<div class="viewcode-block" id="flatten"><a class="viewcode-back" href="../../usage.html#neuropy.internal_composite.flatten">[docs]</a><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Utility function to flatten a list of lists&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">t</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="construct_composite_score"><a class="viewcode-back" href="../../usage.html#neuropy.internal_composite.construct_composite_score">[docs]</a><span class="k">def</span> <span class="nf">construct_composite_score</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">composite_score_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">],</span>
+    <span class="n">drop_input_features</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">mask_lower_cutoff</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">method</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Construct composite score with flexible type of aggregation.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pd.DataFrame</span>
+<span class="sd">        dataframe containing Neurocast features</span>
+<span class="sd">    composite_score_dict: dict</span>
+<span class="sd">        dictionary that specifies the features for each composite score. The keys represent the composite score name,</span>
+<span class="sd">        whereas the values are lists containing the features set used to construct the composite score.</span>
+<span class="sd">    drop_input_features: bool (default: False)</span>
+<span class="sd">        if True, the features used to construct the composite score are removed from the dataframe before it is</span>
+<span class="sd">        returned.</span>
+<span class="sd">    mask_lower_cutoff: Union[dict[str, list], None] (default: None)</span>
+<span class="sd">        Mask elements based on a cutoff value. The pair {key:value} denotes the column name used for the condition and</span>
+<span class="sd">        the cutoff value, respectively. For instance, {&#39;event_count&#39;: 50} means that within the feature set used to</span>
+<span class="sd">        construct the composite score, all the rows where event_count &lt;= 50 will be set as np.nan.</span>
+<span class="sd">    method: Callable (default: np.mean)</span>
+<span class="sd">        Method passed to pd.DataFrame.apply(axis=1), used to aggregate the feature set contained in the values</span>
+<span class="sd">        of composite_score_dict. The input can be strings (e.g. &#39;mean&#39;), functions (e.g. np.mean) and</span>
+<span class="sd">        lambda functions (e.g. lambda row: row.sum()+1)</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.Dataframe</span>
+<span class="sd">        The copy of the original dataframe containing the composite scores.</span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_composite import construct_composite_score</span>
+<span class="sd">    &gt;&gt;&gt; import seaborn as sns</span>
+<span class="sd">    &gt;&gt;&gt; # load dataset</span>
+<span class="sd">    &gt;&gt;&gt; np.random.seed(seed=42)</span>
+<span class="sd">    &gt;&gt;&gt; df = (sns</span>
+<span class="sd">    ...        .load_dataset(name=&#39;iris&#39;)</span>
+<span class="sd">    ...        .assign(event_count = np.random.rand(150))</span>
+<span class="sd">    ...       )</span>
+<span class="sd">    &gt;&gt;&gt; # construct two composited scores named SEPAL and PETAL using mean aggregation,</span>
+<span class="sd">    &gt;&gt;&gt; # and mask all value where event_count &lt;= 0.2</span>
+<span class="sd">    &gt;&gt;&gt; df_out = construct_composite_score(df=df,</span>
+<span class="sd">    ...                                   composite_score_dict={&#39;SEPAL&#39;: [&#39;sepal_length&#39;,&#39;sepal_width&#39;],</span>
+<span class="sd">    ...                                                         &#39;PETAL&#39;: [&#39;petal_length&#39;,&#39;petal_width&#39;]},</span>
+<span class="sd">    ...                                   mask_lower_cutoff={&#39;event_count&#39;: 0.2},</span>
+<span class="sd">    ...                                   method=np.mean)</span>
+<span class="sd">    &gt;&gt;&gt; # construct two composite scores named SEPAL and PETAL using np.linalg.norm(ord=2).</span>
+<span class="sd">    &gt;&gt;&gt; df_out = construct_composite_score(df=df,</span>
+<span class="sd">    ...                                   composite_score_dict={&#39;SEPAL&#39;: [&#39;sepal_length&#39;,&#39;sepal_width&#39;],</span>
+<span class="sd">    ...                                                         &#39;PETAL&#39;: [&#39;petal_length&#39;,&#39;petal_width&#39;]},</span>
+<span class="sd">    ...                                   method=lambda x: np.linalg.norm(x=x, ord=2))</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># collect all features that will be used to construct the composite score in a list</span>
+    <span class="n">feature_list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">composite_score_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span>
+    <span class="p">]</span>
+
+    <span class="c1"># quality check on composite_score_dict</span>
+    <span class="k">if</span> <span class="n">composite_score_dict</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">(</span><span class="n">composite_score_dict</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;Must provide a dictionary with valid feature columns&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">elem</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">feature_list</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">feature_list</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span><span class="si">}</span><span class="s2"> is not contained in df.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># def mask_based_on_event(</span>
+    <span class="c1">#     x: pd.DataFrame, mask_lower_cutoff: Dict[str, list], feature_list: list</span>
+    <span class="c1"># ):</span>
+    <span class="c1">#     &quot;&quot;&quot;Mask values based on threshold if specified&quot;&quot;&quot;</span>
+    <span class="c1">#</span>
+    <span class="c1">#     if mask_lower_cutoff is not None:</span>
+    <span class="c1">#         if len(mask_lower_cutoff.keys()) &gt;= 2:</span>
+    <span class="c1">#             raise AssertionError(&quot;mask_lower_cutoff can only handle one key&quot;)</span>
+    <span class="c1">#         else:</span>
+    <span class="c1">#             (col_event, cutoff_value) = next(iter(mask_lower_cutoff.items()))</span>
+    <span class="c1">#             x.filter(items=feature_list).mask(df[col_event] &lt;= cutoff_value)</span>
+    <span class="c1">#     return x</span>
+
+    <span class="k">if</span> <span class="n">mask_lower_cutoff</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mask_lower_cutoff</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;mask_lower_cutoff can only handle one key&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mask_lower_cutoff_key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mask_lower_cutoff</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="n">tmp_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">feature_list</span><span class="p">)</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span>
+                <span class="n">df</span><span class="p">[</span><span class="n">mask_lower_cutoff_key</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">mask_lower_cutoff</span><span class="p">[</span><span class="n">mask_lower_cutoff_key</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">feature_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">tmp_df</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+
+    <span class="c1"># construct features</span>
+    <span class="n">composite_score</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">name</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">cluster</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">composite_score_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">df</span>
+        <span class="c1"># .pipe(mask_based_on_event, mask_lower_cutoff, feature_list)</span>
+        <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="o">**</span><span class="n">composite_score</span><span class="p">)</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">feature_list</span><span class="p">)</span> <span class="k">if</span> <span class="n">drop_input_features</span> <span class="k">else</span> <span class="n">x</span>
+        <span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="construct_composite_score_multicore"><a class="viewcode-back" href="../../usage.html#neuropy.internal_composite.construct_composite_score_multicore">[docs]</a><span class="k">def</span> <span class="nf">construct_composite_score_multicore</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">composite_score_dicts_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">]],</span>
+    <span class="n">drop_input_features</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">mask_lower_cutoff</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">method</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+    <span class="n">n_cores</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Construct composite score with flexible type of aggregation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pd.DataFrame</span>
+<span class="sd">        dataframe containing Neurocast features</span>
+<span class="sd">    composite_score_dicts_list: list</span>
+<span class="sd">        a list with dictionaries that specifies the features for each composite score. The keys represent the</span>
+<span class="sd">        composite score name, whereas the values are lists containing the feature sets used to construct</span>
+<span class="sd">        the composite score. e.g.</span>
+<span class="sd">        [{&quot;comp_1&quot;: [&quot;feat_1&quot;, &quot;feat_2&quot;, &quot;feat_3&quot;]},</span>
+<span class="sd">        {&quot;comp_2&quot;: [&quot;feat_4&quot;, &quot;feat_5&quot;, &quot;feat_6&quot;]},</span>
+<span class="sd">        {&quot;comp_3&quot;: [&quot;feat_7&quot;, &quot;feat_8&quot;, &quot;feat_9&quot;]},]</span>
+<span class="sd">    drop_input_features: bool (default: False)</span>
+<span class="sd">        if True, the features used to construct the composite score are discarded.</span>
+<span class="sd">    mask_lower_cutoff: Union[dict[str, list], None] (default: None)</span>
+<span class="sd">        Mask elements based on a cutoff value. The pair {key:value} denotes the column name used for the condition and</span>
+<span class="sd">        the cutoff value, respectively. For instance, {&#39;event_count&#39;: 50} means that within the feature set used to</span>
+<span class="sd">        construct the composite score, all the rows where event_count &lt;= 50 will be set as np.nan.</span>
+<span class="sd">    method: Callable (default: np.mean)</span>
+<span class="sd">        Method passed to pd.DataFrame.apply(axis=1), used to aggregate the feature set contained in the values</span>
+<span class="sd">        of composite_score_dict. The input can be strings (e.g. &#39;mean&#39;) or functions (e.g. np.mean) Be aware that</span>
+<span class="sd">        the &quot;multiprocessing&quot; package does not allow &quot;lambda&quot; functions.</span>
+<span class="sd">    n_cores: int</span>
+<span class="sd">        An integer specifying the amount of cores to use when calculating the composite score</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.Dataframe</span>
+<span class="sd">        The copy of the original dataframe containing the composite scores.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_composite import construct_composite_score_multicore</span>
+<span class="sd">    &gt;&gt;&gt; import seaborn as sns</span>
+<span class="sd">    &gt;&gt;&gt; # load dataset</span>
+<span class="sd">    &gt;&gt;&gt; np.random.seed(seed=42)</span>
+<span class="sd">    &gt;&gt;&gt; df = (sns</span>
+<span class="sd">    ...        .load_dataset(name=&#39;iris&#39;)</span>
+<span class="sd">    ...        .assign(event_count = np.random.rand(150))</span>
+<span class="sd">    ...       )</span>
+<span class="sd">    &gt;&gt;&gt; # construct two composited scores named SEPAL and PETAL using mean aggregation,</span>
+<span class="sd">    &gt;&gt;&gt; # and mask all value where event_count &lt;= 0.2</span>
+<span class="sd">    &gt;&gt;&gt; df_out = construct_composite_score_multicore(df=df,</span>
+<span class="sd">    ...                                   composite_score_dicts_list=[{&#39;SEPAL&#39;: [&#39;sepal_length&#39;,&#39;sepal_width&#39;]},</span>
+<span class="sd">    ...                                                         {&#39;PETAL&#39;: [&#39;petal_length&#39;,&#39;petal_width&#39;]}],</span>
+<span class="sd">    ...                                   mask_lower_cutoff={&#39;event_count&#39;: 0.2},</span>
+<span class="sd">    ...                                   method=np.mean)</span>
+<span class="sd">    &gt;&gt;&gt; # construct two composite scores named SEPAL and PETAL using np.linalg.norm(ord=2).</span>
+<span class="sd">    &gt;&gt;&gt; df_out = construct_composite_score_multicore(df=df,</span>
+<span class="sd">    ...                                   composite_score_dicts_list=[{&#39;SEPAL&#39;: [&#39;sepal_length&#39;,&#39;sepal_width&#39;]},</span>
+<span class="sd">    ...                                                         {&#39;PETAL&#39;: [&#39;petal_length&#39;,&#39;petal_width&#39;]}],</span>
+<span class="sd">    ...                                   method=lambda x: np.linalg.norm(x=x, ord=2))</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># quality check on composite_score_dicts_list</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">composite_score_dicts_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">composite_score_dicts_list</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span>
+        <span class="ow">or</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="nb">type</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">dict</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">composite_score_dicts_list</span><span class="p">])</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="s2">&quot;Please provide a list of dictionaries as the input for &#39;composite_score_dicts_list&#39;&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">feature_list</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">flatten</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">current_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+            <span class="k">for</span> <span class="n">current_dict</span> <span class="ow">in</span> <span class="n">composite_score_dicts_list</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">elem</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">feature_list</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">feature_list</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span><span class="si">}</span><span class="s2"> is not contained in df.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># def mask_based_on_event(</span>
+    <span class="c1">#     x: pd.DataFrame, mask_lower_cutoff: Dict[str, list], feature_list: list</span>
+    <span class="c1"># ):</span>
+    <span class="c1">#     &quot;&quot;&quot;Mask values based on threshold if specified&quot;&quot;&quot;</span>
+    <span class="c1">#</span>
+    <span class="c1">#     if mask_lower_cutoff is not None:</span>
+    <span class="c1">#         if len(mask_lower_cutoff.keys()) &gt;= 2:</span>
+    <span class="c1">#             raise AssertionError(&quot;mask_lower_cutoff can only handle one key&quot;)</span>
+    <span class="c1">#         else:</span>
+    <span class="c1">#             (col_event, cutoff_value) = next(iter(mask_lower_cutoff.items()))</span>
+    <span class="c1">#             x.filter(items=feature_list).mask(df[col_event] &lt;= cutoff_value)</span>
+    <span class="c1">#     return x</span>
+
+    <span class="k">if</span> <span class="n">mask_lower_cutoff</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mask_lower_cutoff</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;mask_lower_cutoff can only handle one key&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mask_lower_cutoff_key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mask_lower_cutoff</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="n">tmp_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">feature_list</span><span class="p">)</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span>
+                <span class="n">df</span><span class="p">[</span><span class="n">mask_lower_cutoff_key</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">mask_lower_cutoff</span><span class="p">[</span><span class="n">mask_lower_cutoff_key</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">feature_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">tmp_df</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+
+    <span class="n">a_pool</span> <span class="o">=</span> <span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="n">n_cores</span><span class="p">)</span>  <span class="c1"># specify the amount of cores to use</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">composite_score_list</span> <span class="o">=</span> <span class="n">a_pool</span><span class="o">.</span><span class="n">starmap</span><span class="p">(</span>
+        <span class="n">_apply_composite_score</span><span class="p">,</span>
+        <span class="p">[(</span><span class="n">df</span><span class="p">,</span> <span class="n">tmp_dict</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span> <span class="k">for</span> <span class="n">tmp_dict</span> <span class="ow">in</span> <span class="n">composite_score_dicts_list</span><span class="p">],</span>
+    <span class="p">)</span>  <span class="c1"># process inputs iterable with pool</span>
+    <span class="n">composite_score</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tmp_df</span><span class="p">)</span> <span class="k">for</span> <span class="n">tmp_df</span> <span class="ow">in</span> <span class="n">composite_score_list</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- </span><span class="si">%s</span><span class="s2"> seconds ---&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+    <span class="n">a_pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">df</span>
+        <span class="c1"># .pipe(mask_based_on_event, mask_lower_cutoff, feature_list)</span>
+        <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">composite_score</span><span class="p">)</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">feature_list</span><span class="p">)</span> <span class="k">if</span> <span class="n">drop_input_features</span> <span class="k">else</span> <span class="n">x</span>
+        <span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_apply_composite_score</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cluster_dict</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;worker function used to apply the method per cluster used in the construct_composite_score_multicore function</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pd.DataFrame</span>
+<span class="sd">        dataframe containing features present in the cluster_dict</span>
+<span class="sd">    cluster_dict: dict</span>
+<span class="sd">        a dictionary with key: string, value: list that specifies the features for the composite score.</span>
+<span class="sd">         e.g. {&quot;comp_1&quot;: [&quot;feat_1&quot;, &quot;feat_2&quot;, &quot;feat_3&quot;]}</span>
+<span class="sd">    method: Callable (default: np.mean)</span>
+<span class="sd">        Method passed to pd.DataFrame.apply(axis=1), used to aggregate the feature set contained in the values</span>
+<span class="sd">        of composite_score_dict. The input can be strings (e.g. &#39;mean&#39;) or functions (e.g. np.mean). Be aware that</span>
+<span class="sd">        the &quot;multiprocessing&quot; package does not allow &quot;lambda&quot; functions.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        The composite score as a dictionary with key: str (the name of the cluster), values: pd.Series (the scores</span>
+<span class="sd">        corresponding to the calculated cluster; the length of the pd.Series will match the length of the inputted</span>
+<span class="sd">        pd.DataFrame).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_composite import construct_composite_score_multicore</span>
+<span class="sd">    &gt;&gt;&gt; import seaborn as sns</span>
+<span class="sd">    &gt;&gt;&gt; # load dataset</span>
+<span class="sd">    &gt;&gt;&gt; np.random.seed(seed=42)</span>
+<span class="sd">    &gt;&gt;&gt; df = (sns</span>
+<span class="sd">    ...        .load_dataset(name=&#39;iris&#39;)</span>
+<span class="sd">    ...        .assign(event_count = np.random.rand(150))</span>
+<span class="sd">    ...       )</span>
+<span class="sd">    &gt;&gt;&gt; dict_out = _apply_composite_score(df=df,</span>
+<span class="sd">    ...                              cluster_dict={&#39;SEPAL&#39;: [&#39;sepal_length&#39;,&#39;sepal_width&#39;]},</span>
+<span class="sd">    ...                              method=np.mean)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">composite_score</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># start_time = time.time()</span>
+    <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">cluster</span><span class="p">)</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cluster_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+    <span class="n">composite_score</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">cluster</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># print(&quot;--- %s seconds ---&quot; % (time.time() - start_time))</span>
+    <span class="k">return</span> <span class="n">composite_score</span>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

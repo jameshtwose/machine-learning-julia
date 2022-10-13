@@ -1,0 +1,32 @@
+.. neuropy documentation master file, created by
+   sphinx-quickstart on Thu Mar 17 09:17:33 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to neuropy's documentation!
+===================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+Contents
+--------
+
+.. toctree::
+
+   usage
+
+Thumbnails gallery
+==================
+
+.. nbgallery::
+   notebooks/anomaly-detection-system/anomaly_detection_methods.ipynb
+   .. notebooks/anomaly-detection-system/local-outlier-factor.ipynb
+
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

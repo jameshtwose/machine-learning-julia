@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.frequency_domain &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.frequency_domain</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Submodule frequency_domain.py includes the following functions: &lt;br&gt;</span>
+<span class="sd">   - **frequency_analysis():** Compute Fast Fourier Transform on a time series &lt;br&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.fftpack</span> <span class="kn">import</span> <span class="n">fft</span>
+<span class="kn">from</span> <span class="nn">scipy.fftpack</span> <span class="kn">import</span> <span class="n">fftfreq</span>
+
+
+<div class="viewcode-block" id="frequency_analysis"><a class="viewcode-back" href="../../usage.html#neuropy.frequency_domain.frequency_analysis">[docs]</a><span class="k">def</span> <span class="nf">frequency_analysis</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">fs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Compute Fast Fourier Transform on a time series</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: pandas.DataFrame</span>
+<span class="sd">        Dataframe which contains some numerical feature</span>
+<span class="sd">    fs: int</span>
+<span class="sd">        sample frequency of the signal in Hertz [Hz].</span>
+<span class="sd">    plot: bool, optional (default: True)</span>
+<span class="sd">        plot fourier analysis</span>
+<span class="sd">    kwargs:</span>
+<span class="sd">        Additional keyword arguments for plot setting matplolib style. Available setting:</span>
+<span class="sd">         {&quot;title&quot;: str, &quot;xlim&quot;: tuple, &quot;ylim&quot;: tuple, &quot;grid&quot;: bool}.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_fourier: pandas.DataFrame</span>
+<span class="sd">        Dataframe containing the Fourier transformed signals.</span>
+<span class="sd">    fig: matplotlib.pyplot.Figure</span>
+<span class="sd">        Figure is returned if plot == True, else None.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ----------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.frequency_domain import frequency_analysis</span>
+<span class="sd">    &gt;&gt;&gt; # fs: sample rate | f: signal frequency | Toss: observation time</span>
+<span class="sd">    &gt;&gt;&gt; fs, f, Toss = 100, 1, 4</span>
+<span class="sd">    &gt;&gt;&gt; t = np.linspace(0, Toss, Toss * fs, endpoint=False)</span>
+<span class="sd">    &gt;&gt;&gt; # generate a signal with 2 harmonics</span>
+<span class="sd">    &gt;&gt;&gt; x_sine = np.sin(2*np.pi*f*t) + 0.5*np.cos(2*np.pi*(10*f)*t)</span>
+<span class="sd">    &gt;&gt;&gt; data_time = pd.DataFrame(data={&#39;x_sine&#39;: x_sine},</span>
+<span class="sd">    ...                          index=t)</span>
+<span class="sd">    &gt;&gt;&gt; plot_kwargs={&quot;figsize&quot;:(6,6),</span>
+<span class="sd">    ...              &quot;title&quot;:&quot;Fourier Analysis&quot;,</span>
+<span class="sd">    ...              &quot;ylim&quot;:(0,0.6),</span>
+<span class="sd">    ...              &quot;xlim&quot;:(0,16),</span>
+<span class="sd">    ...              &quot;grid&quot;:True}</span>
+<span class="sd">    &gt;&gt;&gt; data_fourier, fig = frequency_analysis(df=data_time,</span>
+<span class="sd">    ...                                        fs=fs,</span>
+<span class="sd">    ...                                        plot=True,</span>
+<span class="sd">    ...                                        **plot_kwargs)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+        <span class="c1"># convert Series to DataFrame</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;provided df can only be a pd.DataFrame or pd.Series&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">column_name</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;INFO: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">column_name</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">%) Nan&#39;s detected in </span><span class="si">{</span><span class="n">column_name</span><span class="si">}</span><span class="s2">: values were linearly interpolated prior Fourier analysis&quot;</span>
+            <span class="p">)</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># create time array</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># get number of sample</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">fs</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>  <span class="c1"># Note: Toss=(1/fs)*N, N=Toss*fs</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span>
+
+    <span class="c1"># compute fft for each columns</span>
+    <span class="n">data_fourier</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">column_name</span><span class="p">,</span> <span class="n">column_data</span><span class="p">)</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="c1"># compute fft for each column</span>
+        <span class="n">data_fourier</span><span class="p">[</span><span class="n">column_name</span> <span class="o">+</span> <span class="s2">&quot;_fft&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">column_data</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="c1"># get modulus and scale w.r.t number of sample (element-wise operation)</span>
+    <span class="n">data_fourier</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data_fourier</span><span class="p">)</span>
+
+    <span class="c1"># add fequency scale as index</span>
+    <span class="n">data_fourier</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">data_fourier</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">fs</span>
+    <span class="n">data_fourier</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;frequency&quot;</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="c1"># set figure dimension based on kwargs</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;figsize&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="s2">&quot;figsize&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="k">else</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">11.7</span><span class="p">,</span> <span class="mf">8.27</span><span class="p">))</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">column_name</span><span class="p">,</span> <span class="n">column_data</span><span class="p">)</span> <span class="ow">in</span> <span class="n">data_fourier</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="n">markerline</span><span class="p">,</span> <span class="n">stemlines</span><span class="p">,</span> <span class="n">baseline</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span>
+                <span class="n">data_fourier</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                <span class="n">column_data</span><span class="p">,</span>
+                <span class="n">markerfmt</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="n">column_name</span><span class="p">,</span>
+                <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">stemlines</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">getp</span><span class="p">(</span><span class="n">markerline</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">))</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">stemlines</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">,</span> <span class="s2">&quot;solid&quot;</span><span class="p">)</span>
+
+        <span class="c1"># set title, xlim, ylim as function of kwargs</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="s2">&quot;title&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="k">else</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Time series analysis in frequency domain&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;ylim&quot;</span><span class="p">])</span> <span class="k">if</span> <span class="s2">&quot;ylim&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;xlim&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="s2">&quot;xlim&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="k">else</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">fs</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;grid&quot;</span><span class="p">])</span> <span class="k">if</span> <span class="s2">&quot;grid&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">else</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;1/N*|Y(f)|&quot;</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;frequency [Hz]&quot;</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="c1"># _ = plt.show() # outcommented due to it plotting during running the pytest</span>
+
+    <span class="k">return</span> <span class="n">data_fourier</span><span class="p">,</span> <span class="n">fig</span></div>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.config &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.config</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="Config"><a class="viewcode-back" href="../../usage.html#neuropy.config.Config">[docs]</a><span></span><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+
+    <span class="n">__KEYSTROKE_META_COLUMNS</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timeZoneOffset&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;metadataState&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dataVersion&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">__HEALTH_FEATURE_COLUMNS</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;heart_rate_variability&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;steps&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;flights_climbed&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sleep_start&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sleep_end&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;metadataState&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timeZoneOffset&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dataVersion&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">__HEALTH_CORE_COLUMNS</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">]</span>
+    <span class="n">__RENAME_NESTED_HEALTH_COLUMNS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;heartRate&quot;</span><span class="p">:</span> <span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;heartRateVariabilitySDNN&quot;</span><span class="p">:</span> <span class="s2">&quot;heart_rate_variability&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sleep&quot;</span><span class="p">:</span> <span class="s2">&quot;sleep&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">__RENAME_HEALTH_COLUMNS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;userId&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;eventType&quot;</span><span class="p">:</span> <span class="s2">&quot;event_id&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;flightsClimbed&quot;</span><span class="p">:</span> <span class="s2">&quot;flights_climbed&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">__AGG_DICT</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;heart_rate_variability&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;heart_rate_variability&quot;</span><span class="p">,</span> <span class="s2">&quot;first&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;heart_rate_MIN&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;heart_rate_MAX&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;heart_rate_MEAN&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;heart_rate_MEDIAN&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span> <span class="s2">&quot;median&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;heart_rate_STD&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;steps&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;flights_climbed&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;flights_climbed&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;sleep_onset&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;sleep_start&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;sleep_offset&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;sleep_end&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;sleep_duration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;sleep_duration&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="n">__HEALTH_RAW_COLUMNS</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;userId&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;eventType&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;metadataState&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dataVersion&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timeZoneOffset&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;flightsClimbed&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;steps&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timeZoneOffset&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;heartRate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;heartRateVariabilitySDNN&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sleep&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="n">__COMPOSITE_SCORE</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;fine_motor_score_CENTRALITY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;flight_time_MEDIAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_MEDIAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_MEDIAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_STD&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_STD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_STD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_STD&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_MIN&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_MIN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_MAX&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_MAX&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_DRIFT&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;flight_time_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;flight_time_CID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_CID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_CID&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_ENERGY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_ABS_SUM_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_ABS_SUM_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_ABS_SUM_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;flight_time_ABS_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_ABS_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_ABS_E&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_BOUNDS_MAX&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_FIRST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_FIRST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_FIRST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;flight_time_LAST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_LAST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_LAST_MAX&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_MOMENTS_ADV&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_SKEW&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_SKEW&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_SKEW&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;flight_time_KURT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_KURT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_KURT&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_BOUNDS_MIN&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_LAST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_LAST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_LAST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;flight_time_FIRST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_FIRST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_FIRST_MIN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_MAC&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_INERTIA_P&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_INERTIA_N&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_ENTROPY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_APPROX_S&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_APPROX_S&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_APPROX_S&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_MEAN_CHANGE&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_MEAN_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_MEAN_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_MEAN_CHANGE&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_BENFORD&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;flight_time_BL_KL&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_BL_KL&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_BL_KL&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;flight_time_BL_MAD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;release_release_latency_BL_MAD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_press_latency_BL_MAD&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_reciprocal_score_CENTRALITY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;hold_time_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hold_time_MEDIAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_reciprocal_score_DRIFT&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;hold_time_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hold_time_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hold_time_CID&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_reciprocal_score_STD&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hold_time_STD&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_reciprocal_score_ENERGY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;hold_time_ABS_SUM_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hold_time_ABS_E&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_reciprocal_score_MOMENTS_ADV&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hold_time_SKEW&quot;</span><span class="p">,</span> <span class="s2">&quot;hold_time_KURT&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_reciprocal_score_BOUNDS_MIN&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;hold_time_FIRST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hold_time_LAST_MIN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_reciprocal_score_MIN_MAX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hold_time_MIN&quot;</span><span class="p">,</span> <span class="s2">&quot;hold_time_MAX&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_score_reciprocal_INERTIA&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;hold_time_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hold_time_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_reciprocal_score_BENFORD&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hold_time_BL_KL&quot;</span><span class="p">,</span> <span class="s2">&quot;hold_time_BL_MAD&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_ratio_score_CENTRALITY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;press_flight_rate_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_flight_rate_MEDIAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_ratio_score_DRIFT&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;press_flight_rate_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_flight_rate_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_flight_rate_CID&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_ratio_score_STD&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;press_flight_rate_STD&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_ratio_score_ENERGY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;press_flight_rate_ABS_SUM_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_flight_rate_ABS_E&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_ratio_score_MOMENTS_ADV&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;press_flight_rate_SKEW&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_flight_rate_KURT&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_ratio_score_MIN_MAX&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;press_flight_rate_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_flight_rate_MAX&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_ratio_score_INERTIA&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;press_flight_rate_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_flight_rate_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_ratio_score_BENFORD&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;press_flight_rate_BL_MAD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;press_flight_rate_BL_KL&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_speed_score_CENTRALITY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;speed_MEAN&quot;</span><span class="p">,</span> <span class="s2">&quot;speed_MEDIAN&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_speed_score_DRIFT&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;speed_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;speed_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;speed_CID&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_speed_score_STD&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;speed_STD&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_speed_score_ENERGY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;speed_ABS_SUM_E&quot;</span><span class="p">,</span> <span class="s2">&quot;speed_ABS_E&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_speed_score_MOMENTS_ADV&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;speed_SKEW&quot;</span><span class="p">,</span> <span class="s2">&quot;speed_KURT&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_speed_score_BOUNDS_MIN&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;speed_FIRST_MIN&quot;</span><span class="p">,</span> <span class="s2">&quot;speed_LAST_MIN&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_speed_score_MIN_MAX&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;speed_MIN&quot;</span><span class="p">,</span> <span class="s2">&quot;speed_MAX&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fine_motor_speed_score_INERTIA&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;speed_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;speed_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fine_motor_speed_score_BENFORD&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;speed_BL_MAD&quot;</span><span class="p">,</span> <span class="s2">&quot;speed_BL_KL&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;cognition_score_CENTRALITY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pre_correction_slowing_MEDIAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_MEDIAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_MEDIAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_STD&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_STD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_STD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_STD&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_MIN&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_MIN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_MAX&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_MAX&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_DRIFT&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pre_correction_slowing_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pre_correction_slowing_CID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_CID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_CID&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_ENERGY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_ABS_SUM_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_ABS_SUM_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_ABS_SUM_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pre_correction_slowing_ABS_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_ABS_E&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_ABS_E&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_BOUNDS_MAX&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_FIRST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_FIRST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_FIRST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pre_correction_slowing_LAST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_LAST_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_LAST_MAX&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_MOMENTS_ADV&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_SKEW&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_SKEW&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_SKEW&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pre_correction_slowing_KURT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_KURT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_KURT&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_BOUNDS_MIN&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_FIRST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_FIRST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_FIRST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pre_correction_slowing_LAST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_LAST_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_LAST_MIN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_MAC&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_INERTIA_P&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_INERTIA_N&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_ENTROPY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_APPROX_S&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_APPROX_S&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_APPROX_S&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_MEAN_CHANGE&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_MEAN_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_MEAN_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_MEAN_CHANGE&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;cognition_score_BENFORD&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pre_correction_slowing_BL_MAD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_BL_MAD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_BL_MAD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pre_correction_slowing_BL_KL&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;post_correction_slowing_BL_KL&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;after_punctuation_pause_BL_KL&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fatigue_score_CENTRALITY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;session_duration_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;session_duration_MEDIAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_MEDIAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fatigue_score_DRIFT&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;session_duration_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;session_duration_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;session_duration_CID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_CID&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fatigue_score_STD&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;session_duration_STD&quot;</span><span class="p">,</span> <span class="s2">&quot;correction_duration_STD&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;fatigue_score_MIN_MAX&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;session_duration_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;session_duration_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_MAX&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fatigue_score_INERTIA&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;session_duration_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;session_duration_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_STRIKE_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_STRIKE_BLW_MEAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;fatigue_score_BENFORD&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;session_duration_BL_MAD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;session_duration_BL_KL&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_BL_MAD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;correction_duration_BL_KL&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;emotion_score_CENTRALITY&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_MEDIAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_MEDIAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_MEDIAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_MEDIAN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;emotion_score_DRIFT&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_CID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_CID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_CID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_N_ABV_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_N_BLW_MEAN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_CID&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;emotion_score_MIN&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_MIN&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_MIN&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;emotion_score_MAC&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_MEAN_ABS_CHANGE&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;emotion_score_STD&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_STD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_STD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_STD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_STD&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;emotion_score_MAX&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_MAX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_MAX&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;emotion_score_MEAN_CHANGE&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;emoji_sentiment_negativity_MEAN_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_positivity_MEAN_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_neutrality_MEAN_CHANGE&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;emoji_sentiment_polarity_MEAN_CHANGE&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;verbal_score_CENTRALITY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;word_length_MEAN&quot;</span><span class="p">,</span> <span class="s2">&quot;word_length_MEDIAN&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;verbal_score_STD&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;word_length_STD&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;verbal_score_ENERGY&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;word_length_ABS_SUM_E&quot;</span><span class="p">,</span> <span class="s2">&quot;word_length_ABS_E&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;verbal_score_MOMENTS_ADV&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;word_length_SKEW&quot;</span><span class="p">,</span> <span class="s2">&quot;word_length_KURT&quot;</span><span class="p">],</span>
+    <span class="p">}</span>
+
+<div class="viewcode-block" id="Config.get_keystroke_meta_columns"><a class="viewcode-back" href="../../usage.html#neuropy.config.Config.get_keystroke_meta_columns">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_keystroke_meta_columns</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Provide List of metadata relative to keystroke&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__KEYSTROKE_META_COLUMNS</span></div>
+
+<div class="viewcode-block" id="Config.get_health_feature_columns"><a class="viewcode-back" href="../../usage.html#neuropy.config.Config.get_health_feature_columns">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_health_feature_columns</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Provide list features relative to health data&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__HEALTH_FEATURE_COLUMNS</span></div>
+
+<div class="viewcode-block" id="Config.get_health_core_columns"><a class="viewcode-back" href="../../usage.html#neuropy.config.Config.get_health_core_columns">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_health_core_columns</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Provide metadata relative to health data&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__HEALTH_CORE_COLUMNS</span></div>
+
+<div class="viewcode-block" id="Config.get_health_raw_columns"><a class="viewcode-back" href="../../usage.html#neuropy.config.Config.get_health_raw_columns">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_health_raw_columns</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Provide list of raw features relative to health data&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__HEALTH_RAW_COLUMNS</span></div>
+
+<div class="viewcode-block" id="Config.get_aggregation_map"><a class="viewcode-back" href="../../usage.html#neuropy.config.Config.get_aggregation_map">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_aggregation_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Provide dict of aggregation used for health data&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__AGG_DICT</span></div>
+
+<div class="viewcode-block" id="Config.get_nested_health_columns_map"><a class="viewcode-back" href="../../usage.html#neuropy.config.Config.get_nested_health_columns_map">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_nested_health_columns_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Provide dict of map relative to health data&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__RENAME_NESTED_HEALTH_COLUMNS</span></div>
+
+<div class="viewcode-block" id="Config.get_health_columns_map"><a class="viewcode-back" href="../../usage.html#neuropy.config.Config.get_health_columns_map">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_health_columns_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Provide map relative to health data&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__RENAME_HEALTH_COLUMNS</span></div>
+
+<div class="viewcode-block" id="Config.get_composite_score_map"><a class="viewcode-back" href="../../usage.html#neuropy.config.Config.get_composite_score_map">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_composite_score_map</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Provide dict relative to composite score&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__COMPOSITE_SCORE</span></div></div>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

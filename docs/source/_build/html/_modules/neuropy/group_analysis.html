@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.group_analysis &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.group_analysis</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Submodule group_analysis.py includes the following functions: &lt;br&gt;</span>
+<span class="sd">   - **roc_analysis():** Compute ROC analysis [medical field version] &lt;br&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">auc</span>
+
+
+<div class="viewcode-block" id="medical_roc"><a class="viewcode-back" href="../../usage.html#neuropy.group_analysis.medical_roc">[docs]</a><span class="k">def</span> <span class="nf">medical_roc</span><span class="p">(</span>
+    <span class="n">y_benchmark</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span>
+    <span class="n">delta_feature</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span>
+    <span class="n">threshold_array</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">plot</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">anchor_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">feature_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">11.7</span><span class="p">,</span> <span class="mf">8.27</span><span class="p">),</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute ROC analysis [medical field version]</span>
+<span class="sd">    Ref: Receiver Operating Characteristic (ROC) Curve Analysis for Medical Diagnostic Test Evaluation</span>
+<span class="sd">    DOI: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3755824/</span>
+
+<span class="sd">    ----------</span>
+<span class="sd">    y_benchmark: np.array, pd.Series, list</span>
+<span class="sd">        array with binary values (0, 1) relative to the benchmark/anchor</span>
+<span class="sd">    delta_feature: np.array</span>
+<span class="sd">        array containing the difference of a feature feature at two difference time points, e.g. between m00 and m03</span>
+<span class="sd">    threshold_array: Union[np.array, None] (default: None)</span>
+<span class="sd">        array contining threshold values to evaluate `delta_scores` on</span>
+<span class="sd">    plot : bool (default: True)</span>
+<span class="sd">        plot roc_curve</span>
+<span class="sd">    anchor_name : str (default: None),</span>
+<span class="sd">        add to plot the name of y_benchmark</span>
+<span class="sd">    feature_name : str (default: None),</span>
+<span class="sd">        add to plot the name of feature</span>
+<span class="sd">    figsize : tuple (default: (11.7, 8.27))</span>
+<span class="sd">        set plot size</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    summary: pandas.DataFrame</span>
+<span class="sd">        Summary dataframe with with columns true positive rate (tpr), false positive rate (fpr),</span>
+<span class="sd">        true negative rate (tnr), Youden index</span>
+<span class="sd">    roc_auc: float</span>
+<span class="sd">        the area under the receiving operating characteristic (ROC)</span>
+<span class="sd">    fig: matplotlib.figure.Figure (optional)</span>
+<span class="sd">        Figure if plot == True, else None</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Threshold implementation is equivalent to sklearn&#39;s `roc_curve()` with `drop_intermediate=False`.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    ---------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.group_analysis import medical_roc</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.DataFrame(data={&#39;y_benchmark&#39;: [0, 0, 1, 1],</span>
+<span class="sd">    ...                         &#39;feature&#39;: [0.1, 0.4, 0.35, 0.8]})</span>
+<span class="sd">    &gt;&gt;&gt; summary, roc_auc, fig = medical_roc(df[&#39;y_benchmark&#39;], df[&#39;feature&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; # plt.show()</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># cast input if necessary</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y_benchmark</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">y_benchmark</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_benchmark</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delta_feature</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">delta_feature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">delta_feature</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">threshold_array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">threshold_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">threshold_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">threshold_array</span><span class="p">)</span>
+
+    <span class="c1"># check whether input series have the same length</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">delta_feature</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_benchmark</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input arguments must have the same length.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># remove nans if any</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y_benchmark</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">delta_feature</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;NaN values detected in input arrays.&quot;</span><span class="p">)</span>
+        <span class="c1"># remove element-wise</span>
+        <span class="n">is_nan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y_benchmark</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">delta_feature</span><span class="p">))</span>
+        <span class="n">y_benchmark</span><span class="p">,</span> <span class="n">delta_feature</span> <span class="o">=</span> <span class="n">y_benchmark</span><span class="p">[</span><span class="o">~</span><span class="n">is_nan</span><span class="p">],</span> <span class="n">delta_feature</span><span class="p">[</span><span class="o">~</span><span class="n">is_nan</span><span class="p">]</span>
+
+    <span class="c1"># check if arrays are empty after removing NaNs</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">y_benchmark</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">delta_feature</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input arguments must contain valid numbers.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># sort input arrays according to delta scores</span>
+    <span class="n">sorted_idx</span> <span class="o">=</span> <span class="n">delta_feature</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
+    <span class="n">y_benchmark</span><span class="p">,</span> <span class="n">delta_feature</span> <span class="o">=</span> <span class="n">y_benchmark</span><span class="p">[</span><span class="n">sorted_idx</span><span class="p">],</span> <span class="n">delta_feature</span><span class="p">[</span><span class="n">sorted_idx</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">threshold_array</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># select only unique delta scores to avoid repeated error counts.</span>
+        <span class="c1"># note: include last value to match array length</span>
+        <span class="n">unique_deltas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">delta_feature</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">threshold_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">unique_deltas</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_benchmark</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">threshold_array</span> <span class="o">=</span> <span class="n">delta_feature</span><span class="p">[</span><span class="n">threshold_idxs</span><span class="p">]</span>
+
+        <span class="c1"># add an extra threshold position to make sure that the curve starts at (0, 0)</span>
+        <span class="n">threshold_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">threshold_array</span><span class="p">,</span> <span class="n">threshold_array</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">tpr</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># true positive rate a.k.a. sensitivity</span>
+    <span class="n">fpr</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># false positive rate a.k.a. fall-out</span>
+    <span class="k">for</span> <span class="n">threshold</span> <span class="ow">in</span> <span class="n">threshold_array</span><span class="p">:</span>
+        <span class="n">threshold_bool</span> <span class="o">=</span> <span class="n">delta_feature</span> <span class="o">&lt;</span> <span class="n">threshold</span>
+        <span class="n">tp</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">threshold_bool</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_benchmark</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># true positive</span>
+        <span class="n">fp</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">threshold_bool</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_benchmark</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># false positive</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">threshold_bool</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_benchmark</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># false negative</span>
+        <span class="n">tn</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">threshold_bool</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_benchmark</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># true negative</span>
+
+        <span class="c1"># append the output to false positive rate list and true positive rate list</span>
+        <span class="n">fpr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tn</span> <span class="o">/</span> <span class="p">(</span><span class="n">tn</span> <span class="o">+</span> <span class="n">fp</span><span class="p">))</span>
+        <span class="n">tpr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span> <span class="o">/</span> <span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">fn</span><span class="p">))</span>
+
+    <span class="c1"># make dataframe</span>
+    <span class="n">summary_fcn</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="n">threshold_array</span><span class="p">,</span>
+            <span class="s2">&quot;fpr&quot;</span><span class="p">:</span> <span class="n">fpr</span><span class="p">,</span>  <span class="c1"># fall-out</span>
+            <span class="s2">&quot;tpr&quot;</span><span class="p">:</span> <span class="n">tpr</span><span class="p">,</span>  <span class="c1"># sensitivity</span>
+        <span class="p">}</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;tnr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;fpr&quot;</span><span class="p">]</span>  <span class="c1"># specificity</span>
+    <span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;Youden_index&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;tpr&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;tnr&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">threshold_array</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># compute auc</span>
+        <span class="n">auc_fcn</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;fpr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;tpr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">auc_fcn</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># get best Youden_index</span>
+    <span class="n">best_youden</span> <span class="o">=</span> <span class="n">summary_fcn</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;Youden_index&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+        <span class="n">lw</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="n">text_size</span> <span class="o">=</span> <span class="mi">15</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;fpr&quot;</span><span class="p">],</span>
+            <span class="n">summary_fcn</span><span class="p">[</span><span class="s2">&quot;tpr&quot;</span><span class="p">],</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkorange&quot;</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
+            <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;navy&quot;</span><span class="p">,</span>
+            <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+            <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;ROC curve (area = </span><span class="si">%0.2f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="n">auc_fcn</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;navy&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">best_youden</span><span class="p">[</span><span class="s2">&quot;fpr&quot;</span><span class="p">],</span>
+            <span class="n">best_youden</span><span class="p">[</span><span class="s2">&quot;tpr&quot;</span><span class="p">],</span>
+            <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+            <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+            <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Best Youden index = </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">best_youden</span><span class="p">[</span><span class="s2">&quot;Youden_index&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">best_youden</span><span class="p">[</span><span class="s2">&quot;fpr&quot;</span><span class="p">],</span>
+            <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">ymax</span><span class="o">=</span><span class="n">best_youden</span><span class="p">[</span><span class="s2">&quot;tpr&quot;</span><span class="p">],</span>
+            <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+            <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MCID = </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">best_youden</span><span class="p">[</span><span class="s2">&quot;threshold&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">best_youden</span><span class="p">[</span><span class="s2">&quot;tpr&quot;</span><span class="p">],</span>
+            <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">xmax</span><span class="o">=</span><span class="n">best_youden</span><span class="p">[</span><span class="s2">&quot;fpr&quot;</span><span class="p">],</span>
+            <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+            <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;FPR (1 - Specificity)&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">text_size</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;TPR (Sensitivity)&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">text_size</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Receiver operating characteristic&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">text_size</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;large&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">text_size</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">text_size</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">anchor_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">feature_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;Receiver operating characteristic</span><span class="se">\n</span><span class="s1"> anchor = </span><span class="si">{</span><span class="n">anchor_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">  |  feature = </span><span class="si">{</span><span class="n">feature_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                <span class="n">size</span><span class="o">=</span><span class="n">text_size</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Receiver operating characteristic&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">text_size</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">summary_fcn</span><span class="p">,</span> <span class="n">auc_fcn</span><span class="p">,</span> <span class="n">fig</span></div>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

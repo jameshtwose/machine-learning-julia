@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.anomaly_detection &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.anomaly_detection</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Submodule anomaly_detection.py includes the following functions: &lt;br&gt;</span>
+<span class="sd">   - **local_outlier_factor():** Run local outlier factor using sklearn.neighbors &lt;br&gt;</span>
+<span class="sd">   - **std_outlier_detector():** Identify outliers based on standard deviation &lt;br&gt;</span>
+<span class="sd">   - **iqr_outlier_detector():** Identify outliers based on inter-quartile range &lt;br&gt;</span>
+<span class="sd">   - **univariate_outlier_removal():** Identify outliers via a parametric (if normal) or non-parametric method. &lt;br&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Patch</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">LocalOutlierFactor</span>
+
+<span class="kn">from</span> <span class="nn">neuropy.frequentist_statistics</span> <span class="kn">import</span> <span class="n">normal_check</span>
+
+
+<div class="viewcode-block" id="local_outlier_factor"><a class="viewcode-back" href="../../usage.html#neuropy.anomaly_detection.local_outlier_factor">[docs]</a><span class="k">def</span> <span class="nf">local_outlier_factor</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;minkowski&quot;</span><span class="p">,</span>
+    <span class="n">n_neighbours</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">feature_1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">feature_2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Perform local outlier factor algorithm. Input cannot contain missing values.</span>
+<span class="sd">         When performed with two features, a 2D plot is created.</span>
+
+<span class="sd">         Further Information:</span>
+<span class="sd">         https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.LocalOutlierFactor.html#sklearn.neighbors.LocalOutlierFactor</span>
+
+<span class="sd">     Parameters</span>
+<span class="sd">     ----------</span>
+<span class="sd">     X: pandas.DataFrame</span>
+<span class="sd">         Dataframe with variables in columns.</span>
+
+<span class="sd">     show: bool (default: False)</span>
+<span class="sd">         Whether to show dataframe with outliers and summary.</span>
+
+<span class="sd">     plot: bool (default: True)</span>
+<span class="sd">         Whether to plot local outlier factor plots.</span>
+
+<span class="sd">     metric: str (default: &#39;minkowski&#39;)</span>
+<span class="sd">         metric used for the distance computation. Valid values for metric are:</span>
+
+<span class="sd">         - from scikit-learn: [‘cityblock’, ‘cosine’, ‘euclidean’, ‘l1’, ‘l2’,</span>
+<span class="sd">         ‘manhattan’]</span>
+
+<span class="sd">         - from scipy.spatial.distance: [‘braycurtis’, ‘canberra’, ‘chebyshev’,</span>
+<span class="sd">         ‘correlation’, ‘dice’, ‘hamming’, ‘jaccard’, ‘kulsinski’, ‘mahalanobis’, ‘</span>
+<span class="sd">         matching’, ‘minkowski’, ‘rogerstanimoto’, ‘russellrao’, ‘seuclidean’,</span>
+<span class="sd">         ‘sokalmichener’, ‘sokalsneath’, ‘sqeuclidean’, ‘yule’]</span>
+
+<span class="sd">     n_neighbours: int, optional (default: 20)</span>
+<span class="sd">         Number of neighbors to use by default for :meth:`kneighbors` queries.</span>
+<span class="sd">         If n_neighbors is larger than the number of samples provided,</span>
+<span class="sd">         all samples will be used.</span>
+
+<span class="sd">     feature_1: str (default:None)</span>
+<span class="sd">         Specify a feature on which LOF should be applied.</span>
+
+<span class="sd">     feature_2: str (default:None)</span>
+<span class="sd">         Specify another feature on which LOF should be applied.</span>
+
+<span class="sd">     figsize: tuple (default: (25,2))</span>
+<span class="sd">         Figure size of the heatmap, does not change size of 2D plot.</span>
+
+<span class="sd">     Returns</span>
+<span class="sd">     -------</span>
+<span class="sd">     df_outliers: pandas.DataFrame</span>
+<span class="sd">         Dataframe containing feature values and outlier column.</span>
+
+<span class="sd">     summary: pandas.DataFrame</span>
+<span class="sd">         Dataframe containing a lof summary:</span>
+<span class="sd">         [n_total, n_inliers,  n_outliers, percentage_outliers]</span>
+
+<span class="sd">     fig: matplotlib.pyplot.Figure (optional)</span>
+<span class="sd">         if plot==True, return figure object</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">     ----------</span>
+<span class="sd">     &gt;&gt;&gt; import seaborn as sns</span>
+<span class="sd">     &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">     &gt;&gt;&gt; X=sns.load_dataset(&#39;iris&#39;).drop(columns=&#39;species&#39;)</span>
+<span class="sd">     &gt;&gt;&gt; (df_outliers, summary, fig) = local_outlier_factor(X=X, show=True, plot=True, metric=&quot;minkowski&quot;, n_neighbours=20,</span>
+<span class="sd">     &gt;&gt;&gt;                                               feature_1=&quot;petal_length&quot;, feature_2=&quot;sepal_length&quot;, figsize=(7,7))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># keep only numerical features</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span>
+
+    <span class="c1"># remove samples with missing value</span>
+    <span class="k">if</span> <span class="n">X</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Drop observations with missing values in non-numerical features</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;WARNING: X included missing values. These observations are dropped&quot;</span><span class="p">,</span>
+            <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+
+    <span class="c1"># initialize lof object</span>
+    <span class="n">lof</span> <span class="o">=</span> <span class="n">LocalOutlierFactor</span><span class="p">(</span>
+        <span class="n">algorithm</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="n">metric</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="n">n_neighbours</span><span class="p">,</span> <span class="n">contamination</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;Timestamp&quot;</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">():</span>
+        <span class="n">time_check</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">time_check</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">feature_1</span><span class="p">:</span>
+        <span class="n">df_lof</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="n">feature_1</span><span class="p">,</span> <span class="n">feature_2</span><span class="p">])</span>
+    <span class="c1"># if Timestamp feature exist for df for a better visualization</span>
+    <span class="k">elif</span> <span class="n">time_check</span><span class="p">:</span>
+        <span class="n">df_lof</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df_lof</span> <span class="o">=</span> <span class="n">X</span>
+
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">lof</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">df_lof</span><span class="p">)</span>
+
+    <span class="c1"># create df with results of lof</span>
+    <span class="n">df_outliers</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">lof_output</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">y_pred</span><span class="p">),</span>
+        <span class="n">outliers</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;lof_output&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">time_check</span><span class="p">:</span>
+        <span class="n">df_outliers</span> <span class="o">=</span> <span class="n">df_outliers</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create summary df</span>
+    <span class="n">n_data_points</span> <span class="o">=</span> <span class="n">df_outliers</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;n_total&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">n_data_points</span><span class="p">],</span>
+            <span class="s2">&quot;n_inliers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">n_data_points</span> <span class="o">-</span> <span class="n">df_outliers</span><span class="p">[</span><span class="s2">&quot;outliers&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()],</span>
+            <span class="s2">&quot;n_outliers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">df_outliers</span><span class="p">[</span><span class="s2">&quot;outliers&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()],</span>
+            <span class="s2">&quot;percentage_outliers&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">((</span><span class="n">df_outliers</span><span class="p">[</span><span class="s2">&quot;outliers&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">n_data_points</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">],</span>
+        <span class="p">},</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;outlier summary&quot;</span><span class="p">],</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># plot lof 2D</span>
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">feature_1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">feature_2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+
+            <span class="c1"># set minimum value of data - 20%</span>
+            <span class="n">min_value_feature_1</span><span class="p">,</span> <span class="n">min_value_feature_2</span> <span class="o">=</span> <span class="n">df_lof</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.2</span>
+
+            <span class="c1"># set maximum value of data + 20%</span>
+            <span class="n">max_value_feature_1</span><span class="p">,</span> <span class="n">max_value_feature_2</span> <span class="o">=</span> <span class="n">df_lof</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.2</span>
+
+            <span class="c1"># plot the level sets of the decision function</span>
+            <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_value_feature_1</span><span class="p">,</span> <span class="n">max_value_feature_1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_value_feature_2</span><span class="p">,</span> <span class="n">max_value_feature_2</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">lof</span><span class="o">.</span><span class="n">_decision_function</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+            <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Local Outlier Factor (LOF)&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues_r</span><span class="p">)</span>
+
+            <span class="n">a</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                <span class="n">df_outliers</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+                <span class="n">df_outliers</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+                <span class="n">c</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+                <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+                <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                <span class="n">df_outliers</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_outliers</span><span class="p">[</span><span class="s2">&quot;outliers&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="n">feature_1</span><span class="p">],</span>
+                <span class="n">df_outliers</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_outliers</span><span class="p">[</span><span class="s2">&quot;outliers&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="n">feature_2</span><span class="p">],</span>
+                <span class="n">c</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span>
+                <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
+                <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">feature_1</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">feature_2</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;normal observations&quot;</span><span class="p">,</span> <span class="s2">&quot;outliers detected by LOF&quot;</span><span class="p">],</span>
+                <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="c1"># plot lof over time</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cmap</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">([</span><span class="s2">&quot;#F5A75D&quot;</span><span class="p">,</span> <span class="s2">&quot;#2167C5&quot;</span><span class="p">])</span>
+
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Identified outliers in the dataset by LOF&quot;</span><span class="p">)</span>
+
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+                <span class="n">xticklabels</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+                <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;outliers&quot;</span><span class="p">],</span>
+                <span class="n">cbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="n">colorbar</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">colorbar</span>
+            <span class="n">colorbar</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+            <span class="n">colorbar</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([</span><span class="s2">&quot;Outlier&quot;</span><span class="p">,</span> <span class="s2">&quot;Inlier&quot;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">time_check</span><span class="p">:</span>
+                <span class="n">ts_ticks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
+                    <span class="n">df_outliers</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df_outliers</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;D&quot;</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">))</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="n">ts_ticks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ts_ticks</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\longrightarrow$ Time &quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_outliers</span><span class="p">,</span> <span class="n">summary</span><span class="p">,</span> <span class="n">fig</span></div>
+
+
+<div class="viewcode-block" id="iqr_outlier_detector"><a class="viewcode-back" href="../../usage.html#neuropy.anomaly_detection.iqr_outlier_detector">[docs]</a><span class="k">def</span> <span class="nf">iqr_outlier_detector</span><span class="p">(</span>
+    <span class="n">s</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">bool</span><span class="p">],</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Inter-quartile-range-based outlier removal helper.</span>
+
+<span class="sd">    Note: if `s` is not numerical, it returns a list with the same number of `False` objects as there are rows in `s`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    s: pd.Series</span>
+<span class="sd">        numerical variable to identify outliers from</span>
+<span class="sd">    factor: float (default: 1.5)</span>
+<span class="sd">        determines the upper and lower bounds of what is &quot;normal&quot; in the data.</span>
+<span class="sd">        anything beyond those bounds is an &quot;anomaly&quot;:</span>
+<span class="sd">            upper bound: 3rd quartile + (IQR  * factor)</span>
+<span class="sd">            lower bound: 1st quartile - (IQR * factor)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    List[bool]</span>
+<span class="sd">        list of boolean flags indicating if data point is an outlier</span>
+<span class="sd">    lower: float</span>
+<span class="sd">        integer of the lower cutoff used to define an outlier</span>
+<span class="sd">    upper: float</span>
+<span class="sd">        integer of the upper cutoff used to define an outlier</span>
+
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; s = pd.Series([2, 3, 2.5, 4, 2, 1.5, 3.2, 10])</span>
+<span class="sd">    &gt;&gt;&gt; is_outlier, lower, upper = iqr_outlier_detector(s, factor=2)</span>
+<span class="sd">    &gt;&gt;&gt; assert is_outlier == [False, False, False, False, False, False, False, True]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># only numerical variables</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="c1"># calculate inter-quartile range</span>
+    <span class="n">q25</span><span class="p">,</span> <span class="n">q75</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">),</span> <span class="n">s</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">iqr</span> <span class="o">=</span> <span class="n">q75</span> <span class="o">-</span> <span class="n">q25</span>
+
+    <span class="c1"># calculate the outlier cutoff</span>
+    <span class="n">cut_off</span> <span class="o">=</span> <span class="n">iqr</span> <span class="o">*</span> <span class="n">factor</span>
+    <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">q25</span> <span class="o">-</span> <span class="n">cut_off</span><span class="p">,</span> <span class="n">q75</span> <span class="o">+</span> <span class="n">cut_off</span>
+
+    <span class="c1"># identify outliers</span>
+    <span class="n">to_discard</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span> <span class="o">&lt;</span> <span class="n">lower</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="n">upper</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">to_discard</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span></div>
+
+
+<div class="viewcode-block" id="std_outlier_detector"><a class="viewcode-back" href="../../usage.html#neuropy.anomaly_detection.std_outlier_detector">[docs]</a><span class="k">def</span> <span class="nf">std_outlier_detector</span><span class="p">(</span>
+    <span class="n">s</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">bool</span><span class="p">],</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Standard-deviation-based outlier removal helper.</span>
+
+<span class="sd">    Note: if `s` is not numerical, it returns a list with the same number of `False` objects as there are rows in `s`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    s: pd.Series</span>
+<span class="sd">        numerical variable to identify outliers from</span>
+<span class="sd">    factor: float (default: 3.)</span>
+<span class="sd">        determines the upper and lower bounds of what is &quot;normal&quot; in the data.</span>
+<span class="sd">        anything beyond those bounds is an &quot;anomaly&quot;:</span>
+<span class="sd">            upper bound: mean + (std  * factor)</span>
+<span class="sd">            lower bound: mean - (std * factor)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    discard list: List[bool]</span>
+<span class="sd">        list of boolean flags indicating if data point is an outlier</span>
+<span class="sd">    lower: float</span>
+<span class="sd">        integer of the lower cutoff used to define an outlier</span>
+<span class="sd">    upper: float</span>
+<span class="sd">        integer of the upper cutoff used to define an outlier</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; s = pd.Series([2, 3, 2.5, 4, 2, 1.5, 3.2, 10])</span>
+<span class="sd">    &gt;&gt;&gt; is_outlier, lower, upper = std_outlier_detector(s, factor=1.2)</span>
+<span class="sd">    &gt;&gt;&gt; assert is_outlier == [False, False, False, False, False, False, False, True]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># only numerical variables</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="c1"># calculate the outlier cutoff</span>
+    <span class="n">cut_off</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="n">factor</span>
+    <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">cut_off</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> <span class="n">cut_off</span>
+
+    <span class="c1"># identify outliers</span>
+    <span class="n">to_discard</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span> <span class="o">&lt;</span> <span class="n">lower</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="n">upper</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">to_discard</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span></div>
+
+
+<div class="viewcode-block" id="univariate_outlier_removal"><a class="viewcode-back" href="../../usage.html#neuropy.anomaly_detection.univariate_outlier_removal">[docs]</a><span class="k">def</span> <span class="nf">univariate_outlier_removal</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">nonparam_func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="n">iqr_outlier_detector</span><span class="p">,</span>
+    <span class="n">nonparam_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;factor&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">},</span>
+    <span class="n">nonparam_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;inter-quartile range, k=1.5&quot;</span><span class="p">,</span>
+    <span class="n">std_factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span>
+    <span class="n">remove</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">plot</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+
+    <span class="sd">&quot;&quot;&quot;Rule-based univariate outlier removal.</span>
+
+<span class="sd">    Applies both a parametric or a non-parametric outlier removal based on a condition (parametric assumption).</span>
+<span class="sd">    By default, the parametric method assumes a gaussian distribution, and so:</span>
+<span class="sd">        if met, defines ouliers based on the empirical rule (see https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule)</span>
+<span class="sd">        if NOT met, defines ouliers based on its inter-quartile range</span>
+
+<span class="sd">    Note that detection is ONLY applied to numerical columns. Categorical columns will remain and returned UNALTERED</span>
+<span class="sd">    in every case.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pd.DataFrame</span>
+<span class="sd">        dataframe with column variables to apply outlier removal to. Only numerical variables are considered.</span>
+
+<span class="sd">    nonparam_func: callable (default: iqr_outlier_detector())</span>
+<span class="sd">        non-parametric function. Must take in a Pandas Series, and return a list of booleans of the same size</span>
+<span class="sd">        indicating whether a data point is an outlier or not, and the lower and upper float values that define an</span>
+<span class="sd">        outlier. Default is IQR method.</span>
+
+<span class="sd">    nonparam_args: dict (default: {&quot;factor&quot;: 1.5})</span>
+<span class="sd">        non-parametric input arguments. Default is k=1.5 for IQR method.</span>
+
+<span class="sd">    nonparam_name: str (default: &quot;non-parametric method&quot;)</span>
+<span class="sd">        non-parametric method name (as shown in summary output).</span>
+
+<span class="sd">    std_factor: float (default: 3.)</span>
+<span class="sd">        factor multiplier for `std_outlier_detector`. See &#39;std_outlier_detector` docstrings for more info.</span>
+
+<span class="sd">    remove: bool (default: False)</span>
+<span class="sd">        whether to apply outlier removal to input dataframe (mask of NaNs). Categorical columns remain unaltered.</span>
+
+<span class="sd">    plot: bool (default: False)</span>
+<span class="sd">        whether to plot outliers.</span>
+
+<span class="sd">    figsize: Tuple[float, float] (default: (15, 7))</span>
+<span class="sd">        figure size.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df: pd.Dataframe</span>
+<span class="sd">        input dataframe with or without outliers</span>
+
+<span class="sd">    summary: pd.DataFrame</span>
+<span class="sd">        summary report of outlier removal analysis</span>
+
+<span class="sd">    fig: plt.Figure (optional)</span>
+<span class="sd">        if plot==True, return figure object</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ----------</span>
+<span class="sd">    &gt;&gt;&gt; import seaborn as sns</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.anomaly_detection import univariate_outlier_removal</span>
+<span class="sd">    &gt;&gt;&gt; df = sns.load_dataset(&#39;titanic&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; def some_outlier_detector(s, threshold=4.):</span>
+<span class="sd">    ...        to_discard = (s &lt; -threshold) | (s &gt; threshold)</span>
+<span class="sd">    ...        return to_discard.values.tolist(), -threshold, threshold</span>
+<span class="sd">    &gt;&gt;&gt; df, summary, fig = univariate_outlier_removal(df,</span>
+<span class="sd">    ...                                               nonparam_func=some_outlier_detector,</span>
+<span class="sd">    ...                                               nonparam_args={&quot;threshold&quot;: 55.},</span>
+<span class="sd">    ...                                               nonparam_name=&quot;hard threshold, t=5&quot;,</span>
+<span class="sd">    ...                                               remove=False,</span>
+<span class="sd">    ...                                               plot=True,</span>
+<span class="sd">    ...                                               figsize=(25, 5))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># make a copy in case remove=True and plot=True</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_original</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># check if callable is valid</span>
+    <span class="n">discard_list</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">nonparam_func</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">10.0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">),</span> <span class="o">**</span><span class="n">nonparam_args</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
+        <span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="nb">bool</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">discard_list</span>
+    <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="n">nonparam_func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">` callable must return a list of booleans.&quot;</span>
+
+    <span class="c1"># dictionary to store results</span>
+    <span class="n">outliers</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;var&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;outliers-removed&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;outliers-removed %&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;cutoff_lower&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;cutoff_upper&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="p">}</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="c1"># instantiate figure</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+
+        <span class="c1"># store colors per feature method in boxplot</span>
+        <span class="n">custom_palette</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">param_color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+        <span class="n">nonparam_color</span> <span class="o">=</span> <span class="s2">&quot;orange&quot;</span>
+
+    <span class="c1"># set default parametric method string</span>
+    <span class="n">param_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;standard deviation, k=</span><span class="si">{</span><span class="n">std_factor</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="c1"># if there are no numerical variables, return original df + empty summaries and plots</span>
+    <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">([</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">outliers</span><span class="p">),</span> <span class="n">fig</span>
+
+    <span class="c1"># loop over every feature</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">([</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">])):</span>
+
+        <span class="c1"># select feature series</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
+
+        <span class="c1"># does it satisfy condition?</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">normal_check</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())[</span><span class="s2">&quot;normality&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="c1"># apply parametric function if condition is met</span>
+                <span class="n">to_discard</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">std_outlier_detector</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="n">std_factor</span><span class="p">)</span>
+
+                <span class="c1"># log method name</span>
+                <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">param_name</span><span class="p">)</span>
+
+                <span class="c1"># log the upper and lower bounds of the cutoff</span>
+                <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;cutoff_lower&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span>
+                <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;cutoff_upper&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
+
+                <span class="c1"># box color in boxplot</span>
+                <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+                    <span class="n">custom_palette</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">param_color</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># apply non-parametric function if condition is met</span>
+                <span class="n">to_discard</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">nonparam_func</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="o">**</span><span class="n">nonparam_args</span><span class="p">)</span>
+
+                <span class="c1"># log method name</span>
+                <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nonparam_name</span><span class="p">)</span>
+
+                <span class="c1"># log the upper and lower bounds of the cutoff</span>
+                <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;cutoff_lower&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span>
+                <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;cutoff_upper&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span>
+
+                <span class="c1"># box color in boxplot</span>
+                <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+                    <span class="n">custom_palette</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">nonparam_color</span>
+
+        <span class="c1"># catch and log exception (if any), and jump the to next column without raising an exception</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exception in `</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">`: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># log summary outliers</span>
+        <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;var&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;outliers-removed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">to_discard</span><span class="p">))</span>
+        <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;outliers-removed %&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">to_discard</span><span class="p">)</span> <span class="o">/</span> <span class="n">s</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="p">)</span>
+        <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="n">to_discard</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_list</span><span class="p">())</span>
+
+        <span class="c1"># plot red circles around outliers to remove</span>
+        <span class="k">if</span> <span class="n">plot</span> <span class="ow">and</span> <span class="nb">sum</span><span class="p">(</span><span class="n">to_discard</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                <span class="n">s</span><span class="p">[</span><span class="n">to_discard</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                <span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">to_discard</span><span class="p">),</span>
+                <span class="s2">&quot;o&quot;</span><span class="p">,</span>
+                <span class="n">ms</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
+                <span class="n">mec</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
+                <span class="n">mfc</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+                <span class="n">mew</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="c1"># remove outliers: mask them with nans</span>
+        <span class="k">if</span> <span class="n">remove</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">f</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">to_discard</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="c1"># summary and logs in data frame</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span>
+
+    <span class="c1"># return (masked) dataframe, summary frame and (if plot) figure handle</span>
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+
+        <span class="c1"># plot only numerical variables</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">df_original</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">([</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">]),</span>
+            <span class="n">fliersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span>
+            <span class="n">palette</span><span class="o">=</span><span class="n">custom_palette</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># add transparency to colors</span>
+        <span class="k">for</span> <span class="n">patch</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">artists</span><span class="p">,</span> <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">]):</span>
+            <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">patch</span><span class="o">.</span><span class="n">get_facecolor</span><span class="p">()</span>
+            <span class="n">patch</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">))</span>
+
+        <span class="c1"># add legend</span>
+        <span class="n">param_patch</span> <span class="o">=</span> <span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">param_color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">param_name</span><span class="p">)</span>
+        <span class="n">nonparam_patch</span> <span class="o">=</span> <span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">nonparam_color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">nonparam_name</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="p">[</span><span class="n">param_patch</span><span class="p">,</span> <span class="n">nonparam_patch</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">summary</span><span class="p">,</span> <span class="n">fig</span></div>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

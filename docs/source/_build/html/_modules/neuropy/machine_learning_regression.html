@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.machine_learning_regression &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.machine_learning_regression</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Submodule machine_learning_regression.py includes the following functions: &lt;br&gt;</span>
+<span class="sd">  - **test_performance():** Compute p-values for parameters of the estimator. &lt;br&gt;</span>
+<span class="sd">  - **display_cv_plot():** Display the results of the cross validation for regularized ols. &lt;br&gt;</span>
+<span class="sd">  - **display_shrinkage_plot():** Display the results of the cross validation for regularized OLS. &lt;br&gt;</span>
+<span class="sd">  - **ols_regularized():** Linear model - Linear Regression with crossvalidation and regularization. &lt;br&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">base</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">max_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+
+<div class="viewcode-block" id="test_performance"><a class="viewcode-back" href="../../usage.html#neuropy.machine_learning_regression.test_performance">[docs]</a><span class="k">def</span> <span class="nf">test_performance</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">named_step</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compute p-values for parameters of the estimator (sklearn regressor)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    estimator</span>
+<span class="sd">        Fitted estimator from sklearn, e.g. sklearn.linear_model.LinearRegression</span>
+<span class="sd">    X_test: array-like, shape (n_samples, n_features)</span>
+<span class="sd">        Predictors</span>
+<span class="sd">    y_test: array-like, shape (n_samples)</span>
+<span class="sd">        Target</span>
+<span class="sd">    show: bool (default: True)</span>
+<span class="sd">        Whether to print the results</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dict</span>
+<span class="sd">        A `dict` with keys &#39;fitting&#39; (type: dict) and &#39;df_coef&#39; (type: pandas.Dataframe) containing information on the</span>
+<span class="sd">        model performance with regards to the test data</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ----------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.model_selection import train_test_split</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.linear_model import LinearRegression</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn import datasets</span>
+<span class="sd">    &gt;&gt;&gt; X, y, coef = datasets.make_regression(n_samples=150, n_features=3, coef=True, bias=1, effective_rank=3, random_state=42)</span>
+<span class="sd">    &gt;&gt;&gt; X, y = pd.DataFrame(data=X), pd.Series(data=y)</span>
+<span class="sd">    &gt;&gt;&gt; X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42)</span>
+<span class="sd">    &gt;&gt;&gt; reg = LinearRegression()</span>
+<span class="sd">    &gt;&gt;&gt; reg.fit(X_train, y_train)</span>
+<span class="sd">    &gt;&gt;&gt; output = test_performance(reg, X_test, y_test, show=False)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Enter estimator within Pipeline</span>
+    <span class="k">if</span> <span class="n">named_step</span><span class="p">:</span>
+        <span class="n">estimator</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="n">named_step</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">estimator</span>
+
+    <span class="c1"># Add constant to X (intercept)</span>
+    <span class="n">newX</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># count sample</span>
+    <span class="n">n_sample</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+    <span class="c1"># Get the coefficients from the estimator</span>
+    <span class="n">coefs</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">coef_</span>
+
+    <span class="k">if</span> <span class="n">estimator</span><span class="o">.</span><span class="n">fit_intercept</span><span class="p">:</span>
+        <span class="c1"># Add constant (1) to X</span>
+        <span class="n">newX</span><span class="p">[</span><span class="s2">&quot;Constant&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">newX</span><span class="p">))</span>
+        <span class="n">newX</span> <span class="o">=</span> <span class="n">newX</span><span class="p">[[</span><span class="s2">&quot;Constant&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">newX</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Constant&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
+
+        <span class="c1"># Add intercept to coefficients</span>
+        <span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">estimator</span><span class="o">.</span><span class="n">intercept_</span><span class="p">,</span> <span class="n">coefs</span><span class="p">)</span>
+
+    <span class="c1"># Predict y from X_test</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="c1"># Compute metrics in TEST set</span>
+    <span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
+    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="n">R2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>  <span class="c1"># coefficient of determination</span>
+    <span class="n">R2_adjusted</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">R2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">coefs</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">max_err</span> <span class="o">=</span> <span class="n">max_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>  <span class="c1"># maximum residual error</span>
+    <span class="n">AIC</span> <span class="o">=</span> <span class="n">n_sample</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y_test</span><span class="p">)))</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span>
+        <span class="n">coefs</span>
+    <span class="p">)</span>  <span class="c1"># Akaike Information Criterion</span>
+
+    <span class="c1"># Standard error of the parameters</span>
+    <span class="n">var_b</span> <span class="o">=</span> <span class="n">mse</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">newX</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">newX</span><span class="p">))</span><span class="o">.</span><span class="n">diagonal</span><span class="p">())</span>
+    <span class="n">se_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_b</span><span class="p">)</span>
+
+    <span class="c1"># Test of coefficients: t-values and p-values</span>
+    <span class="n">t_values</span> <span class="o">=</span> <span class="n">coefs</span> <span class="o">/</span> <span class="n">se_b</span>
+    <span class="n">p_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">newX</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">t_values</span><span class="p">]</span>
+
+    <span class="c1"># Wrap info on coefficients in data frame</span>
+    <span class="n">df_coef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;coef&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">coefs</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="s2">&quot;SE&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">se_b</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="s2">&quot;t-values&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t_values</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="s2">&quot;p-values&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">p_values</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="s2">&quot;stat-sign&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">p_values</span><span class="p">],</span>
+        <span class="p">},</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">newX</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Wrap info on fitting in a dictionary</span>
+    <span class="n">fitting</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;R2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">R2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+            <span class="s2">&quot;R2_Adjusted&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">R2_adjusted</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+            <span class="s2">&quot;rmse&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">rmse</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+            <span class="s2">&quot;mae&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">mae</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+            <span class="s2">&quot;max-error&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">max_err</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+            <span class="s2">&quot;AIC&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">AIC</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+            <span class="s2">&quot;n-sample&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">n_sample</span><span class="p">],</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">fitting</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df_coef</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;fitting&quot;</span><span class="p">:</span> <span class="n">fitting</span><span class="p">,</span> <span class="s2">&quot;df_coef&quot;</span><span class="p">:</span> <span class="n">df_coef</span><span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="display_cv_plot"><a class="viewcode-back" href="../../usage.html#neuropy.machine_learning_regression.display_cv_plot">[docs]</a><span class="k">def</span> <span class="nf">display_cv_plot</span><span class="p">(</span>
+    <span class="n">cv_result</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">scoring</span><span class="p">,</span>
+    <span class="n">best_result</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">decide_scoring</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">11.7</span><span class="p">,</span> <span class="mf">8.27</span><span class="p">),</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Display the results of the cross validation for regularized OLS</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cv_result: pd.DataFrame</span>
+<span class="sd">        DataFrame with mean/score and std/score in columns for score in `scoring`</span>
+<span class="sd">    scoring: str or list of str</span>
+<span class="sd">        (List with) scoring methods from cross validation</span>
+<span class="sd">    best_result: int</span>
+<span class="sd">        Index of `cv_result` with the best result</span>
+<span class="sd">    decide_scoring: str</span>
+<span class="sd">    figsize: tuple</span>
+<span class="sd">        Tuple with width and height of the figure</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    plot_cv: matplotlib.figure.Figure</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># List scoring if it is a single string</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">scoring</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">scoring</span> <span class="o">=</span> <span class="p">[</span><span class="n">scoring</span><span class="p">]</span>
+
+    <span class="c1"># New subplot for every scoring metric</span>
+    <span class="n">plot_cv</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">scoring</span><span class="p">),</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">cv_result</span><span class="p">[</span><span class="s2">&quot;alpha&quot;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scoring</span><span class="p">)):</span>
+        <span class="n">current_scoring</span> <span class="o">=</span> <span class="n">scoring</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+        <span class="c1"># Mirror plot if scoring is in opposite direction</span>
+        <span class="k">if</span> <span class="s2">&quot;neg&quot;</span> <span class="ow">in</span> <span class="n">current_scoring</span><span class="p">:</span>
+            <span class="n">correction</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">correction</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="c1"># Plot training performance in blue, test performance in orange</span>
+        <span class="k">for</span> <span class="n">sample</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;train_&quot;</span><span class="p">,</span> <span class="s2">&quot;test_&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;#2167C5&quot;</span><span class="p">,</span> <span class="s2">&quot;#EB5E23&quot;</span><span class="p">]):</span>
+            <span class="c1"># Mean performance of all cross validations splits at each alpha</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">correction</span> <span class="o">*</span> <span class="n">cv_result</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">][</span><span class="n">sample</span> <span class="o">+</span> <span class="n">current_scoring</span><span class="p">]</span>
+            <span class="c1"># Standard error performance of all cross validation splits at each alpha</span>
+            <span class="n">std_error</span> <span class="o">=</span> <span class="n">cv_result</span><span class="p">[</span><span class="s2">&quot;std&quot;</span><span class="p">][</span><span class="n">sample</span> <span class="o">+</span> <span class="n">current_scoring</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                <span class="n">cv_result</span><span class="p">[</span><span class="s2">&quot;n_splits&quot;</span><span class="p">]</span>
+            <span class="p">)</span>
+
+            <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">std_error</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">std_error</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span>
+            <span class="p">)</span>
+
+        <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">current_scoring</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;neg_&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">+/- Std Error&quot;</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Alpha&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Draw lines to indicate the best result</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span>
+            <span class="n">y</span><span class="p">[</span><span class="n">best_result</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4A4A4A&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">[</span><span class="n">best_result</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4A4A4A&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">best_result</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">best_result</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4A4A4A&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">cv_result</span><span class="p">[</span><span class="s2">&quot;reg_type&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ridge&quot;</span><span class="p">:</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Add title to the plot</span>
+    <span class="k">if</span> <span class="s2">&quot;neg&quot;</span> <span class="ow">in</span> <span class="n">decide_scoring</span><span class="p">:</span>
+        <span class="n">correction</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">plot_cv</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Results Cross Validation to determine regularization strength for &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cv_result</span><span class="p">[</span><span class="s1">&#39;reg_type&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;Best score in test set (&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">decide_scoring</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;neg_&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;test_&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">) = &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cv_result</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">][</span><span class="n">decide_scoring</span><span class="p">][</span><span class="n">best_result</span><span class="p">]</span><span class="o">*</span><span class="n">correction</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot; for alpha = </span><span class="si">{</span><span class="n">cv_result</span><span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">][</span><span class="n">best_result</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">plot_cv</span></div>
+
+
+<div class="viewcode-block" id="display_shrinkage_plot"><a class="viewcode-back" href="../../usage.html#neuropy.machine_learning_regression.display_shrinkage_plot">[docs]</a><span class="k">def</span> <span class="nf">display_shrinkage_plot</span><span class="p">(</span>
+    <span class="n">reg</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha_space</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">regularization_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">11.7</span><span class="p">,</span> <span class="mf">8.27</span><span class="p">)</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Display the results of the cross validation for regularized ols</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    reg: fitted sklearn model for which the alpha can be changes</span>
+<span class="sd">    X: predictors</span>
+<span class="sd">    y: outcome</span>
+<span class="sd">    alpha_space: list</span>
+<span class="sd">        Alphas to be plotted on x</span>
+<span class="sd">    regularization_type: str</span>
+<span class="sd">        Description of the type, e.g. &#39;ridge&#39; or &#39;lasso&#39;</span>
+<span class="sd">    figsize: tuple</span>
+<span class="sd">        Tuple with width and height of the figure</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    shrinkage_plot: matplotlib.figure.Figure</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">shrinkage_plot</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+
+    <span class="n">coefs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Clone the model to not change the one found in crossvalidation</span>
+    <span class="n">shrinkage</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+
+    <span class="c1"># Fit the model with all provided alphas</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">alpha_space</span><span class="p">:</span>
+        <span class="n">shrinkage</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="n">shrinkage</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">coefs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">shrinkage</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+
+    <span class="c1"># Use Neurocast colours if nr of coefficients allow for that</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">shrinkage</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_prop_cycle</span><span class="p">(</span>
+            <span class="s2">&quot;color&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;#2167C5&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;#EB5E23&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;#4A4A4A&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;#F5A75D&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;#9B9B9B&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;#3D9140&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;#FFE119&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha_space</span><span class="p">,</span> <span class="n">coefs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">regularization_type</span> <span class="o">==</span> <span class="s2">&quot;lasso&quot;</span><span class="p">:</span>
+        <span class="c1"># Change axis to log scale and reverse</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># Add annotation</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;weights&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">regularization_type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> coefficients as a function of the regularization&quot;</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">shrinkage_plot</span></div>
+
+
+<div class="viewcode-block" id="ols_regularized"><a class="viewcode-back" href="../../usage.html#neuropy.machine_learning_regression.ols_regularized">[docs]</a><span class="k">def</span> <span class="nf">ols_regularized</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
+    <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">regularization_type</span><span class="o">=</span><span class="s2">&quot;ridge&quot;</span><span class="p">,</span>
+    <span class="n">alpha_space</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">hold_out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">hold_out_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+    <span class="n">hold_out_random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">hold_out_stratify</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">groups</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">scoring</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;neg_mean_absolute_error&quot;</span><span class="p">,</span> <span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span> <span class="s2">&quot;r2&quot;</span><span class="p">],</span>
+    <span class="n">decide_scoring</span><span class="o">=</span><span class="s2">&quot;test_neg_mean_squared_error&quot;</span><span class="p">,</span>
+    <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">11.7</span><span class="p">,</span> <span class="mf">8.27</span><span class="p">),</span>
+<span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Linear model - Linear Regression with crossvalidation and regularization</span>
+
+<span class="sd">    The model is fitted on a use_sample and evaluated on the hold_out. If hold_out is specified, complete X and y are</span>
+<span class="sd">    the use_sample. If hold_out is not specified, X and y are splitted in the use_sample and hold_out sample using</span>
+<span class="sd">    test_test_split).</span>
+<span class="sd">    If crossvalidation is applied, the use_sample will be split in training and test samples to find the optimal alpha</span>
+<span class="sd">    for the regularization.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X: pandas.DataFrame</span>
+<span class="sd">        Predictors</span>
+<span class="sd">    y: pandas.Series</span>
+<span class="sd">        Target</span>
+<span class="sd">    fit_intercept: bool (default: True)</span>
+<span class="sd">        whether to calculate the intercept for this model.</span>
+<span class="sd">        If set to False, no intercept will be used in calculations (e.g. data is expected to be already centered).</span>
+<span class="sd">    regularization_type: str {&#39;ridge&#39;, &#39;lasso&#39;, &#39;elasticNet&#39;} or None, default &#39;ridge&#39;</span>
+<span class="sd">    alpha_space: float, numpy.array or None (default: None)</span>
+<span class="sd">        Regularization strength (or options to try in cross validation).</span>
+<span class="sd">        If None: `np.logspace(-4, 0, 50)` for Ridge regression and `np.arange(0.0001, 0.5, 0.05)` for Lasso</span>
+<span class="sd">        If numpy.array: array of regularization options</span>
+<span class="sd">        If float: regularization strength to use. No cross validation is applied.</span>
+<span class="sd">    hold_out: optional, dict {X_hold: pd.DataFrame, y_hold: pd.Series}</span>
+<span class="sd">        Dictionary with hold out data set to check performance of the model.</span>
+<span class="sd">    hold_out_size: float (default: 0.3)</span>
+<span class="sd">        Size of test subset used by `sklearn.model_selection.train_test_split`</span>
+<span class="sd">    hold_out_random_state: int or None (default: None)</span>
+<span class="sd">        Seed for the random number generated used by `sklearn.model_selection.train_test_split`</span>
+<span class="sd">    hold_out_stratify: array-like or None (default: None)</span>
+<span class="sd">        If not none, this is used as class labels for a stratified split by `sklearn.model_selection.train_test_split`</span>
+<span class="sd">    cv: int, cross-validation generator, an iterable, or None (default: 5)</span>
+<span class="sd">        If None: no crossvalidation is applied</span>
+<span class="sd">        For all other options: see sklearn.model_selection.cross_validate</span>
+<span class="sd">    groups: array-like, with shape (n_samples) or None (default: None)</span>
+<span class="sd">        Group labels for samples used in conjunction with a &#39;Group&#39; cv instance (sklearn.model_selection.cross_validate)</span>
+<span class="sd">    scoring: list (default: [&#39;neg_mean_absolute_error&#39;, &#39;neg_mean_squared_error&#39;, &#39;r2&#39;])</span>
+<span class="sd">        Metrics that are used in the cross validation</span>
+<span class="sd">    decide_scoring: str (default: &#39;test_neg_mean_squared_error&#39;)</span>
+<span class="sd">        Scoring metric that should be used to select the best model in the cross validation</span>
+<span class="sd">    plot: bool (default: False)</span>
+<span class="sd">        Whether to plot the result from cross validation / different alpha&#39;s</span>
+<span class="sd">    show: bool (default: True)</span>
+<span class="sd">        Whether to show the performance of the final model using `test_performance`</span>
+<span class="sd">    figsize: tuple</span>
+<span class="sd">        Tuple with width and height of the figure</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    reg_performance: dict</span>
+<span class="sd">        Dictionary with keys &#39;fitting&#39;: dict with model performance on hold_out and &#39;df_coef&#39;: DataFrame with values of</span>
+<span class="sd">        the coefficients on the hold_out. If cv=True, the dictionary also contains &#39;cv_results&#39;: Series with the mean</span>
+<span class="sd">        and std performance during the crossvalidation.</span>
+<span class="sd">    optimal_alpha_plot: None or Figure</span>
+<span class="sd">        If cv=True, Figure that shows the model performance using different alphas for the regularization</span>
+<span class="sd">    shrinkage_plot: None or Figure</span>
+<span class="sd">        If more than one value for alpha_space is provided, Figure that shows the coefficients for different alphas on</span>
+<span class="sd">        the entire training set (i.e. all data except hold_out). If nr of coefficients &lt; 8, Neurocast colours used.</span>
+<span class="sd">    reg: sklearn.linear_model instance</span>
+<span class="sd">        The final fitted model (e.g. a Lasso)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ----------</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn import datasets</span>
+<span class="sd">    &gt;&gt;&gt; diabetes = datasets.load_diabetes()</span>
+<span class="sd">    &gt;&gt;&gt; X = diabetes.data[:150]</span>
+<span class="sd">    &gt;&gt;&gt; X = pd.DataFrame(X, columns = [&#39;age&#39;, &#39;sex&#39;, &#39;BMI&#39;, &#39;BP&#39;, &#39;S1&#39;, &#39;S2&#39;, &#39;S3&#39;, &#39;S4&#39;, &#39;S5&#39;, &#39;S6&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; y = pd.Series(diabetes.target[:150])</span>
+<span class="sd">    &gt;&gt;&gt; ols_results, plot1, plot2, fitted_model = ols_regularized(X, y)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">hold_out</span><span class="p">:</span>
+        <span class="c1"># Check if the hold out data has the right shape</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">required_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">hold_out</span> <span class="k">for</span> <span class="n">required_key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;X_hold&quot;</span><span class="p">,</span> <span class="s2">&quot;y_hold&quot;</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Hold_out dit not have the required keys&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">hold_out</span><span class="p">[</span><span class="s2">&quot;X_hold&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">hold_out</span><span class="p">[</span><span class="s2">&quot;y_hold&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Hold_out X and y do not have the same number of rows&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">hold_out</span><span class="p">[</span><span class="s2">&quot;y_hold&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Hold_out y has more than one column&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Use complete X and y as use_sample and hold out final evaluation</span>
+        <span class="n">X_train</span> <span class="o">=</span> <span class="n">X</span>
+        <span class="n">X_test</span> <span class="o">=</span> <span class="n">hold_out</span><span class="p">[</span><span class="s2">&quot;X_hold&quot;</span><span class="p">]</span>
+        <span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="n">y_test</span> <span class="o">=</span> <span class="n">hold_out</span><span class="p">[</span><span class="s2">&quot;y_hold&quot;</span><span class="p">]</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Split the data in training and testing subsets (use_sample and hold_out)</span>
+        <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+            <span class="n">X</span><span class="p">,</span>
+            <span class="n">y</span><span class="p">,</span>
+            <span class="n">test_size</span><span class="o">=</span><span class="n">hold_out_size</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">hold_out_random_state</span><span class="p">,</span>
+            <span class="n">stratify</span><span class="o">=</span><span class="n">hold_out_stratify</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">groups</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Make sure the correct indices are selected for groups in the crossvalidation</span>
+            <span class="n">groups</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="c1"># Initiate the estimator</span>
+    <span class="k">if</span> <span class="n">regularization_type</span> <span class="o">==</span> <span class="s2">&quot;ridge&quot;</span><span class="p">:</span>
+        <span class="c1"># Ridge regression</span>
+        <span class="n">reg</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="n">fit_intercept</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">alpha_space</span><span class="p">:</span>
+            <span class="c1"># Set the default range of alphas</span>
+            <span class="n">alpha_space</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha_space</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># Set the alpha</span>
+            <span class="n">reg</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_space</span>
+            <span class="c1"># No cross validation</span>
+            <span class="n">cv</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">elif</span> <span class="n">regularization_type</span> <span class="o">==</span> <span class="s2">&quot;lasso&quot;</span><span class="p">:</span>
+        <span class="c1"># Lasso regression</span>
+        <span class="n">reg</span> <span class="o">=</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="n">fit_intercept</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">alpha_space</span><span class="p">:</span>
+            <span class="c1"># Set the default range of alphas</span>
+            <span class="n">alpha_space</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha_space</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># Set the alpha</span>
+            <span class="n">reg</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_space</span>
+            <span class="c1"># No cross validation</span>
+            <span class="n">cv</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">elif</span> <span class="n">regularization_type</span> <span class="o">==</span> <span class="s2">&quot;elasticNet&quot;</span><span class="p">:</span>
+        <span class="c1"># Elastic net</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;ElasticNet is not implemented yet&quot;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">regularization_type</span><span class="p">:</span>
+        <span class="c1"># Simple linear regression</span>
+        <span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="n">fit_intercept</span><span class="p">)</span>
+        <span class="n">cv</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Unknown regularization type. Choose one of {&#39;ridge&#39;, &#39;lasso&#39;, &#39;elasticNet&#39;} or None&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">cv</span><span class="p">:</span>
+        <span class="n">cv_result</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alpha_space</span><span class="p">)):</span>
+            <span class="n">reg</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha_space</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">cv_scores</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span>
+                <span class="n">reg</span><span class="p">,</span>
+                <span class="n">X_train</span><span class="p">,</span>
+                <span class="n">y_train</span><span class="p">,</span>
+                <span class="n">groups</span><span class="o">=</span><span class="n">groups</span><span class="p">,</span>
+                <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">,</span>
+                <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span>
+                <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">return_estimator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">n_splits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cv_scores</span><span class="p">[</span><span class="s2">&quot;fit_time&quot;</span><span class="p">])</span>
+            <span class="n">cv_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cv_scores</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;fit_time&quot;</span><span class="p">,</span> <span class="s2">&quot;score_time&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">cv_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv_scores</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+            <span class="n">cv_result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;alpha&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">alpha</span>
+            <span class="n">cv_result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;n_splits&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_splits</span>
+            <span class="n">cv_result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;reg_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">regularization_type</span>
+
+        <span class="n">df_result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cv_result</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Find the index at which the MSE in the test data is smallest (= neg MSE is biggest)</span>
+        <span class="n">best_result</span> <span class="o">=</span> <span class="n">df_result</span><span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">][</span><span class="n">decide_scoring</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+        <span class="n">reg</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">df_result</span><span class="p">[</span><span class="s2">&quot;alpha&quot;</span><span class="p">][</span><span class="n">best_result</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">cv</span> <span class="ow">and</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="n">optimal_alpha_plot</span> <span class="o">=</span> <span class="n">display_cv_plot</span><span class="p">(</span>
+            <span class="n">cv_result</span><span class="p">,</span>
+            <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">,</span>
+            <span class="n">best_result</span><span class="o">=</span><span class="n">best_result</span><span class="p">,</span>
+            <span class="n">decide_scoring</span><span class="o">=</span><span class="n">decide_scoring</span><span class="p">,</span>
+            <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">optimal_alpha_plot</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">alpha_space</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">shrinkage_plot</span> <span class="o">=</span> <span class="n">display_shrinkage_plot</span><span class="p">(</span>
+            <span class="n">reg</span><span class="p">,</span>
+            <span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span>
+            <span class="n">alpha_space</span><span class="o">=</span><span class="n">alpha_space</span><span class="p">,</span>
+            <span class="n">regularization_type</span><span class="o">=</span><span class="n">regularization_type</span><span class="p">,</span>
+            <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># Next release: add legend?</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">shrinkage_plot</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Fit the model using the complete training set</span>
+    <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="c1"># Determine performance</span>
+    <span class="n">reg_performance</span> <span class="o">=</span> <span class="n">test_performance</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cv</span><span class="p">:</span>
+        <span class="n">reg_performance</span><span class="p">[</span><span class="s2">&quot;cv_results&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_result</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">best_result</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="c1"># Remove RMSE adjusted?</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">reg_performance</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">reg_performance</span><span class="p">,</span> <span class="n">optimal_alpha_plot</span><span class="p">,</span> <span class="n">shrinkage_plot</span><span class="p">,</span> <span class="n">reg</span></div>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

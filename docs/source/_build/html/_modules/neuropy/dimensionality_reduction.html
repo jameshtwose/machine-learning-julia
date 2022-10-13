@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.dimensionality_reduction &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.dimensionality_reduction</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Submodule dimensionality_reduction.py includes the following functions:</span>
+<span class="sd">   - **variance_threshold():** Perform dimensionality reduction using variance threshold &lt;br&gt;</span>
+<span class="sd">   - **missing_value_threshold():** Perform dimensionality reduction using missing value threshold &lt;br&gt;</span>
+<span class="sd">   - **nullity_sort():** Sorts the data frame based on it&#39;s nullity &lt;br&gt;</span>
+<span class="sd">   - **nullity_filter():** Filters the data frame based on it&#39;s nullity &lt;br&gt;</span>
+<span class="sd">   - **msno_matrix():** A matrix visualization of the nullity of the given DataFrame &lt;br&gt;</span>
+<span class="sd">   - **chisquare_threshold():** Perform dimensionality reduction using chisquare &lt;br&gt;</span>
+<span class="sd">   - **high_correlation_threshold():** Perform dimensionality reduction by removing highly correlated features &lt;br&gt;</span>
+<span class="sd">   - **robust_rfecv():** Run Recursive Feature Elimination (RFE) using multiple Machine learning models &lt;br&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">gridspec</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">is_classifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">is_regressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">chi2</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">RFECV</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+
+<span class="kn">from</span> <span class="nn">neuropy.correlation</span> <span class="kn">import</span> <span class="n">correlation_analysis</span>
+
+
+<div class="viewcode-block" id="variance_threshold"><a class="viewcode-back" href="../../usage.html#neuropy.dimensionality_reduction.variance_threshold">[docs]</a><span class="k">def</span> <span class="nf">variance_threshold</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">11.7</span><span class="p">,</span> <span class="mf">8.27</span><span class="p">)</span>
+<span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Perform dimensionality reduction using variance threshold. The method considers numerical features only.</span>
+<span class="sd">        Rows with any missing values will be discarded.</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: pandas.DataFrame</span>
+<span class="sd">        Dataframe with variables in columns, cases in rows</span>
+<span class="sd">    threshold: float (default: 0.001)</span>
+<span class="sd">        Features with a variance lower than threshold will be flagged.</span>
+<span class="sd">    show: bool (default: False)</span>
+<span class="sd">        whether to show the summary</span>
+<span class="sd">    plot: bool (default: False)</span>
+<span class="sd">        whether to plot the box plot with normalized features</span>
+<span class="sd">    figsize: tuple (default: (11.7, 8.27))</span>
+<span class="sd">        Width and height of the figure in inches</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    summary: pandas.DataFrame</span>
+<span class="sd">        Dataframe containing a feature selection summary:</span>
+<span class="sd">        [normalized-variance feature-type  variance-threshold  to-discard]</span>
+<span class="sd">    boxplot: Figure</span>
+<span class="sd">        Properties of the gigure can be changed later, e.g. boxplot.axes[0].set_ylim(0,10) to change the limits. If</span>
+<span class="sd">        plot == False, boxplot will be None.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ----------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.dimensionality_reduction import variance_threshold</span>
+<span class="sd">    &gt;&gt;&gt; data = sns.load_dataset(name = &#39;titanic&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; summary, _ = variance_threshold(data = data, threshold = 0.05, show = False, plot = True)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># TODO address normalization</span>
+    <span class="c1"># select only numerical feature, drop row with any nan and normalize feature such that mean(feature) = 1</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="s2">&quot;bool&quot;</span><span class="p">)</span>
+    <span class="n">normalized_data</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
+        <span class="o">/</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">normalized_data</span><span class="o">.</span><span class="n">var</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+    <span class="n">summary</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;normalized-variance&quot;</span><span class="p">]</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;feature-type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;variance-threshold&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">threshold</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;to-discard&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;normalized-variance&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">threshold</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span>
+        <span class="p">[</span><span class="s2">&quot;feature-type&quot;</span><span class="p">,</span> <span class="s2">&quot;normalized-variance&quot;</span><span class="p">,</span> <span class="s2">&quot;variance-threshold&quot;</span><span class="p">,</span> <span class="s2">&quot;to-discard&quot;</span><span class="p">]</span>
+    <span class="p">]</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;normalized-variance&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+
+    <span class="n">boxplot</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="c1"># plot red feature &lt; threshold &amp; green feature &gt;= threshold</span>
+        <span class="n">dict_palette</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="nb">zip</span><span class="p">(</span>
+                <span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;to-discard&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s2">&quot;tomato&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s2">&quot;springgreen&quot;</span><span class="p">}),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="n">boxplot</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">normalized_data</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">dict_palette</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Feature selection via variance threshold</span><span class="se">\n</span><span class="s2"> original features = </span><span class="si">{</span><span class="n">normalized_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;| selected features = </span><span class="si">{</span><span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;to-discard&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized data&quot;</span><span class="p">)</span>
+        <span class="n">patch_discard</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;tomato&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;feature to discard&quot;</span><span class="p">)</span>
+        <span class="n">patch_keep</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;springgreen&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;selected feature&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="p">[</span><span class="n">patch_keep</span><span class="p">,</span> <span class="n">patch_discard</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">summary</span><span class="p">,</span> <span class="n">boxplot</span></div>
+
+
+<div class="viewcode-block" id="missing_value_threshold"><a class="viewcode-back" href="../../usage.html#neuropy.dimensionality_reduction.missing_value_threshold">[docs]</a><span class="k">def</span> <span class="nf">missing_value_threshold</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Perform dimensionality reduction using missing value threshold.</span>
+<span class="sd">    The method considers both numerical and categorical features.</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: pandas.DataFrame</span>
+<span class="sd">        Dataframe with variables in columns, cases in rows</span>
+<span class="sd">    threshold: float (default: 5)</span>
+<span class="sd">        Features with a higher missing value percentage than threshold will be flagged</span>
+<span class="sd">    show: bool (default: False)</span>
+<span class="sd">        whether to show the summary</span>
+<span class="sd">    plot: bool (default: False)</span>
+<span class="sd">        whether to plot the heatmap with missing values</span>
+<span class="sd">    figsize: tuple (default: (25, 10))</span>
+<span class="sd">        Width and height of the figure in inches</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    summary: pandas.DataFrame</span>
+<span class="sd">        Dataframe containing a feature selection summary:</span>
+<span class="sd">        [&#39;feature-type&#39;, &#39;missing-value %&#39;, &#39;missing-threshold %&#39;, &#39;to-discard&#39;]</span>
+<span class="sd">    missplot: Figure</span>
+<span class="sd">        A figure is returned if plot == True, else None</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ----------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.dimensionality_reduction import missing_value_threshold</span>
+<span class="sd">    &gt;&gt;&gt; titanic = sns.load_dataset(name=&#39;titanic&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; summary, fig = missing_value_threshold(data=titanic, threshold=5, show=False, plot=True)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">summary</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+    <span class="n">summary</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;missing-value %&quot;</span><span class="p">]</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;feature-type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;missing-threshold %&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">threshold</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;to-discard&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;missing-value %&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span>
+        <span class="p">[</span><span class="s2">&quot;feature-type&quot;</span><span class="p">,</span> <span class="s2">&quot;missing-value %&quot;</span><span class="p">,</span> <span class="s2">&quot;missing-threshold %&quot;</span><span class="p">,</span> <span class="s2">&quot;to-discard&quot;</span><span class="p">]</span>
+    <span class="p">]</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;missing-value %&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+
+    <span class="n">missplot</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="n">missplot</span> <span class="o">=</span> <span class="n">msno_matrix</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">summary</span><span class="p">,</span> <span class="n">missplot</span></div>
+
+
+<div class="viewcode-block" id="nullity_sort"><a class="viewcode-back" href="../../usage.html#neuropy.dimensionality_reduction.nullity_sort">[docs]</a><span class="k">def</span> <span class="nf">nullity_sort</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    COPIED FROM MISSINGNO</span>
+<span class="sd">    Sorts a DataFrame according to its nullity, in either ascending or descending order.</span>
+<span class="sd">    :param df: The DataFrame object being sorted.</span>
+<span class="sd">    :param sort: The sorting method: either &quot;ascending&quot;, &quot;descending&quot;, or None (default).</span>
+<span class="sd">    :return: The nullity-sorted DataFrame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">sort</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">df</span>
+    <span class="k">elif</span> <span class="n">sort</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ascending&quot;</span><span class="p">,</span> <span class="s2">&quot;descending&quot;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s1">&#39;The &quot;sort&quot; parameter must be set to &quot;ascending&quot; or &quot;descending&quot;.&#39;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">axis</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;rows&quot;</span><span class="p">,</span> <span class="s2">&quot;columns&quot;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The &quot;axis&quot; parameter must be set to &quot;rows&quot; or &quot;columns&quot;.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="s2">&quot;columns&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sort</span> <span class="o">==</span> <span class="s2">&quot;ascending&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="p">:]</span>
+        <span class="k">elif</span> <span class="n">sort</span> <span class="o">==</span> <span class="s2">&quot;descending&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)),</span> <span class="p">:]</span>
+    <span class="k">elif</span> <span class="n">axis</span> <span class="o">==</span> <span class="s2">&quot;rows&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sort</span> <span class="o">==</span> <span class="s2">&quot;ascending&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;rows&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="n">sort</span> <span class="o">==</span> <span class="s2">&quot;descending&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;rows&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">))]</span></div>
+
+
+<div class="viewcode-block" id="nullity_filter"><a class="viewcode-back" href="../../usage.html#neuropy.dimensionality_reduction.nullity_filter">[docs]</a><span class="k">def</span> <span class="nf">nullity_filter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    COPIED FROM MISSINGNO</span>
+<span class="sd">    Filters a DataFrame according to its nullity, using some combination of &#39;top&#39; and &#39;bottom&#39; numerical and</span>
+<span class="sd">    percentage values. Percentages and numerical thresholds can be specified simultaneously: for example,</span>
+<span class="sd">    to get a DataFrame with columns of at least 75% completeness but with no more than 5 columns, use</span>
+<span class="sd">    `nullity_filter(df, filter=&#39;top&#39;, p=.75, n=5)`.</span>
+<span class="sd">    :param df: The DataFrame whose columns are being filtered.</span>
+<span class="sd">    :param filter: The orientation of the filter being applied to the DataFrame. One of, &quot;top&quot;, &quot;bottom&quot;,</span>
+<span class="sd">    or None (default). The filter will simply return the DataFrame if you leave the filter argument unspecified or</span>
+<span class="sd">    as None.</span>
+<span class="sd">    :param p: A completeness ratio cut-off. If non-zero the filter will limit the DataFrame to columns with at least p</span>
+<span class="sd">    completeness. Input should be in the range [0, 1].</span>
+<span class="sd">    :param n: A numerical cut-off. If non-zero no more than this number of columns will be returned.</span>
+<span class="sd">    :return: The nullity-filtered `DataFrame`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">filter</span> <span class="o">==</span> <span class="s2">&quot;top&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">p</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="n">c</span> <span class="o">&gt;=</span> <span class="n">p</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;rows&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)]]</span>
+        <span class="k">if</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;rows&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)[</span><span class="o">-</span><span class="n">n</span><span class="p">:])]</span>
+    <span class="k">elif</span> <span class="nb">filter</span> <span class="o">==</span> <span class="s2">&quot;bottom&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">p</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="n">c</span> <span class="o">&lt;=</span> <span class="n">p</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;rows&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)]]</span>
+        <span class="k">if</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;rows&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)[:</span><span class="n">n</span><span class="p">])]</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="msno_matrix"><a class="viewcode-back" href="../../usage.html#neuropy.dimensionality_reduction.msno_matrix">[docs]</a><span class="k">def</span> <span class="nf">msno_matrix</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span>
+    <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">p</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">sort</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">width_ratios</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">sparkline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">inline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">freq</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A matrix visualization of the nullity of the given DataFrame. COPIED from missingo package</span>
+<span class="sd">    :param df: The `DataFrame` being mapped.</span>
+<span class="sd">    :param filter: The filter to apply to the heatmap. Should be one of &quot;top&quot;, &quot;bottom&quot;, or None (default).</span>
+<span class="sd">    :param n: The max number of columns to include in the filtered DataFrame.</span>
+<span class="sd">    :param p: The max percentage fill of the columns in the filtered DataFrame.</span>
+<span class="sd">    :param sort: The row sort order to apply. Can be &quot;ascending&quot;, &quot;descending&quot;, or None.</span>
+<span class="sd">    :param figsize: The size of the figure to display.</span>
+<span class="sd">    :param fontsize: The figure&#39;s font size. Default to 16.</span>
+<span class="sd">    :param labels: Whether or not to display the column names. Defaults to the underlying data labels when there are</span>
+<span class="sd">    50 columns or less, and no labels when there are more than 50 columns.</span>
+<span class="sd">    :param sparkline: Whether or not to display the sparkline. Defaults to True.</span>
+<span class="sd">    :param width_ratios: The ratio of the width of the matrix to the width of the sparkline. Defaults to `(15, 1)`.</span>
+<span class="sd">    Does nothing if `sparkline=False`.</span>
+<span class="sd">    :param color: The color of the filled columns. Default is `(0.25, 0.25, 0.25)`.</span>
+<span class="sd">    :return: If `inline` is False, the underlying `matplotlib.figure` object. Else, nothing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">nullity_filter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="nb">filter</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">nullity_sort</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
+
+    <span class="n">height</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># z is the color-mask array, g is a NxNx3 matrix. Apply the z color-mask to set the RGB of each pixel.</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+    <span class="n">g</span><span class="p">[</span><span class="n">z</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">g</span><span class="p">[</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span>
+
+    <span class="c1"># Set up the matplotlib grid layout. A unary subplot if no sparkline, a left-right splot if yes sparkline.</span>
+    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sparkline</span><span class="p">:</span>
+            <span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width_ratios</span><span class="o">=</span><span class="n">width_ratios</span><span class="p">)</span>
+            <span class="n">gs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.08</span><span class="p">)</span>
+            <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">ax0</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sparkline</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;Plotting a sparkline on an existing axis is not currently supported. &quot;</span>
+                <span class="s2">&quot;To remove this warning, set sparkline=False.&quot;</span>
+            <span class="p">)</span>
+            <span class="n">sparkline</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">ax0</span> <span class="o">=</span> <span class="n">ax</span>
+
+    <span class="c1"># Create the nullity plot.</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Remove extraneous default visual elements.</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_top</span><span class="p">()</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Set up and rotate the column ticks. The labels argument is set to None by default. If the user specifies it in</span>
+    <span class="c1"># the argument, respect that specification. Otherwise display for &lt;= 50 columns and do not display for &gt; 50.</span>
+    <span class="k">if</span> <span class="n">labels</span> <span class="ow">or</span> <span class="p">(</span><span class="n">labels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">):</span>
+        <span class="n">ha</span> <span class="o">=</span> <span class="s2">&quot;left&quot;</span>
+        <span class="n">ax0</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">)))</span>
+        <span class="n">ax0</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="n">ha</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax0</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+
+    <span class="c1"># Adds Timestamps ticks if freq is not None, else set up the two top-bottom row ticks.</span>
+    <span class="k">if</span> <span class="n">freq</span><span class="p">:</span>
+        <span class="n">ts_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="n">pd</span><span class="o">.</span><span class="n">PeriodIndex</span><span class="p">:</span>
+            <span class="n">ts_array</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+            <span class="n">ts_ticks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">:</span>
+            <span class="n">ts_array</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+            <span class="n">ts_ticks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Dataframe index must be PeriodIndex or DatetimeIndex.&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">ts_array</span><span class="p">:</span>
+                <span class="n">ts_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Could not divide time index into desired frequency.&quot;</span><span class="p">)</span>
+
+        <span class="n">ax0</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">ts_list</span><span class="p">)</span>
+        <span class="n">ax0</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">ts_ticks</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">*</span> <span class="mi">20</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax0</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">ax0</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">fontsize</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">*</span> <span class="mi">20</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Create the inter-column vertical grid.</span>
+    <span class="n">in_between_point</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">in_between_point</span> <span class="ow">in</span> <span class="n">in_between_point</span><span class="p">:</span>
+        <span class="n">ax0</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">in_between_point</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">sparkline</span><span class="p">:</span>
+        <span class="c1"># Calculate row-wise completeness for the sparkline.</span>
+        <span class="n">completeness_srs</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">x_domain</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+        <span class="n">y_range</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">completeness_srs</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+        <span class="n">min_completeness</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">y_range</span><span class="p">)</span>
+        <span class="n">max_completeness</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_range</span><span class="p">)</span>
+        <span class="n">min_completeness_index</span> <span class="o">=</span> <span class="n">y_range</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">min_completeness</span><span class="p">)</span>
+        <span class="n">max_completeness_index</span> <span class="o">=</span> <span class="n">y_range</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">max_completeness</span><span class="p">)</span>
+
+        <span class="c1"># Set up the sparkline, remove the border element.</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+        <span class="c1"># GH 25</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_ymargin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># Plot sparkline---plot is sideways so the x and y axis are reversed.</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_range</span><span class="p">,</span> <span class="n">x_domain</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="c1"># Figure out what case to display the label in: mixed, upper, lower.</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Data Completeness&quot;</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+            <span class="c1"># Set up and rotate the sparkline label.</span>
+            <span class="n">ha</span> <span class="o">=</span> <span class="s2">&quot;left&quot;</span>
+            <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">min_completeness</span> <span class="o">+</span> <span class="p">(</span><span class="n">max_completeness</span> <span class="o">-</span> <span class="n">min_completeness</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="n">label</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="n">ha</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+            <span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_top</span><span class="p">()</span>
+            <span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+            <span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+        <span class="c1"># Add maximum and minimum labels, circles.</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+            <span class="n">max_completeness</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">max_completeness</span><span class="p">,</span> <span class="n">max_completeness_index</span><span class="p">),</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">max_completeness</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">max_completeness_index</span><span class="p">),</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">*</span> <span class="mi">14</span><span class="p">),</span>
+            <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+            <span class="n">min_completeness</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">min_completeness</span><span class="p">,</span> <span class="n">min_completeness_index</span><span class="p">),</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">min_completeness</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">min_completeness_index</span><span class="p">),</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">*</span> <span class="mi">14</span><span class="p">),</span>
+            <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">min_completeness</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">max_completeness</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="p">)</span>  <span class="c1"># Otherwise the circles are cut off.</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">min_completeness</span><span class="p">],</span>
+            <span class="p">[</span><span class="n">min_completeness_index</span><span class="p">],</span>
+            <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">markersize</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">max_completeness</span><span class="p">],</span>
+            <span class="p">[</span><span class="n">max_completeness_index</span><span class="p">],</span>
+            <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">markersize</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Remove tick mark (only works after plotting).</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">inline</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;The &#39;inline&#39; argument has been deprecated, and will be removed in a future version &quot;</span>
+            <span class="s2">&quot;of missingno.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ax0</span></div>
+
+
+<div class="viewcode-block" id="chisquare_threshold"><a class="viewcode-back" href="../../usage.html#neuropy.dimensionality_reduction.chisquare_threshold">[docs]</a><span class="k">def</span> <span class="nf">chisquare_threshold</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
+    <span class="n">threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+    <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">11.7</span><span class="p">,</span> <span class="mf">8.27</span><span class="p">),</span>
+<span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Perform dimensionality reduction using chisquare. The method considers is applied only to categorical features.</span>
+<span class="sd">        the target variable y need to either either categical or integer type. Rows with any missing values will be discarded.</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: pandas.DataFrame</span>
+<span class="sd">        Dataframe with variables in columns, cases in rows</span>
+<span class="sd">    threshold: float (default: 0.05)</span>
+<span class="sd">        p-value threshold which is used to assess which feature to discard</span>
+<span class="sd">    show: bool (default: False)</span>
+<span class="sd">        whether to show the summary</span>
+<span class="sd">    plot: bool (default: False)</span>
+<span class="sd">        whether to plot the bar plot with normalized features</span>
+<span class="sd">    figsize: tuple (default: (11.7, 8.27))</span>
+<span class="sd">        Width and height of the figure in inches</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ----------</span>
+<span class="sd">    summary: pandas.DataFrame</span>
+<span class="sd">        Dataframe containing a feature selection summary:</span>
+<span class="sd">        [normalized-variance feature-type  variance-threshold  to-discard]</span>
+<span class="sd">    barplot: Figure</span>
+<span class="sd">        A figure is returned if plot == True, else None</span>
+
+
+<span class="sd">    Examples</span>
+<span class="sd">    ----------</span>
+<span class="sd">    &gt;&gt;&gt; data = sns.load_dataset(name = &#39;titanic&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; X = data.drop(labels=[&#39;survived&#39;], axis=&#39;columns&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; y = data[&#39;survived&#39;]</span>
+<span class="sd">    &gt;&gt;&gt; summary, fig = chisquare_threshold(X = X, y = y, show = True, plot = True)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># start function</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># discard all numerical features and keep track of the original dtypes</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
+    <span class="n">dtype_X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">dtypes</span>
+
+    <span class="c1"># check consistecy w.r.t. dtypes and samples</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Lengths of X and y differ&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_categorical_dtype</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="ow">or</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_integer_dtype</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="ow">or</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_string_dtype</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+            <span class="s1">&#39;y need to be either type(y) = &quot;category&quot; | &quot;int&quot;. Use y.astype(int) &#39;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Missing values handling in y</span>
+    <span class="k">if</span> <span class="n">y</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="c1"># Remove all observations that have missing y values</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;WARNING: y included missing values. These observations are dropped in both y and X&quot;</span><span class="p">,</span>
+            <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">correct_y_indices</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">correct_y_indices</span><span class="p">]</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">correct_y_indices</span><span class="p">]</span>
+
+    <span class="c1"># Drop observations with missing values in features</span>
+    <span class="k">if</span> <span class="n">X</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;WARNING: X included missing values. These observations are &quot;</span>
+            <span class="s2">&quot;dropped in both y and X&quot;</span><span class="p">,</span>
+            <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">correct_X_indices</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">correct_X_indices</span><span class="p">]</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">correct_X_indices</span><span class="p">]</span>
+
+    <span class="c1"># convert any &#39;object&#39; column to &#39;category&#39;. Boolean don&#39;t need to be converted</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;object&quot;</span><span class="p">]),</span>
+            <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;object&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">astype</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;category&quot;</span>
+            <span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># convert categories to int (frequency count), whereas include boolean without convert them</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">),</span>
+            <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># compute chi2 for each feature regarding the predictive capability of y</span>
+    <span class="p">(</span><span class="n">chi2_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">)</span> <span class="o">=</span> <span class="n">chi2</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="c1"># build summary</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;feature-type&quot;</span><span class="p">:</span> <span class="n">dtype_X</span><span class="p">,</span>
+            <span class="s2">&quot;chi2&quot;</span><span class="p">:</span> <span class="n">chi2_value</span><span class="p">,</span>
+            <span class="s2">&quot;p-value&quot;</span><span class="p">:</span> <span class="n">p_value</span><span class="p">,</span>
+            <span class="s2">&quot;stat-sign&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">p_value</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">),</span>
+            <span class="s2">&quot;to-discard&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">p_value</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">),</span>
+        <span class="p">},</span>  <span class="c1"># discard features based on p-value</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;chi2&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;p-value&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;chi2&quot;</span><span class="p">,</span> <span class="s2">&quot;p-value&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+
+    <span class="n">barplot</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="c1"># plot red feature &lt; threshold &amp; green feature &gt;= threshold</span>
+        <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;springgreen&quot;</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">summary</span><span class="p">[</span><span class="s2">&quot;to-discard&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;tomato&quot;</span>
+        <span class="n">df_palette</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
+        <span class="c1"># create dictionary from parallel lists</span>
+        <span class="n">feature_name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_palette</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">feature_color</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_palette</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="n">dict_palette</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">feature_name</span><span class="p">,</span> <span class="n">feature_color</span><span class="p">))</span>
+        <span class="c1"># remove &#39;Color&#39; column from summary</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
+
+        <span class="c1"># make barplot</span>
+        <span class="n">barplot</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">summary</span><span class="p">[</span><span class="s2">&quot;chi2&quot;</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="n">dict_palette</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Feature selection via chi2square</span><span class="se">\n</span><span class="s2"> original features = </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;| selected features = </span><span class="si">{</span><span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;to-discard&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Categorical Features&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\chi^</span><span class="si">{2}</span><span class="s2">$&quot;</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">summary</span><span class="p">,</span> <span class="n">barplot</span></div>
+
+
+<div class="viewcode-block" id="high_correlation_threshold"><a class="viewcode-back" href="../../usage.html#neuropy.dimensionality_reduction.high_correlation_threshold">[docs]</a><span class="k">def</span> <span class="nf">high_correlation_threshold</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">target</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">threshold</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+    <span class="n">check_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;pearson&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Perform dimensionality reduction using correlation. The method will consider highly correlated features and will</span>
+<span class="sd">        add features with a lower correlation with the target variable y to a discard list. This method uses the</span>
+<span class="sd">        `correlation_analysis` function from neuropy.correlation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: pd.DataFrame</span>
+<span class="sd">        Includes the features.</span>
+<span class="sd">    target: str or List[str]</span>
+<span class="sd">        Target variable, in case of multioutput problem insert a list of targets.</span>
+<span class="sd">    threshold: float (default: 0.8)</span>
+<span class="sd">        The threshold value for the r-value, only r-values exceeding the threshold will be considered.</span>
+<span class="sd">    check_norm: bool (default: False)</span>
+<span class="sd">        If True, normality will be checked for columns in `data` using `normal_check`. This influences the used method</span>
+<span class="sd">        for correlations, i.e. Pearson or Spearman. Note: normality check ignores missing values.</span>
+<span class="sd">    method: {&#39;pearson&#39;, &#39;kendall&#39;, &#39;spearman&#39;}, default &#39;pearson&#39;</span>
+<span class="sd">        Type of correlation, either Pearson&#39;s r, Spearman&#39;s rho, or Kendall&#39;s tau, implemented via respectively</span>
+<span class="sd">        `scipy.stats.pearsonr`, `scipy.stats.spearmanr`, and `scipy.stats.kendalltau`. Ignored if check_norm is True.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_summary: pd.Dataframe</span>
+<span class="sd">        Summary dataframe with correlation analysis results and dimensionality reduction results. The correlation with</span>
+<span class="sd">        the target(s) is/are absolute and thus do not denote directionality.</span>
+<span class="sd">    to_discard_corr_list: List</span>
+<span class="sd">        List of all features to discard. This list can be passed as an argument to:</span>
+<span class="sd">            e.g. df.drop(columns=to_discard_corr_list)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ________</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.dimensionality_reduction import high_correlation_threshold</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn import datasets</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; boston_data = datasets.load_boston()</span>
+<span class="sd">    &gt;&gt;&gt; df_boston = pd.DataFrame(boston_data.data,columns=boston_data.feature_names)</span>
+<span class="sd">    &gt;&gt;&gt; df_boston[&#39;target&#39;] = pd.Series(boston_data.target)</span>
+<span class="sd">    &gt;&gt;&gt; df_summary, to_discard_corr_list = high_correlation_threshold(data=df_boston, target=&#39;target&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">to_discard_corr_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">to_keep_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">List</span><span class="p">):</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="n">target</span><span class="p">]</span>
+
+    <span class="c1"># Runs Neuropy&#39;s correlation analysis with permutation is false.</span>
+    <span class="n">results</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">correlation_analysis</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">target</span><span class="p">),</span>
+        <span class="n">check_norm</span><span class="o">=</span><span class="n">check_norm</span><span class="p">,</span>
+        <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+        <span class="n">permutation_test</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">plot_permutation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># df_summary is build up on the results dict from correlation analysis.</span>
+    <span class="n">df_summary</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;r-value&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;r-value&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">)]</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_summary</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="c1"># Calculating the absolute correlation with the target (without significance).</span>
+        <span class="n">corr_feature_1</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">data</span><span class="p">[[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;feature1&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">target</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;feature1&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">][</span><span class="n">target</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">corr_feature_2</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">data</span><span class="p">[[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;feature2&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">target</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;feature2&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">][</span><span class="n">target</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">corr_feature_1</span> <span class="o">&gt;</span> <span class="n">corr_feature_2</span><span class="p">:</span>
+            <span class="n">to_discard_corr_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;feature2&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">to_keep_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;feature1&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">to_discard_corr_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;feature1&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">to_keep_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;feature2&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">df_summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;corr(feature1, target)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">corr_feature_1</span>
+            <span class="n">df_summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;corr(feature2, target)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">corr_feature_2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df_summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;mean(corr(feature1, target))&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">corr_feature_1</span>
+            <span class="n">df_summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;mean(corr(feature2, target))&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">corr_feature_2</span>
+
+    <span class="n">df_summary</span><span class="p">[</span><span class="s2">&quot;selected_feature&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">to_keep_list</span>
+
+    <span class="k">return</span> <span class="n">df_summary</span><span class="p">,</span> <span class="n">to_discard_corr_list</span></div>
+
+
+<div class="viewcode-block" id="robust_rfecv"><a class="viewcode-back" href="../../usage.html#neuropy.dimensionality_reduction.robust_rfecv">[docs]</a><span class="k">def</span> <span class="nf">robust_rfecv</span><span class="p">(</span>  <span class="c1"># noqa: C901</span>
+    <span class="n">X</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">,</span>
+    <span class="n">model_list</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">cv</span><span class="o">=</span><span class="n">KFold</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+    <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">preprocessing_pipe</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">groups</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">njobs</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Run Recursive Feature Elimination (RFE) using multiple Machine learning models.</span>
+<span class="sd">        The function is suitable for both classification and regression problem.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X: pd.DataFrame</span>
+<span class="sd">        Contains training vectors.</span>
+<span class="sd">    y: pd.Series</span>
+<span class="sd">        Target values.</span>
+<span class="sd">    model_list: List</span>
+<span class="sd">        Estimators that have either coef. or feature importance. object.</span>
+<span class="sd">    step: int, optional (default=1)</span>
+<span class="sd">        It refers to the (integer) number of features to remove at each iteration.</span>
+<span class="sd">    cv: cross-validation generator (default: KFold(3))</span>
+<span class="sd">        Determines the cross-validation splitting strategy.</span>
+<span class="sd">        For more details see https://scikit-learn.org/stable/modules/cross_validation.html</span>
+<span class="sd">    scoring: string, callable or None, optional</span>
+<span class="sd">        A string or a scorer callable object / function with signature.</span>
+<span class="sd">        For more details see https://scikit-learn.org/stable/modules/model_evaluation.html</span>
+<span class="sd">    preprocessing_pipe: Pipeline object, or Nones</span>
+<span class="sd">        Preprocessing steps needed before the estimator (e.g. StandardScaler)</span>
+<span class="sd">    groups: pd.Series, or Nones</span>
+<span class="sd">        Group labels for the samples used while splitting the dataset into train/test set.</span>
+<span class="sd">        Only used in conjunction with a “Group” cv instance (e.g., GroupKFold).</span>
+<span class="sd">        For more details see https://scikit-learn.org/stable/modules/cross_validation.html</span>
+<span class="sd">        section 3.1.2.2. Cross-validation iterators with stratification based on class labels</span>
+<span class="sd">    show: Boolean</span>
+<span class="sd">        Whether to print the results.</span>
+<span class="sd">    plot: Boolean</span>
+<span class="sd">        Whether to plot the rfe summary plot.</span>
+<span class="sd">    njobs: int</span>
+<span class="sd">        The amount of cores to use when running the RFECV worker function.</span>
+<span class="sd">    kwargs: key, value pairings</span>
+<span class="sd">        Additional keyword arguments for plot setting matplotlib style. Available setting:</span>
+<span class="sd">            figsize  : tuple (default: (7, 5))</span>
+<span class="sd">            textsize : int (default: 15) adjust size for xticks label, title and legend</span>
+<span class="sd">            xlim : tuple. Set the x limits of the current axes.</span>
+<span class="sd">            ylim : tuple. Set the y limits of the current axes.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_summary: pd.DataFrame</span>
+<span class="sd">        Dataframe which show they number of optimal feature, score value and score type e.g., r2, auc.</span>
+<span class="sd">    df_feature:</span>
+<span class="sd">        DataFrame containing the selected features for each ML model and the corresponding intersection</span>
+<span class="sd">    fig: matplotlib.figure.Figure</span>
+<span class="sd">        matplotlib object</span>
+
+
+<span class="sd">    Displays</span>
+<span class="sd">    --------</span>
+<span class="sd">    - results will be printed if show = True</span>
+<span class="sd">    - plots will be printed if plot = True</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.datasets import load_breast_cancer</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.discriminant_analysis import LinearDiscriminantAnalysis</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.dimensionality_reduction import robust_rfecv</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.pipeline import Pipeline</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.preprocessing import StandardScaler</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.impute import SimpleImputer</span>
+
+<span class="sd">    &gt;&gt;&gt; # load dataset</span>
+<span class="sd">    &gt;&gt;&gt; cancer = load_breast_cancer()</span>
+<span class="sd">    &gt;&gt;&gt; df = pd.DataFrame(data=np.c_[cancer[&#39;data&#39;], cancer[&#39;target&#39;]], columns = np.append(cancer[&#39;feature_names&#39;], [&#39;target&#39;]))</span>
+<span class="sd">    &gt;&gt;&gt; X = df.drop(columns=[&#39;target&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; y = df[&#39;target&#39;]</span>
+
+<span class="sd">    &gt;&gt;&gt; # prepare pipeline and classifies</span>
+<span class="sd">    &gt;&gt;&gt; pipe = Pipeline([</span>
+<span class="sd">    ...    (&#39;inputer&#39;, SimpleImputer(strategy=&#39;median&#39;)),</span>
+<span class="sd">    ...    (&#39;scaler&#39;, StandardScaler())</span>
+<span class="sd">    ... ])</span>
+<span class="sd">    &gt;&gt;&gt; clf = [AdaBoostClassifier(n_estimators=20), RandomForestClassifier(n_estimators=20,max_depth=5), LinearDiscriminantAnalysis()]</span>
+
+<span class="sd">    &gt;&gt;&gt; df_summary, df_feature, fig = robust_rfecv(X, y, model_list=clf, preprocessing_pipe=pipe, scoring=&#39;roc_auc&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model_list</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;No ML model found as input.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="s2">&quot;X should be of type pd.DataFrame, currently the function cannot handle np.array&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># detect if regression of classification problem based on the type of model</span>
+    <span class="n">check_model_type</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;clf&quot;</span><span class="p">,</span> <span class="s2">&quot;is_classifier&quot;</span><span class="p">,</span> <span class="s2">&quot;is_regressor&quot;</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">model_list</span><span class="p">:</span>
+        <span class="n">check_model_type</span> <span class="o">=</span> <span class="n">check_model_type</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;clf&quot;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+                <span class="s2">&quot;is_classifier&quot;</span><span class="p">:</span> <span class="n">is_classifier</span><span class="p">(</span><span class="n">m</span><span class="p">),</span>
+                <span class="s2">&quot;is_regressor&quot;</span><span class="p">:</span> <span class="n">is_regressor</span><span class="p">(</span><span class="n">m</span><span class="p">),</span>
+            <span class="p">},</span>
+            <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">check_model_type</span><span class="p">[</span><span class="s2">&quot;is_classifier&quot;</span><span class="p">])</span>
+        <span class="o">==</span> <span class="n">check_model_type</span><span class="p">[</span><span class="s2">&quot;is_classifier&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="p">):</span>
+        <span class="c1"># all model are classifiers</span>
+        <span class="k">if</span> <span class="n">scoring</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">scoring</span> <span class="o">=</span> <span class="s2">&quot;roc_auc&quot;</span>  <span class="c1"># assign default scoring</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;rfecv for classification problem with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> ML models with </span><span class="si">{</span><span class="n">scoring</span><span class="si">}</span><span class="s2"> score&quot;</span>
+        <span class="p">)</span>
+        <span class="n">title_plot</span> <span class="o">=</span> <span class="s2">&quot;Recursive Feature Elimination (Classification)&quot;</span>
+    <span class="k">elif</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">check_model_type</span><span class="p">[</span><span class="s2">&quot;is_regressor&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="n">check_model_type</span><span class="p">[</span><span class="s2">&quot;is_regressor&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="p">):</span>
+        <span class="c1"># all model are regressors</span>
+        <span class="k">if</span> <span class="n">scoring</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">scoring</span> <span class="o">=</span> <span class="s2">&quot;neg_root_mean_squared_error&quot;</span>  <span class="c1"># assign default scoring</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;rfecv for regression problem with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">model_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> ML model mo with </span><span class="si">{</span><span class="n">scoring</span><span class="si">}</span><span class="s2"> score&quot;</span>
+        <span class="p">)</span>
+        <span class="n">title_plot</span> <span class="o">=</span> <span class="s2">&quot;Recursive Feature Elimination (Regression)&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;&#39;model_list&#39; can contain either only classifiers or only regressors&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="c1"># set figure dimension based on kwargs</span>
+        <span class="k">if</span> <span class="s2">&quot;figsize&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;figsize&quot;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+        <span class="c1"># set figure dimension based on kwargs</span>
+        <span class="k">if</span> <span class="s2">&quot;textsize&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">textsize</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;textsize&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">textsize</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">n_features</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">classifier_name</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">preprocessing_pipe</span><span class="p">:</span>
+        <span class="n">pipe_names_list</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+                    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">preprocessing_pipe</span><span class="o">.</span><span class="n">steps</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;impute&quot;</span> <span class="ow">in</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">pipe_names_list</span><span class="p">):</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">preprocessing_pipe</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="n">preprocessing_pipe</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)),</span>
+                <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">X</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&quot;&quot;The dataframe passed as X included nan&#39;s and there was either no pipe passed or the pipe</span>
+<span class="s2">                      did not include an imputer, therefore the nan&#39;s have been dropped row wise. The shape of</span>
+<span class="s2">                      the resulting data frame is </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># select the same rows in y that are in X</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">model_list</span><span class="p">:</span>
+        <span class="c1"># extract the name of the classifier</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="n">classifier_name</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="c1"># rfecv for model_list</span>
+        <span class="n">rfecv</span> <span class="o">=</span> <span class="n">RFECV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="n">njobs</span><span class="p">)</span>
+
+        <span class="n">_</span> <span class="o">=</span> <span class="n">rfecv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">groups</span><span class="p">)</span>
+
+        <span class="c1"># make list from chosen features</span>
+        <span class="n">features_rfe</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rfecv</span><span class="o">.</span><span class="n">support_</span><span class="p">)</span> <span class="k">if</span> <span class="n">s</span><span class="p">]</span>
+        <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">features_rfe</span><span class="p">)</span>
+
+        <span class="c1"># make list from best grid scores</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rfecv</span><span class="o">.</span><span class="n">grid_scores_</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+        <span class="c1"># make list from optimal n. of features</span>
+        <span class="n">n_feature</span> <span class="o">=</span> <span class="n">rfecv</span><span class="o">.</span><span class="n">n_features_</span>
+        <span class="n">n_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_feature</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">step</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                    <span class="n">x_range</span><span class="p">,</span> <span class="n">rfecv</span><span class="o">.</span><span class="n">grid_scores_</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">step</span><span class="p">)</span>
+                <span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                    <span class="n">x_range</span><span class="p">,</span> <span class="n">rfecv</span><span class="o">.</span><span class="n">grid_scores_</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span>
+                <span class="p">)</span>
+
+    <span class="n">df_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;optimal_n_features&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span>
+            <span class="s2">&quot;highest_performance&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span>
+            <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">scoring</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">classifier_name</span><span class="p">],</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;highest_performance&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># compute intersection features</span>
+    <span class="n">classifier_name</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;intersection&quot;</span><span class="p">)</span>
+    <span class="n">intersection</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="o">*</span><span class="n">features</span><span class="p">)</span>
+    <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">intersection</span><span class="p">))</span>
+
+    <span class="c1"># create dataframe which contains the feature list</span>
+    <span class="n">dict_feature</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">name_col</span><span class="p">,</span> <span class="n">feature_col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">classifier_name</span><span class="p">,</span> <span class="n">features</span><span class="p">):</span>
+        <span class="n">feature_col</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># arrange values alphabetically</span>
+        <span class="n">dict_feature</span><span class="p">[</span><span class="n">name_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">feature_col</span>
+    <span class="n">df_feature</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="nb">dict</span><span class="p">([(</span><span class="n">k</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dict_feature</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of features selected&quot;</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cv mean </span><span class="si">{</span><span class="n">scoring</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title_plot</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">textsize</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">(),</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">textsize</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_size</span><span class="p">(</span><span class="n">textsize</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_size</span><span class="p">(</span><span class="n">textsize</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_size</span><span class="p">(</span><span class="n">textsize</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;xlim&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;xlim&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="s2">&quot;ylim&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;ylim&quot;</span><span class="p">])</span>
+
+        <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">()</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df_feature</span><span class="p">[</span><span class="s2">&quot;intersection&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()),</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+            <span class="n">ymin</span><span class="o">=</span><span class="n">ymin</span><span class="p">,</span>
+            <span class="n">ymax</span><span class="o">=</span><span class="n">ymax</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;optimal number of features&quot;</span><span class="p">,</span>
+        <span class="p">)</span>  <span class="c1">#</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">textsize</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">df_summary</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_summary</span><span class="p">,</span> <span class="n">df_feature</span><span class="p">,</span> <span class="n">fig</span></div>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

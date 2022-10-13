@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.internal_utils &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.internal_utils</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Submodule internal_utils.py includes the following functions: &lt;br&gt;</span>
+<span class="sd">- **aws_data_extraction():** Load data from specified AWS S3 Bucket. &lt;br&gt;</span>
+<span class="sd">- **assign_datetime_and_date():** Assign datetime to timestamp and extract date. &lt;br&gt;</span>
+<span class="sd">- **select_keystroke_time_range():** Get keystroke data from a specific time range based on a specified date</span>
+<span class="sd">column. &lt;br&gt;</span>
+<span class="sd">- **_unpack_one_nested_json():** Get data from column with lists of dict to multiple columns (e.g. ACM/health data) &lt;br&gt;</span>
+<span class="sd">- **prep_weather_df():** Get weather data from nested format to multiple columns. &lt;br&gt;</span>
+<span class="sd">- **aws_bucket_search():** List all available file paths and datasets on aws in a bucket or find all buckets. &lt;br&gt;</span>
+<span class="sd">- **api_send_request():** Data util to request datasets from Neurocast data API. &lt;br&gt;</span>
+<span class="sd">- **api_send_request_in_chunks():** Data util to request datasets from Neurocast data API in chunks</span>
+<span class="sd">(for large files). &lt;br&gt;</span>
+<span class="sd">- **_prepare_health_data():** Data util to pre-process raw health data. &lt;br&gt;</span>
+<span class="sd">- **_aggregate_health_data():** Aggregation of raw health data. Required step for merging to keystroke dataframes. &lt;br&gt;</span>
+<span class="sd">- **merge_keystrokes_and_health():** Function used to merge keystroke and health kit data whilst maintaining as much</span>
+<span class="sd">data possible. &lt;br&gt;</span>
+<span class="sd">- **sql_data_extraction():** Pulling data from the sql database. &lt;br&gt;</span>
+<span class="sd">- **aws_upload_data():** Uploading csvs to the S3 buckets. &lt;br&gt;</span>
+<span class="sd">- **sql_show_column_information():** Looking up column information of an available table in the sql database. &lt;br&gt;</span>
+<span class="sd">- **sql_show_tables():** Looking up the available tables in the sql database. &lt;br&gt;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">boto3</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sql</span>
+
+<span class="kn">from</span> <span class="nn">neuropy.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">neuropy.utils</span> <span class="kn">import</span> <span class="n">log_step</span>
+<span class="kn">from</span> <span class="nn">neuropy.utils</span> <span class="kn">import</span> <span class="n">log_step_aws</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="aws_data_extraction"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.aws_data_extraction">[docs]</a><span class="nd">@log_step</span>
+<span class="nd">@log_step_aws</span>
+<span class="k">def</span> <span class="nf">aws_data_extraction</span><span class="p">(</span><span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">bucket</span><span class="o">=</span><span class="s2">&quot;neurocast-vm-shared&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load data from specified AWS S3 Bucket.</span>
+<span class="sd">    AWS access key should be loaded with name &#39;AWS_KEY&#39;, AWS secret key with name &#39;AWS_SECRET_KEY&#39;</span>
+<span class="sd">    Any added `**kwargs` will be passed to `pandas.read_csv`</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    filepath : str</span>
+<span class="sd">        Path on VM where data is saved.</span>
+<span class="sd">    bucket : str</span>
+<span class="sd">        Initialized on vm-shared bucket.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ---------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import aws_data_extraction</span>
+<span class="sd">    &gt;&gt;&gt; data = aws_data_extraction(filepath=&#39;Aleide/B2C-INDEX-user40-20190807-20191028.csv&#39;,</span>
+<span class="sd">    &gt;&gt;&gt;                            bucket=&#39;neurocast-vm-shared&#39;)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s3</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span>
+        <span class="s2">&quot;s3&quot;</span><span class="p">,</span>
+        <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_KEY&quot;</span><span class="p">),</span>
+        <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_SECRET_KEY&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;Body&quot;</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="assign_datetime_and_date"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.assign_datetime_and_date">[docs]</a><span class="nd">@log_step</span>
+<span class="k">def</span> <span class="nf">assign_datetime_and_date</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> <span class="n">time_column</span><span class="o">=</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="n">timezone_column</span><span class="o">=</span><span class="s2">&quot;timeZoneOffset&quot;</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create datetime object from unit timestamp column, takes timezone into account. Also adds a new column</span>
+<span class="sd">    with only a date object.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pd.DataFrame</span>
+<span class="sd">    time_column: &#39;str&#39;, default=&#39;timestamp&#39;</span>
+<span class="sd">        The column with unit timestamps.</span>
+<span class="sd">    timezone_column: &#39;str&#39;, default=&#39;timeZoneOffset&#39;</span>
+<span class="sd">        The time zone expressed in ms.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">timestamp_tzcorrected</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">time_column</span><span class="p">]</span> <span class="o">+</span> <span class="n">d</span><span class="p">[</span><span class="n">timezone_column</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ms&quot;</span>
+        <span class="p">),</span>
+        <span class="n">date</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="o">.</span><span class="n">timestamp_tzcorrected</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="select_keystroke_time_range"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.select_keystroke_time_range">[docs]</a><span class="k">def</span> <span class="nf">select_keystroke_time_range</span><span class="p">(</span>
+    <span class="n">df_keys</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">df_quest</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">days_before</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">days_after</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">quest_date_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span>
+    <span class="n">keys_date_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span>
+    <span class="n">checkpoint_column</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Merge daily keystroke features (`df_keys`) to a questionaire dataset (`df_quest`) on `user_id` and `checkpoint`.</span>
+<span class="sd">    The user must specify how many days worth of keystroke features will be selected BEFORE and AFTER each checkpoint.</span>
+
+<span class="sd">    In case that one would want days before but not days after checkpoints, set `days_after=0`.</span>
+<span class="sd">    If `days_before=0` and `days_after=0`, same date is returned.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_keys: pd.DataFrame</span>
+<span class="sd">        daily aggregates of keystroke data in the standard form of Neurocast&#39;s API.</span>
+<span class="sd">    df_quest: pd.DataFrame</span>
+<span class="sd">        data frame with questionnaire.</span>
+<span class="sd">    days_before: int (default: 0)</span>
+<span class="sd">        number of days before checkpoint.</span>
+<span class="sd">    days_after: int (default: 0)</span>
+<span class="sd">        number of days after checkpoint.</span>
+<span class="sd">    keys_date_column: str (default: &quot;date&quot;)</span>
+<span class="sd">        date column name from `df_keys` (in date or datetime format).</span>
+<span class="sd">    quest_date_column: str (default: &quot;date&quot;)</span>
+<span class="sd">        date column name from `df_quest` (in date or datetime format).</span>
+<span class="sd">    checkpoint_column: Union[str, None] (default: None)</span>
+<span class="sd">        reference date column name from `df_quest` (in date or datetime format) that is used to select data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        Merged df with data points wihtin selected days.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">     &gt;&gt;&gt; df_quest = (</span>
+<span class="sd">    ...     fetch_poms_dataset()</span>
+<span class="sd">    ...     .pipe(melt_multiple_test_dates, checkpoint_column={&quot;m03&quot;: 1} end_points=[&#39;HADS_anxiety&#39;, &#39;HADS_total&#39;])</span>
+<span class="sd">    ...     )</span>
+<span class="sd">    &gt;&gt;&gt; df_m03_14days_before = (</span>
+<span class="sd">    ...        aws_data_extraction(&quot;Natali/VUmc_daily-aggs_363-500_20180821-20200114.csv&quot;)</span>
+<span class="sd">    ...        .pipe(assign_datetime_and_date)</span>
+<span class="sd">    ...        .pipe(select_keystroke_time_range,</span>
+<span class="sd">    ...        df_quest=df_quest, days_before=15, days_after=0, quest_date_column=&quot;test_date&quot;)</span>
+<span class="sd">    ...)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">checkpoint_column</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">checkpoint_column</span> <span class="o">=</span> <span class="s2">&quot;checkpoint&quot;</span>
+        <span class="n">df_quest</span> <span class="o">=</span> <span class="n">df_quest</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">checkpoint_column</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;No `checkpoint` provided. A single checkpoint is assumed (`checkpoint = 0`).&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">checkpoint_column</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df_quest</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;There is no </span><span class="si">{</span><span class="n">checkpoint_column</span><span class="si">}</span><span class="s2"> in `df_quest`. Please provide the correct date column name.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+    <span class="k">if</span> <span class="n">quest_date_column</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df_quest</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;There is no </span><span class="si">{</span><span class="n">quest_date_column</span><span class="si">}</span><span class="s2"> in `df_quest`. Please provide the correct date column name.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+    <span class="k">if</span> <span class="s2">&quot;datetime&quot;</span> <span class="ow">in</span> <span class="n">df_quest</span><span class="p">[</span><span class="n">quest_date_column</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+        <span class="n">df_quest</span> <span class="o">=</span> <span class="n">df_quest</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+            <span class="o">**</span><span class="p">{</span><span class="n">quest_date_column</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="n">quest_date_column</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">keys_date_column</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df_keys</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;There is no </span><span class="si">{</span><span class="n">keys_date_column</span><span class="si">}</span><span class="s2"> in `df_keys`. Please provide the correct date column name.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span>
+
+    <span class="n">sub_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">user_i</span><span class="p">,</span> <span class="n">chkpt_i</span><span class="p">),</span> <span class="n">sub_df_quest</span> <span class="ow">in</span> <span class="n">df_quest</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">,</span> <span class="n">checkpoint_column</span><span class="p">]</span>
+    <span class="p">):</span>
+        <span class="c1"># define start and end times based on checkpoint date</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">sub_df_quest</span><span class="p">[</span><span class="n">quest_date_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span>
+            <span class="n">days</span><span class="o">=</span><span class="n">days_before</span>
+        <span class="p">)</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">sub_df_quest</span><span class="p">[</span><span class="n">quest_date_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span>
+            <span class="n">days</span><span class="o">=</span><span class="n">days_after</span>
+        <span class="p">)</span>
+
+        <span class="c1"># select date range per user i and add checkpoint column</span>
+        <span class="n">sub_df_keys</span> <span class="o">=</span> <span class="n">df_keys</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="n">df_keys</span><span class="p">[</span><span class="n">keys_date_column</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">)</span>
+            <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_keys</span><span class="o">.</span><span class="n">user_id</span> <span class="o">==</span> <span class="n">user_i</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">sub_df_keys</span> <span class="o">=</span> <span class="n">sub_df_keys</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">checkpoint_column</span><span class="p">:</span> <span class="n">chkpt_i</span><span class="p">})</span>
+
+        <span class="c1"># and append to list</span>
+        <span class="n">sub_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sub_df_keys</span><span class="p">)</span>
+
+    <span class="n">df_keys</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">sub_dfs</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_keys</span><span class="p">,</span> <span class="n">df_quest</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">,</span> <span class="n">checkpoint_column</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="replace_default_values_with_nan"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.replace_default_values_with_nan">[docs]</a><span class="nd">@log_step</span>
+<span class="k">def</span> <span class="nf">replace_default_values_with_nan</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> <span class="n">replace_values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">95.00</span><span class="p">,</span> <span class="o">-</span><span class="mf">96.00</span><span class="p">,</span> <span class="o">-</span><span class="mf">97.00</span><span class="p">,</span> <span class="o">-</span><span class="mf">98.00</span><span class="p">,</span> <span class="o">-</span><span class="mf">99.00</span><span class="p">,</span> <span class="s2">&quot;1-1-2999&quot;</span><span class="p">]</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Replaces default values with Nan values.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pd.DataFrame</span>
+<span class="sd">    replace_values: List</span>
+<span class="sd">        Specify which values need to be replaced with Nans.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">replace_values</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_unpack_one_nested_json</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">column_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">column_map</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Unravels a list of dictionaries (json) in a row cell into multiple columns.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pd.DataFrame</span>
+<span class="sd">        Dataframe with `column_name` column</span>
+<span class="sd">    column_name: str</span>
+<span class="sd">        Name of the column with a list of dictionaries in each row</span>
+<span class="sd">    column_map: Union[Dict[str, str] (default: None)</span>
+<span class="sd">        A dictionary mapping keys in nested dictionaries to a new name. If None, names are kept.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        DataFrame with columns that correspond to the keys of the dictionaries inside `column_name`.</span>
+<span class="sd">        All columns in the original DataFrame are returned, except the `column_name`.</span>
+<span class="sd">        Duplicated key-value pairs are dropped.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import _unpack_one_nested_json</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import aws_data_extraction</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; data = (aws_data_extraction(&#39;Gerrieke/TU_acm.csv&#39;)</span>
+<span class="sd">    &gt;&gt;&gt;         .pipe(_unpack_one_nested_json)</span>
+<span class="sd">    &gt;&gt;&gt;         # Add euclidean distances based on x and y values from acm</span>
+<span class="sd">    &gt;&gt;&gt;         .assign(d = lambda df: np.sqrt(df[&#39;x&#39;]**2 + df[&#39;y&#39;]**2))</span>
+<span class="sd">    &gt;&gt;&gt;         )</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># check if column exist</span>
+    <span class="k">if</span> <span class="n">column_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="n">column_name</span><span class="si">}</span><span class="s2">` does not exist in `df`.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># helper to flatten json</span>
+    <span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">sublist</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">a_list</span><span class="p">]</span>
+
+    <span class="n">sub_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+
+        <span class="c1"># unpack json</span>
+        <span class="n">proper_json</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">)))</span>
+
+        <span class="c1"># create a new df with upacked values</span>
+        <span class="c1"># set same index as in original row</span>
+        <span class="n">sub_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">value</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">proper_json</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">proper_json</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="c1"># if empty, do not add an empty df</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">sub_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">sub_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sub_df</span><span class="p">)</span>
+
+    <span class="c1"># if column_map is None, create a mirror dictionary</span>
+    <span class="k">if</span> <span class="n">column_map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">column_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">sub_dfs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">}</span>
+
+    <span class="c1"># drop nested column</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">column_name</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># drop duplicated samples and rename new column names</span>
+    <span class="n">sub_dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">sub_dfs</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">column_map</span><span class="p">)</span>
+
+    <span class="c1"># join upacked dataframe to the main one</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sub_dfs</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="prep_weather_df"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.prep_weather_df">[docs]</a><span class="k">def</span> <span class="nf">prep_weather_df</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">weather_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;weather&quot;</span><span class="p">,</span> <span class="n">missing</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Get weather data from nested format to multiple columns</span>
+
+<span class="sd">    Note: rows for which all of [humidity, cloud, temp_c, feelslike_c, uv] are zero, are likely rows from people who</span>
+<span class="sd">    did not allow to track their location, and for whom thus no weather information was retrieved.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data: pd.DataFrame</span>
+<span class="sd">        DataFrame with weather_column that has lists of dictionaries in each row</span>
+<span class="sd">    weather_column: str (default: &#39;weather&#39;)</span>
+<span class="sd">        Name of the column that has the weather data</span>
+<span class="sd">    missing: float or in (default: np.nan)</span>
+<span class="sd">        Value for missing data in output (empty strings in input)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    data: pd.DataFrame</span>
+<span class="sd">        DataFrame with columns that correspond to the keys of the dictionaries inside the weather.</span>
+<span class="sd">        All columns in the original DataFrame except the weather column are returned.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; weather_columns = [&quot;userId&quot;,&quot;eventType&quot;,&quot;timestamp&quot;,&quot;platform&quot;,&quot;dataVersion&quot;,&quot;timeZoneOffset&quot;, &quot;projectID&quot;,</span>
+<span class="sd">    ... &quot;metadataState&quot;, &quot;weather&quot;]</span>
+<span class="sd">    &gt;&gt;&gt; df_weather = (aws_data_extraction(&#39;Gerrieke/TU_weather.csv&#39;)</span>
+<span class="sd">    ...              .filter(weather_columns)</span>
+<span class="sd">    ...              .rename(columns={&#39;userId&#39;: &#39;user_id&#39;})</span>
+<span class="sd">    ...              .pipe(prep_weather_df)</span>
+<span class="sd">    ...              )</span>
+<span class="sd">    &gt;&gt;&gt; all_zero = ((df_weather.humidity==0) &amp; (df_weather.cloud==0) &amp; (df_weather.temp_c==0) &amp;</span>
+<span class="sd">    ...             (df_weather.feelslike_c==0) &amp; (df_weather.uv==0))</span>
+<span class="sd">    &gt;&gt;&gt; df_weather = df_weather[~all_zero]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get data from json and unnest</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">weather_column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>
+    <span class="c1"># Unnest and recode missings for three different columns</span>
+    <span class="n">df2</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s2">&quot;location&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">missing</span><span class="p">})</span>
+    <span class="n">df3</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s2">&quot;current&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">missing</span><span class="p">})</span>
+    <span class="n">df4</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[</span><span class="s2">&quot;condition&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="n">missing</span><span class="p">})</span>
+
+    <span class="c1"># Combine the data (dropping original nested columns)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">weather_column</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+            <span class="n">df1</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;current&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+            <span class="n">df2</span><span class="p">,</span>
+            <span class="n">df3</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;condition&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+            <span class="n">df4</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="aws_bucket_search"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.aws_bucket_search">[docs]</a><span class="k">def</span> <span class="nf">aws_bucket_search</span><span class="p">(</span>
+    <span class="n">search_term</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">bucket</span><span class="o">=</span><span class="s2">&quot;neurocast-vm-shared&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;List all available file paths and datasets on aws in a bucket or find all buckets</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    search_term: str</span>
+<span class="sd">        Search string for all elements in bucket</span>
+<span class="sd">    bucket: str or None (default: &quot;neurocast-vm-shared&quot;)</span>
+<span class="sd">        Bucket on S3 to look in. If None, all bucket names will be returned and search_term is ignored.</span>
+<span class="sd">    regex: bool (default: False)</span>
+<span class="sd">        Whether the search_term is a regex expression</span>
+<span class="sd">    show: bool (default: True)</span>
+<span class="sd">        Whether to print the objects/file paths that are found</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    aws_results: list</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import aws_bucket_search</span>
+<span class="sd">    &gt;&gt;&gt; # Find all paths that contain a certain string</span>
+<span class="sd">    &gt;&gt;&gt; res_list = aws_bucket_search(search_term=&#39;Almer&#39;, bucket=&quot;neurocast-vm-shared&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Find all buckets</span>
+<span class="sd">    &gt;&gt;&gt; res_list = aws_bucket_search(bucket=None)</span>
+<span class="sd">    &gt;&gt;&gt; # Get all paths that include a folder structure</span>
+<span class="sd">    &gt;&gt;&gt; res_list = aws_bucket_search(&#39;[A-z]/&#39;, regex=True, show=False)</span>
+<span class="sd">    &gt;&gt;&gt; # Show unique folder names from the paths</span>
+<span class="sd">    &gt;&gt;&gt; pd.Series([path.split(&#39;/&#39;)[0] for path in res_list]).unique()</span>
+<span class="sd">    &gt;&gt;&gt; # Since this included empty folder names, get all elements from split</span>
+<span class="sd">    &gt;&gt;&gt; splitted_res_list = [path.split(&#39;/&#39;) for path in res_list for substring in path]</span>
+<span class="sd">    &gt;&gt;&gt; # Get the subfolder names if folder name is missing</span>
+<span class="sd">    &gt;&gt;&gt; pd.Series([line[0] if line[0] else line[1] for line in try1 ]).unique()</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_KEY&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_SECRET_KEY&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Please make sure your .env file is correctly read in and it contains &#39;AWS_KEY&#39; and &#39;AWS_SECRET_KEY&#39;&quot;</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">s3</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span>
+            <span class="s2">&quot;s3&quot;</span><span class="p">,</span>
+            <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_KEY&quot;</span><span class="p">),</span>
+            <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_SECRET_KEY&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="n">aws_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">bucket</span><span class="p">:</span>
+        <span class="c1"># Get the buckets</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_buckets</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Existing buckets:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">bucket</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;Buckets&quot;</span><span class="p">]:</span>
+            <span class="c1"># Output the bucket names</span>
+            <span class="n">aws_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bucket</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">bucket</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">aws_results</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">search_term</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_objects</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">)[</span><span class="s2">&quot;Contents&quot;</span><span class="p">]:</span>
+            <span class="n">aws_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="s2">&quot;Key&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Get the objects in the bucket</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_objects</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">)[</span><span class="s2">&quot;Contents&quot;</span><span class="p">]:</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">regex</span><span class="p">:</span>
+            <span class="c1"># Match with regex</span>
+            <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">search_term</span><span class="p">,</span> <span class="n">key</span><span class="p">[</span><span class="s2">&quot;Key&quot;</span><span class="p">]):</span>
+                <span class="n">match</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Find substring in string</span>
+            <span class="k">if</span> <span class="n">search_term</span> <span class="ow">in</span> <span class="n">key</span><span class="p">[</span><span class="s2">&quot;Key&quot;</span><span class="p">]:</span>
+                <span class="n">match</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+            <span class="c1"># Output the bucket names</span>
+            <span class="n">aws_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="s2">&quot;Key&quot;</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Existing objects:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;,</span><span class="se">\n</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aws_results</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">aws_results</span></div>
+
+
+<div class="viewcode-block" id="api_send_request"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.api_send_request">[docs]</a><span class="k">def</span> <span class="nf">api_send_request</span><span class="p">(</span>
+    <span class="n">user_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+    <span class="n">time_window</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">dataset_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">86400000</span><span class="p">,</span>
+    <span class="n">source</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;keystroke_features_test&quot;</span><span class="p">,</span>
+    <span class="n">source_type</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Data util to request datasets from Neurocast&#39;s data API.</span>
+
+<span class="sd">    It send a GET request to the API&#39;s `materialize` endpoint.</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    user_ids: List[int]</span>
+<span class="sd">        A list of user ids of interest.</span>
+<span class="sd">    time_window: List[str]</span>
+<span class="sd">        A list of two strings: a start and end date in ISO format (YYYY-MM-DD or YYYY-M-D) delimiting a date range.</span>
+<span class="sd">        Start and end dates are included. E.g. [&quot;2020-09-01&quot;, &quot;2020-09-30&quot;].</span>
+<span class="sd">    dataset_name: str</span>
+<span class="sd">        A filename. Must be unique in `s3://neurocast-vm-shared/&lt;user-name&gt;/`, otherwise it&#39;ll overwrite the existing</span>
+<span class="sd">        file.</span>
+<span class="sd">    interval: int (default: 86400000)</span>
+<span class="sd">        The level of aggregation in milliseconds. Popular intervals are: session (0), hour (3600000) and day (86400000).</span>
+<span class="sd">    source: str (default: &quot;keystroke_features_test&quot;)</span>
+<span class="sd">        Whether to request aggregated or raw data. Suppported values: `keystroke_features`, `keystroke_features_test`,</span>
+<span class="sd">        `accelerometer_features`, `accelerometer_features_test`, `gyroscope_features`, `gyroscope_features_test`,</span>
+<span class="sd">        `raw`.</span>
+<span class="sd">    source_type: Union[str, None] (default: None)</span>
+<span class="sd">        The kind of raw data to request. Only valid when `source == &quot;raw&quot;`. Supported values: `keystrokes`,</span>
+<span class="sd">        `accelerometer`, `gyroscope`, `health`, `health2`, `adaptive_correction_moments`, `labels`, `steps`,</span>
+<span class="sd">        `st_results`, `weather`.</span>
+<span class="sd">    verbose: bool (default: True)</span>
+<span class="sd">       Whether to print request payload and response.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    payload:  HTTP payload (json) passed to the API endpoint</span>
+<span class="sd">    status: whether the API call was successful ot not. Two possible outcomes: `success` and `failed`</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import api_send_request</span>
+<span class="sd">    &gt;&gt;&gt; payload, status = api_send_request(user_ids=[3, 40],</span>
+<span class="sd">    ...                                    time_window=[&quot;2020-1-1&quot;, &quot;2020-1-10&quot;],</span>
+<span class="sd">    ...                                    dataset_name=&quot;my_dataset&quot;,</span>
+<span class="sd">    ...                                    interval=0,</span>
+<span class="sd">    ...                                    source=&quot;keystroke_features&quot;,</span>
+<span class="sd">    ...                                    source_type=None,</span>
+<span class="sd">    ...                                    verbose=False)</span>
+<span class="sd">    &gt;&gt;&gt; print(payload)</span>
+<span class="sd">    &gt;&gt;&gt; # {</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;timewindow&quot;: [&quot;2020-1-1&quot;, &quot;2020-1-10&quot;],</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;dataset_name&quot;: &quot;my_dataset&quot;,</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;user_ids&quot;: [3, 40],</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;Neurocast-API-Key&quot;: &quot;HDWFEHFN32ALENFLKSJL41KFJWFNWLEGNJ8!NW&quot;,</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;interval&quot;: 0,</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;source&quot;: &quot;keystroke_features&quot;,</span>
+<span class="sd">    &gt;&gt;&gt; # }</span>
+<span class="sd">    &gt;&gt;&gt; print(status)</span>
+<span class="sd">    &gt;&gt;&gt; # &quot;success&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># define data sources. UPDATE SUPPORTED SOURCES ALONG WITH THE API.</span>
+    <span class="n">SOURCES</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;keystroke_features&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;keystroke_features_test&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;accelerometer_features&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;accelerometer_features_test&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gyroscope_features&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gyroscope_features_test&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;raw&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">SOURCE_TYPES</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;keystrokes&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;accelerometer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gyroscope&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;health&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;health2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;adaptive_correction_moments&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;labels&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;steps&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;st_results&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;weather&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># assert if the user&#39;s personal API key exists</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NEUROCAST-API-KEY&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span>
+            <span class="s2">&quot;Please make sure `NEUROCAST-API-KEY` is an environment variable, and that is a valid key.&quot;</span>
+            <span class="s2">&quot;If using `dotenv`, please make sure your .env file is set correctly, and that load_dotenv() is called &quot;</span>
+            <span class="s2">&quot;before this function.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># assert if the source requested is supported</span>
+    <span class="k">if</span> <span class="n">source</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SOURCES</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Source `</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">` is not supported. Supported sources are </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s1">`&#39;</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">SOURCES</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">source</span> <span class="o">==</span> <span class="s2">&quot;raw&quot;</span><span class="p">:</span>
+        <span class="c1"># assert if source type if specified and that source type is supported when requesting raw data</span>
+        <span class="k">if</span> <span class="n">source_type</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">source_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SOURCE_TYPES</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Source type is either not specified or not supported. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Supported source types are: </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s1">`&#39;</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">SOURCE_TYPES</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="c1"># define request&#39;s payload</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;timewindow&quot;</span><span class="p">:</span> <span class="n">time_window</span><span class="p">,</span>
+        <span class="s2">&quot;dataset_name&quot;</span><span class="p">:</span> <span class="n">dataset_name</span><span class="p">,</span>
+        <span class="s2">&quot;user_ids&quot;</span><span class="p">:</span> <span class="n">user_ids</span><span class="p">,</span>
+        <span class="s2">&quot;Neurocast-API-Key&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NEUROCAST-API-KEY&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;interval&quot;</span><span class="p">:</span> <span class="n">interval</span><span class="p">,</span>
+        <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">source</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># add soruce type if source == `raw`</span>
+    <span class="k">if</span> <span class="n">source_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;source_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">source_type</span>
+
+    <span class="c1"># parse json (for visualization)</span>
+    <span class="n">parsed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># send request to `materialize` endpoint</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s2">&quot;https://data.neurocast.io/materialize&quot;</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">parsed</span><span class="p">,</span>
+        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="c1"># print request&#39;s payload and response</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">parsed</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parsed</span><span class="p">,</span> <span class="n">resp</span><span class="o">.</span><span class="n">content</span></div>
+
+
+<div class="viewcode-block" id="api_send_request_in_chunks"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.api_send_request_in_chunks">[docs]</a><span class="k">def</span> <span class="nf">api_send_request_in_chunks</span><span class="p">(</span>
+    <span class="n">user_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+    <span class="n">time_window</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">dataset_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">86400000</span><span class="p">,</span>
+    <span class="n">source</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;keystroke_features_test&quot;</span><span class="p">,</span>
+    <span class="n">source_type</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;_part&quot;</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Data util to request datasets from Neurocast&#39;s data API in chunks.</span>
+
+<span class="sd">    Useful for large datasets, e.g. a year worth of session data or a month worth of raw data from many user.</span>
+<span class="sd">    Wrapper for api_send_request, sends multiple GET requests to the API&#39;s `materialize` endpoint.</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    user_ids: List[int]</span>
+<span class="sd">        A list of user ids of interest.</span>
+<span class="sd">    time_window: List[str]</span>
+<span class="sd">        A list of two strings: a start and end date in ISO format (YYYY-MM-DD or YYYY-M-D) delimiting a date range.</span>
+<span class="sd">        Start and end dates are included. E.g. [&quot;2020-09-01&quot;, &quot;2020-09-30&quot;].</span>
+<span class="sd">    dataset_name: str</span>
+<span class="sd">        A filename. Must be unique in `s3://neurocast-vm-shared/&lt;user-name&gt;/`, otherwise it&#39;ll overwrite the existing</span>
+<span class="sd">        file.</span>
+<span class="sd">    interval: int (default: 86400000)</span>
+<span class="sd">        The level of aggregation in milliseconds. Popular intervals are: session (0), hour (3600000) and day (86400000).</span>
+<span class="sd">    source: str (default: &quot;keystroke_features_test&quot;)</span>
+<span class="sd">        Whether to request aggregated or raw data. Suppported values: `keystroke_features`, `keystroke_features_test`,</span>
+<span class="sd">        `accelerometer_features`, `accelerometer_features_test`, `gyroscope_features`, `gyroscope_features_test`,</span>
+<span class="sd">        `raw`.</span>
+<span class="sd">    source_type: Union[str, None] (default: None)</span>
+<span class="sd">        The kind of raw data to request. Only valid when `source == &quot;raw&quot;`. Supported values: `keystrokes`,</span>
+<span class="sd">        `accelerometer`, `gyroscope`, `health`, `health2`, `adaptive_correction_moments`, `labels`, `steps`,</span>
+<span class="sd">        `st_results`, `weather`.</span>
+<span class="sd">    chunk_size: int (default: 10)</span>
+<span class="sd">        the number of days (size) in a chunk of data. E.g. if `chunk_size == 5` and</span>
+<span class="sd">        `time_window == [&quot;2020-11-01&quot;, &quot;2020-11-10&quot;], it will send two requests: [&quot;2020-11-01&quot;, &quot;2020-11-05&quot;]</span>
+<span class="sd">        and [&quot;2020-11-06&quot;, &quot;2020-11-10&quot;]. The different chunks will be saved in separate files,</span>
+<span class="sd">        with {suffix}_0, {suffix}_1, etc. appended to the filename.</span>
+<span class="sd">    suffix: str (default: &quot;_part&quot;)</span>
+<span class="sd">        optional sub-string appended at the end of each chunk&#39;s filename. E.g. if suffix=&quot;_chunk&quot;, dataset_name=&quot;dataset&quot;</span>
+<span class="sd">        and there are 3 chunks, then filenames will be `data_chunk-0`, `data_chunk-1`, `data_chunk-2`.</span>
+<span class="sd">    verbose: bool (default: True)</span>
+<span class="sd">         Whether to print request payload and response.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    payload: list of HTTP payloads (json) passed to the API endpoint, one for each chunk file</span>
+<span class="sd">    status: list of strings indicating success (`success`) or failure (`failed`) of API calls, one for each chunk file</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import api_send_request_in_chunks</span>
+<span class="sd">    &gt;&gt;&gt; payload, status = api_send_request_in_chunks(user_ids=[3, 40],</span>
+<span class="sd">    ...                                              time_window=[&quot;2020-1-1&quot;, &quot;2020-1-10&quot;],</span>
+<span class="sd">    ...                                              dataset_name=&quot;my_dataset&quot;,</span>
+<span class="sd">    ...                                              interval=0,</span>
+<span class="sd">    ...                                              source=&quot;keystroke_features&quot;,</span>
+<span class="sd">    ...                                              source_type=None,</span>
+<span class="sd">    ...                                              chunk_size=5,</span>
+<span class="sd">    ...                                              suffix=&quot;_chunk&quot;</span>
+<span class="sd">    ...                                              verbose=False)</span>
+<span class="sd">    &gt;&gt;&gt; print(payload)</span>
+<span class="sd">    &gt;&gt;&gt; # [{</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;timewindow&quot;: [&quot;2020-1-1&quot;, &quot;2020-1-5&quot;],</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;dataset_name&quot;: &quot;my_dataset_chunk-0&quot;,</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;user_ids&quot;: [3, 40],</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;Neurocast-API-Key&quot;: &quot;HDWFEHFN32ALENFLKSJL41KFJWFNWLEGNJ8!NW&quot;,</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;interval&quot;: 0,</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;source&quot;: &quot;keystroke_features&quot;,</span>
+<span class="sd">    &gt;&gt;&gt; # },</span>
+<span class="sd">    &gt;&gt;&gt; # {</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;timewindow&quot;: [&quot;2020-1-6&quot;, &quot;2020-1-10&quot;],</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;dataset_name&quot;: &quot;my_dataset_chunk-1&quot;,</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;user_ids&quot;: [3, 40],</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;Neurocast-API-Key&quot;: &quot;HDWFEHFN32ALENFLKSJL41KFJWFNWLEGNJ8!NW&quot;,</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;interval&quot;: 0,</span>
+<span class="sd">    &gt;&gt;&gt; #    &quot;source&quot;: &quot;keystroke_features&quot;,</span>
+<span class="sd">    &gt;&gt;&gt; # }]</span>
+<span class="sd">    &gt;&gt;&gt; print(status)</span>
+<span class="sd">    &gt;&gt;&gt; # [&quot;success&quot;, &quot;success&quot;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">START</span> <span class="o">=</span> <span class="n">time_window</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">END</span> <span class="o">=</span> <span class="n">time_window</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># check whether dates are in the correct format</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">END</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid date format. Must be in the format `%Y-%m-</span><span class="si">%d</span><span class="s2">`&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create period range object sampled every `batch_size` days.</span>
+    <span class="n">period_ranges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">period_range</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="n">END</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">chunk_size</span><span class="si">}</span><span class="s2">D&quot;</span><span class="p">)</span>
+
+    <span class="c1"># loop over each date sample</span>
+    <span class="n">payload</span><span class="p">,</span> <span class="n">status</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">date</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">period_ranges</span><span class="p">):</span>
+        <span class="c1"># define start and end dates of a batch</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">date</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">(),</span>
+            <span class="n">date</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">chunk_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="c1"># make sure that end date is not later than the batches&#39; end date</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">END</span><span class="p">)</span> <span class="k">if</span> <span class="n">end</span> <span class="o">&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">END</span><span class="p">)</span> <span class="k">else</span> <span class="n">end</span>
+
+        <span class="c1"># request data from that batch</span>
+        <span class="n">payload_i</span><span class="p">,</span> <span class="n">status_i</span> <span class="o">=</span> <span class="n">api_send_request</span><span class="p">(</span>
+            <span class="n">user_ids</span><span class="o">=</span><span class="n">user_ids</span><span class="p">,</span>
+            <span class="n">time_window</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">date</span><span class="p">()),</span> <span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="o">.</span><span class="n">date</span><span class="p">())],</span>
+            <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">suffix</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">,</span>
+            <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+            <span class="n">source_type</span><span class="o">=</span><span class="n">source_type</span><span class="p">,</span>
+            <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">payload</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">payload_i</span><span class="p">)</span>
+        <span class="n">status</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">status_i</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">payload</span><span class="p">,</span> <span class="n">status</span></div>
+
+
+<span class="k">def</span> <span class="nf">_prepare_health_data</span><span class="p">(</span><span class="n">df_health</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Pre-processing of raw health data. It is a necessary step for merging to keytrokes dataframes.</span>
+<span class="sd">    Pre-processing inlcudes:</span>
+<span class="sd">            - renaming of variables</span>
+<span class="sd">            - unraveling of embedded nested jsons</span>
+<span class="sd">            - casting of data types</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_health: pd.DataFrame</span>
+<span class="sd">        raw health dataframe, can be requested using the data API</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        Preprocessed dataframe.</span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    [1] time offsets (`timeZoneOffset`) are set to GMT+1 timezone (Central European Time) when unavailable.</span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import _prepare_health_data, aws_data_extraction</span>
+<span class="sd">    &gt;&gt;&gt; df_raw_health = aws_data_extraction(filepath=&quot;Natali/raw_health_20200101_20200110_all_users.csv&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; df_prep_health = _prepare_health_data(df_raw_health)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># assert that all columns exist in dataframe</span>
+    <span class="n">is_in</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">get_health_raw_columns</span><span class="p">(),</span> <span class="n">df_health</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_in</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+        <span class="n">missing_cols</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">`&quot;</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">get_health_raw_columns</span><span class="p">())[</span><span class="o">~</span><span class="n">is_in</span><span class="p">]</span>
+        <span class="p">]</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column(s) </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing_cols</span><span class="p">)</span><span class="si">}</span><span class="s2"> missing.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># rename, change data types, create useful columns</span>
+    <span class="n">df_health</span> <span class="o">=</span> <span class="n">df_health</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">Config</span><span class="o">.</span><span class="n">get_health_columns_map</span><span class="p">())</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="o">**</span><span class="p">{</span>
+            <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+                <span class="n">d</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;timeZoneOffset&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">3600</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ms&quot;</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+            <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;steps&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span>
+            <span class="s2">&quot;flights_climbed&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;flights_climbed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># loop over nested columns</span>
+    <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">Config</span><span class="o">.</span><span class="n">get_nested_health_columns_map</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">df_health</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">df_health</span>
+            <span class="c1"># unravel them, drop duplicates and rename new columns</span>
+            <span class="o">.</span><span class="n">pipe</span><span class="p">(</span>
+                <span class="n">_unpack_one_nested_json</span><span class="p">,</span>
+                <span class="n">column_name</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
+                <span class="n">column_map</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">alias</span><span class="p">,</span>
+                    <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">alias</span><span class="si">}</span><span class="s2">_start&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">alias</span><span class="si">}</span><span class="s2">_end&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+            <span class="p">)</span>
+            <span class="c1"># timestamp to datetime object</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+                <span class="o">**</span><span class="p">{</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">alias</span><span class="si">}</span><span class="s2">_start&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+                        <span class="n">d</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">alias</span><span class="si">}</span><span class="s2">_start&quot;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ms&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span>
+                    <span class="p">),</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">alias</span><span class="si">}</span><span class="s2">_end&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+                        <span class="n">d</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">alias</span><span class="si">}</span><span class="s2">_end&quot;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ms&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span>
+                    <span class="p">),</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_health</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_aggregate_health_data</span><span class="p">(</span>
+    <span class="n">df_health</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">agg_dict</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Aggregation of raw health data. It is a necessary step for merging to keystroke dataframes.</span>
+<span class="sd">    Aggregation is applied according to (1) literature or (2) the sampling nature of each featrue:</span>
+<span class="sd">         * Heart rate variability: FIRST sample of the day [2]</span>
+<span class="sd">         * Heart rate: MIN, MAX, MEAN, MEDIAN, STD across all samples</span>
+<span class="sd">         * Steps: MAX or LAST step count. Samples are incremental.</span>
+<span class="sd">         * Flights climbed:  MAX or LAST step count. Samples are incremental.</span>
+<span class="sd">         * Sleep Onset: FIRST `asleep` event of the day.</span>
+<span class="sd">         * Sleep Offset: LAST `asleep` event of the day.</span>
+<span class="sd">     Parameters</span>
+<span class="sd">     ----------</span>
+<span class="sd">     df_health: pd.DataFrame</span>
+<span class="sd">         preprocessed health data</span>
+<span class="sd">     agg_dict: Union[Dict[str, Tuple[str, Any]], None] (default: None)</span>
+<span class="sd">         dictionary of aggregated features in the form {&quot;aggregated_feature_name&quot;: (&quot;feature&quot;, &quot;aggregate&quot;)}.</span>
+<span class="sd">         E.g.:</span>
+<span class="sd">         {</span>
+<span class="sd">             &quot;heart_rate_variability&quot;: (&quot;heart_rate_variability&quot;, &quot;first&quot;),</span>
+<span class="sd">             &quot;heart_rate_MIN&quot;: (&quot;heart_rate&quot;, &quot;min&quot;),</span>
+<span class="sd">             &quot;heart_rate_MAX&quot;: (&quot;heart_rate&quot;, np.max),</span>
+<span class="sd">             &quot;heart_rate_MODE&quot;: (&quot;heart_rate&quot;, lambda x: scipy.stats.mode(x)[0]),</span>
+<span class="sd">             ...</span>
+<span class="sd">          }</span>
+<span class="sd">         Valid aggregate can be found in [1]</span>
+
+<span class="sd">     Returns</span>
+<span class="sd">     -------</span>
+<span class="sd">     pd.DataFrame</span>
+<span class="sd">         aggregated health data (per user &amp; per day)</span>
+<span class="sd">     References</span>
+<span class="sd">     ----------</span>
+<span class="sd">     [1] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.aggregate.html</span>
+<span class="sd">     [2] https://medium.com/@altini_marco/how-to-make-sense-of-your-apple-watch-heart-rate-variability-hrv-data-89bf4a510438</span>
+<span class="sd">     Examples</span>
+<span class="sd">     --------</span>
+<span class="sd">     &gt;&gt;&gt; from neuropy.internal_utils import _aggregate_health_data, aws_data_extraction</span>
+<span class="sd">     &gt;&gt;&gt; df_raw_health = aws_data_extraction(filepath=&quot;Natali/raw_health_20200101_20200110_all_users.csv&quot;)</span>
+<span class="sd">     &gt;&gt;&gt; df_prep_health = _prepare_health_data(df_raw_health)</span>
+<span class="sd">     &gt;&gt;&gt; df_agg_health = _aggregate_health_data(df_prep_health)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># expected columns in the dataframe</span>
+    <span class="n">expected_cols</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Config</span><span class="o">.</span><span class="n">get_health_core_columns</span><span class="p">()</span> <span class="o">+</span> <span class="n">Config</span><span class="o">.</span><span class="n">get_health_feature_columns</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="c1"># if agg_dict is None, user default aggregations</span>
+    <span class="k">if</span> <span class="n">agg_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">agg_dict</span> <span class="o">=</span> <span class="n">Config</span><span class="o">.</span><span class="n">get_aggregation_map</span><span class="p">()</span>
+
+    <span class="c1"># add base columns, aggregate them and return them</span>
+    <span class="n">header_agg</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;timeZoneOffset&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;timeZoneOffset&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="s2">&quot;metadataState&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;metadataState&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="s2">&quot;dataVersion&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;dataVersion&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">]),</span>
+    <span class="p">}</span>
+    <span class="n">agg_dict</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">header_agg</span><span class="p">,</span> <span class="o">**</span><span class="n">agg_dict</span><span class="p">}</span>
+
+    <span class="c1"># features to aggregate</span>
+    <span class="n">agg_cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">feature</span> <span class="k">for</span> <span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">agg</span><span class="p">)</span> <span class="ow">in</span> <span class="n">agg_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span> <span class="o">-</span> <span class="p">{</span>
+        <span class="s2">&quot;sleep_duration&quot;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># assert if features in `agg_dict` exist in `df_health`</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">i</span> <span class="ow">in</span> <span class="n">df_health</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">agg_cols</span><span class="p">]):</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Must provide a dictionary with valid feature columns: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">get_health_feature_columns</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># assert if `df_health` contains the expected features</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">i</span> <span class="ow">in</span> <span class="n">df_health</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">expected_cols</span><span class="p">]):</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Dataframe must contain the following feature columns: </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">expected_cols</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="s2">&quot;Please prepare the health dataframe beforehand. You can use `_prepare_health_data()` data util.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># aggregate according to aggregation map</span>
+    <span class="c1"># create sleep duration for possible sleep aggregations</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df_health</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+            <span class="o">**</span><span class="p">{</span>
+                <span class="s2">&quot;sleep_end&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;sleep_end&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;sleep&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="s2">&quot;inBed&quot;</span><span class="p">)),</span>
+                <span class="s2">&quot;sleep_start&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;sleep_start&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mask</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;sleep&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="s2">&quot;inBed&quot;</span><span class="p">)),</span>
+                <span class="s2">&quot;sleep_duration&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;sleep_end&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;sleep_start&quot;</span><span class="p">])</span>
+                <span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+                <span class="o">.</span><span class="n">round</span><span class="p">(),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">get_health_core_columns</span><span class="p">())</span>
+        <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="o">**</span><span class="n">agg_dict</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<div class="viewcode-block" id="merge_keystrokes_and_health"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.merge_keystrokes_and_health">[docs]</a><span class="k">def</span> <span class="nf">merge_keystrokes_and_health</span><span class="p">(</span>
+    <span class="n">df_raw_health</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">df_keys</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">how</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span> <span class="o">=</span> <span class="s2">&quot;outer&quot;</span><span class="p">,</span>
+    <span class="n">agg_dict</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Merge two dataframes (containing keystroke and health data) on user ID and date.</span>
+
+<span class="sd">    This function pre-processes and aggregates raw health data before merging. See `_prepare_health_data()` and</span>
+<span class="sd">    `_aggregate_health_data()` for more details on these steps. The existing `date` column in the `df_keys` data is</span>
+<span class="sd">    used for merging, or a new `date` column is generated based on the `timestamp` and `timeZoneOffset` columns.</span>
+
+<span class="sd">    This function only applies to datasets requested from the Neurocast&#39;s Data API. It specifically supports data from</span>
+<span class="sd">    the following sources:</span>
+<span class="sd">        - For aggregated keystroke features: `keystroke_features`, `keystroke_features_test`</span>
+<span class="sd">        - For raw health events: `raw` (source type: `health2`)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_raw_health: pd.DataFrame</span>
+<span class="sd">        dataframe containing raw health data</span>
+<span class="sd">    df_keys: pd.Dataframe</span>
+<span class="sd">        dataframe containing aggregated keystroke features</span>
+<span class="sd">    how: str (default: &quot;outer&quot;)</span>
+<span class="sd">        type of merge to be performed. Supported types are &quot;outer&quot;, &quot;inner&quot;, &quot;left&quot;, &quot;right&quot;, &quot;cross&quot;.</span>
+<span class="sd">        See [1] for more info. Note that &quot;left&quot; refers to `df_keys` in this case, and &quot;right&quot; refers to `df_raw_health`.</span>
+<span class="sd">    agg_dict: Union[Dict[str, Tuple[str, str]], None] (default: None)</span>
+<span class="sd">        dictionary of aggregated features in the form {&quot;aggregated_feature_name&quot;: (&quot;feature&quot;, &quot;aggregate&quot;)}.</span>
+<span class="sd">        If None, use the default set of aggregations. See `_aggregate_health_data()` more more details.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.Dataframe</span>
+<span class="sd">        a dataframe with health and keytroke data aligned on user ID and date.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    [1] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import aws_data_extraction, merge_keystrokes_and_health</span>
+<span class="sd">    &gt;&gt;&gt; df_raw_health = aws_data_extraction(filepath=&quot;Natali/raw_health_20200101_20200110_all_users.csv&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; df_agg_keys = aws_data_extraction(filepath=&quot;Natali/aggregated_keys_20200101_20200110_all_users.csv&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; df = merge_keystrokes_and_health(df_raw_health=df_raw_health,</span>
+<span class="sd">    ....                                 df_keys=df_agg_keys)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># assert core columns exist in keystroke dataframe</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">i</span> <span class="ow">in</span> <span class="n">df_keys</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Config</span><span class="o">.</span><span class="n">get_keystroke_meta_columns</span><span class="p">()]):</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;`df_keys` must contain the following columns: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Config</span><span class="o">.</span><span class="n">get_keystroke_meta_columns</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># prepare keystroke dataframe</span>
+    <span class="k">if</span> <span class="s2">&quot;date&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df_keys</span><span class="p">:</span>
+        <span class="n">df_keys</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+            <span class="n">df_keys</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">df_keys</span><span class="p">[</span><span class="s2">&quot;timeZoneOffset&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">3600</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span>
+            <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;ms&quot;</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span>
+
+    <span class="c1"># prepare health dataframe</span>
+    <span class="n">df_health</span> <span class="o">=</span> <span class="n">_prepare_health_data</span><span class="p">(</span><span class="n">df_raw_health</span><span class="p">)</span>
+    <span class="n">df_health</span> <span class="o">=</span> <span class="n">_aggregate_health_data</span><span class="p">(</span><span class="n">df_health</span><span class="p">,</span> <span class="n">agg_dict</span><span class="o">=</span><span class="n">agg_dict</span><span class="p">)</span>
+
+    <span class="c1"># merge both dataframes on `date` and `user_id`</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">df_keys</span><span class="p">,</span>
+        <span class="n">df_health</span><span class="p">,</span>
+        <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span>
+        <span class="o">+</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Config</span><span class="o">.</span><span class="n">get_keystroke_meta_columns</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">],</span>
+        <span class="n">how</span><span class="o">=</span><span class="n">how</span><span class="p">,</span>
+        <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;_keystroke&quot;</span><span class="p">,</span> <span class="s2">&quot;_health&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="c1"># drop date column</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="sql_data_extraction"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.sql_data_extraction">[docs]</a><span class="k">def</span> <span class="nf">sql_data_extraction</span><span class="p">(</span><span class="n">connection_string</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">table_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;metadata_states&quot;</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load data from a specific sql table</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    connection_string : str</span>
+<span class="sd">        An sql connection string with the format:</span>
+<span class="sd">        &#39;mysql+pymysql://NAME:PASSWORD@URL&#39;</span>
+<span class="sd">    table_name : str</span>
+<span class="sd">        the name of an sql table, to find out available sql tables run the sql_show_tables() function</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ---------</span>
+<span class="sd">    &gt;&gt;&gt; import os</span>
+<span class="sd">    &gt;&gt;&gt; from dotenv import load_dotenv, find_dotenv</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import sql_data_extraction</span>
+<span class="sd">    &gt;&gt;&gt; load_dotenv(find_dotenv())</span>
+<span class="sd">    &gt;&gt;&gt; connect_string = os.environ[&quot;string_HOST_neuro_users&quot;]</span>
+<span class="sd">    &gt;&gt;&gt; sql_df = sql_data_extraction(connection_string=connect_string,</span>
+<span class="sd">    ...                              table_name = &#39;projects&#39;)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">connection_string</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Please input a valid connection string&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">table_name</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Please input a string for the table_name&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sql_engine</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="n">connection_string</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># read in the data as a data frame based on the query and connection</span>
+            <span class="n">df_sql</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s2">&quot;select * from &quot;</span> <span class="o">+</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">sql_engine</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">df_sql</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">sql_engine</span><span class="o">.</span><span class="n">dispose</span><span class="p">()</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sd">&quot;&quot;&quot;The requested table_name is not available from this database, please use the</span>
+<span class="sd">                             sql_show_tables() function to check for available tables.&quot;&quot;&quot;</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="c1"># Add line of code to close connection!!!!!</span>
+            <span class="n">sql_engine</span><span class="o">.</span><span class="n">dispose</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="aws_upload_data"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.aws_upload_data">[docs]</a><span class="k">def</span> <span class="nf">aws_upload_data</span><span class="p">(</span>
+    <span class="n">df</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">upload_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">folder_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bucket</span><span class="o">=</span><span class="s2">&quot;neurocast-vm-shared&quot;</span>
+<span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Upload a pandas data frame to an aws s3 bucket.</span>
+<span class="sd">    AWS access key should be loaded with name &#39;AWS_KEY&#39;, AWS secret key with name &#39;AWS_SECRET_KEY&#39;</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df: pd.DataFrame</span>
+<span class="sd">        The name of the data frame to be uploaded to aws S3.</span>
+<span class="sd">    upload_name : str</span>
+<span class="sd">        The name of the .csv to be saved. The suggested naming convention is:</span>
+<span class="sd">        {PROJECT_NAME}_users_{USERRANGE}_{AGGREGATIONLEVEL}_{DATATYPE}_{DATE_RANGE}.csv</span>
+<span class="sd">        e.g. APPSMS_users_363_488_day_keystroke_20180821_20210421.csv</span>
+<span class="sd">    folder_name : str</span>
+<span class="sd">        The name of the folder where the data frame should be saved.</span>
+<span class="sd">    bucket : str</span>
+<span class="sd">        A valid aws s3 bucket name - we generally use &quot;neurocast-vm-shared&quot;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ---------</span>
+<span class="sd">    &gt;&gt;&gt; from dotenv import load_dotenv, find_dotenv</span>
+<span class="sd">    &gt;&gt;&gt; import seaborn as sns</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import aws_upload_data</span>
+<span class="sd">    &gt;&gt;&gt; load_dotenv(find_dotenv())</span>
+<span class="sd">    &gt;&gt;&gt; data = sns.load_dataset(&quot;iris&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; csv_name=&quot;iris_test_df.csv&quot;</span>
+<span class="sd">    &gt;&gt;&gt; folder_name=&quot;TESTING_UPLOAD_FUNCTION&quot;</span>
+<span class="sd">    &gt;&gt;&gt; Bucket=&#39;neurocast-vm-shared&#39;</span>
+<span class="sd">    &gt;&gt;&gt; aws_upload_data(df=data, upload_name=csv_name, folder_name=folder_name, bucket=Bucket)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_KEY&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_SECRET_KEY&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Please make sure your .env file is correctly read in and it contains &#39;AWS_KEY&#39; and &#39;AWS_SECRET_KEY&#39;&quot;</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Please input a valid pandas data frame&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">upload_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sd">&quot;&quot;&quot;Please input an upload_name of the format</span>
+<span class="sd">                         {PROJECT_NAME}_users_{USERRANGE}_{AGGREGATIONLEVEL}_{DATATYPE}_{DATE_RANGE}.csv</span>
+<span class="sd">                         e.g. APPSMS_users_363_488_day_keystroke_20180821_20210421.csv&quot;&quot;&quot;</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">upload_name</span> <span class="o">=</span> <span class="n">upload_name</span>
+    <span class="n">s3</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span>
+        <span class="s2">&quot;s3&quot;</span><span class="p">,</span>
+        <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_KEY&quot;</span><span class="p">),</span>
+        <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;AWS_SECRET_KEY&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">folder_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">check_name</span> <span class="o">=</span> <span class="n">upload_name</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">check_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">upload_name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">aws_bucket_search_list</span> <span class="o">=</span> <span class="n">aws_bucket_search</span><span class="p">(</span>
+        <span class="n">search_term</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;^</span><span class="si">{</span><span class="n">check_name</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span>
+        <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">check_name</span> <span class="ow">in</span> <span class="n">aws_bucket_search_list</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sd">&quot;&quot;&quot;The folder and upload name combination you have requested already exists in the bucket,</span>
+<span class="sd">        please change the name of the upload or delete the upload you wish to overwrite</span>
+<span class="sd">        (using boto3.delete_object()).&quot;&quot;&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">folder_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">upload_name</span><span class="p">)</span>
+        <span class="n">s3</span><span class="o">.</span><span class="n">upload_file</span><span class="p">(</span><span class="n">Filename</span><span class="o">=</span><span class="n">upload_name</span><span class="p">,</span> <span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="n">upload_name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;You should be able to find </span><span class="si">{</span><span class="n">upload_name</span><span class="si">}</span><span class="s2"> in the s3 bucket in the appropriate folder&quot;</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">upload_name</span><span class="p">)</span>
+        <span class="n">s3</span><span class="o">.</span><span class="n">upload_file</span><span class="p">(</span>
+            <span class="n">Filename</span><span class="o">=</span><span class="n">upload_name</span><span class="p">,</span> <span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="n">folder_name</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">upload_name</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;You should be able to find </span><span class="si">{</span><span class="n">upload_name</span><span class="si">}</span><span class="s2"> in the s3 bucket in the following folder: </span><span class="si">{</span><span class="n">folder_name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">upload_name</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="sql_show_column_information"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.sql_show_column_information">[docs]</a><span class="k">def</span> <span class="nf">sql_show_column_information</span><span class="p">(</span><span class="n">connection_string</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;metadata_states&quot;</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return column information from a table in sql</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    connection_string : str</span>
+<span class="sd">        An sql connection string with the format:</span>
+<span class="sd">        &#39;mysql+pymysql://NAME:PASSWORD@URL&#39;</span>
+<span class="sd">    table_name : str</span>
+<span class="sd">        the name of an sql table, to find out available sql tables run the sql_show_tables() function</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ---------</span>
+<span class="sd">    &gt;&gt;&gt; import os</span>
+<span class="sd">    &gt;&gt;&gt; from dotenv import load_dotenv, find_dotenv</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import sql_show_column_information</span>
+<span class="sd">    &gt;&gt;&gt; load_dotenv(find_dotenv())</span>
+<span class="sd">    &gt;&gt;&gt; connect_string = os.environ[&quot;string_HOST_neuro_users&quot;]</span>
+<span class="sd">    &gt;&gt;&gt; column_info_df = sql_show_column_information(connection_string=connect_string,</span>
+<span class="sd">    ...                                              table_name=&#39;projects&#39;)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># create a stable connection with the SQL server</span>
+    <span class="n">sql_engine</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="n">connection_string</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">sql_engine</span><span class="p">)</span>
+        <span class="n">all_column_info_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">get_columns</span><span class="p">(</span><span class="n">table_name</span><span class="p">))</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">sql_engine</span><span class="o">.</span><span class="n">dispose</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">all_column_info_df</span></div>
+
+
+<div class="viewcode-block" id="sql_show_tables"><a class="viewcode-back" href="../../usage.html#neuropy.internal_utils.sql_show_tables">[docs]</a><span class="k">def</span> <span class="nf">sql_show_tables</span><span class="p">(</span><span class="n">connection_string</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return all available tables found within an sql connection</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    connection_string : str</span>
+<span class="sd">        An sql connection string with the format:</span>
+<span class="sd">        &#39;mysql+pymysql://NAME:PASSWORD@URL&#39;</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ---------</span>
+<span class="sd">    &gt;&gt;&gt; import os</span>
+<span class="sd">    &gt;&gt;&gt; from dotenv import load_dotenv, find_dotenv</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.internal_utils import sql_show_tables</span>
+<span class="sd">    &gt;&gt;&gt; load_dotenv(find_dotenv())</span>
+<span class="sd">    &gt;&gt;&gt; connect_string = os.environ[&quot;string_HOST_neuro_users&quot;]</span>
+<span class="sd">    &gt;&gt;&gt; column_info_df = sql_show_tables(connection_string=connect_string)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">connection_string</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Please input a valid connection string&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># create a stable connection with the SQL server</span>
+        <span class="n">sql_engine</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="n">connection_string</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">inspector</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">sql_engine</span><span class="p">)</span>
+            <span class="n">table_names_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="n">inspector</span><span class="o">.</span><span class="n">get_table_names</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Table_names&quot;</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="c1"># Add line of code to close connection!!!!!</span>
+            <span class="n">sql_engine</span><span class="o">.</span><span class="n">dispose</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">table_names_df</span></div>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

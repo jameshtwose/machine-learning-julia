@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.vumc_utils &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.vumc_utils</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Submodule vumc_utils.py. Includes project specific functions for the VUmc &lt;br&gt;</span>
+<span class="sd">- **fetch_poms_dataset():** Internal function to load data quickly &lt;br&gt;</span>
+<span class="sd">- **melt_multiple_test_dates():** Creates user-friendly dataframe when handling multiple test dates &lt;br&gt;</span>
+<span class="sd">- **replace_default_values_with_nan():** Pipe function to remove default values &lt;br&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">neuropy.internal_utils</span> <span class="kn">import</span> <span class="n">aws_data_extraction</span>
+<span class="kn">from</span> <span class="nn">neuropy.internal_utils</span> <span class="kn">import</span> <span class="n">replace_default_values_with_nan</span>
+<span class="kn">from</span> <span class="nn">neuropy.utils</span> <span class="kn">import</span> <span class="n">log_step</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="fetch_poms_dataset"><a class="viewcode-back" href="../../usage.html#neuropy.vumc_utils.fetch_poms_dataset">[docs]</a><span class="nd">@log_step</span>
+<span class="k">def</span> <span class="nf">fetch_poms_dataset</span><span class="p">(</span>
+    <span class="n">poms_filepath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;20200303_APPSMS_export_DS_Friendly.csv&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Fetch POMS and VUmc code tables from S3 bucket, and merge them.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    poms_filepath: str (default: &quot;20200303_APPSMS_export_DS_Friendly.csv&quot;)</span>
+<span class="sd">        filepath to POMS table</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        POMS table with user ids</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; df_poms = fetch_poms_dataset()</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># load user id dataset</span>
+    <span class="n">df_user</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">aws_data_extraction</span><span class="p">(</span>
+            <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;VUmc/vumc_code_neurokeys_code_user_id.csv&quot;</span><span class="p">,</span>
+            <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;Neurokeys ID&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span> <span class="s2">&quot;VUmc code&quot;</span><span class="p">:</span> <span class="s2">&quot;VUmc_code&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Neurokeys code&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># load POMS dataset</span>
+    <span class="n">df_poms</span> <span class="o">=</span> <span class="n">aws_data_extraction</span><span class="p">(</span>
+        <span class="n">filepath</span><span class="o">=</span><span class="n">poms_filepath</span><span class="p">,</span> <span class="n">bucket</span><span class="o">=</span><span class="s2">&quot;neurokeys-vumc-ka-hoo-private&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># merge them both based on project code</span>
+    <span class="k">return</span> <span class="n">df_poms</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_user</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;VUmc_code&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="melt_multiple_test_dates"><a class="viewcode-back" href="../../usage.html#neuropy.vumc_utils.melt_multiple_test_dates">[docs]</a><span class="k">def</span> <span class="nf">melt_multiple_test_dates</span><span class="p">(</span>
+    <span class="n">df_quest</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">end_points</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span>
+    <span class="n">checkpoints</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;m00&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="s2">&quot;m002&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s2">&quot;m03&quot;</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s2">&quot;m06&quot;</span><span class="p">:</span> <span class="mf">6.0</span><span class="p">,</span>
+        <span class="s2">&quot;m09&quot;</span><span class="p">:</span> <span class="mf">9.0</span><span class="p">,</span>
+        <span class="s2">&quot;m12&quot;</span><span class="p">:</span> <span class="mf">12.0</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Melt dataframe columns w.r.t checkpoints (m00, m0002, m03, m06, m09, m12).</span>
+<span class="sd">    So instead of:</span>
+<span class="sd">            m00_CIS_total | m0002_CIS_total | m03_CIS_total | m06_CIS_total | m09_CIS_total | m012_CIS_total</span>
+<span class="sd">                 7                8                 6               10              7               7</span>
+<span class="sd">        Now we&#39;ll have:</span>
+<span class="sd">            checkpoint | CIS_total</span>
+<span class="sd">               0.0          7</span>
+<span class="sd">               0.2          8</span>
+<span class="sd">               3.0          6</span>
+<span class="sd">               6.0          10</span>
+<span class="sd">               9.0          7</span>
+<span class="sd">               12.0         7</span>
+
+<span class="sd">    Special logic for endpoints that have a m002 measurement. These endpoints consider &quot;Questionnaires_completiondate&quot;</span>
+<span class="sd">    as test date. Endpoints without a m002 measurement consider &#39;visitdate&#39; as test date.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_quest: pd.DataFrame</span>
+<span class="sd">        Dataframe that contains the end point results.</span>
+<span class="sd">    end_point: str</span>
+<span class="sd">        Column that specifies the scores of the end point of interest.</span>
+<span class="sd">    checkpoints: Dict[str, float] (default: {&#39;m00&#39;: 0., &#39;m002&#39;: 0.5, &#39;m03&#39;: 3., &#39;m06&#39;: 6., &#39;m09&#39;: 9., &#39;m12&#39;: 12.})</span>
+<span class="sd">        mapping of checkpoint prefixes to floats.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ________</span>
+<span class="sd">    &gt;&gt;&gt; df_quest = (</span>
+<span class="sd">    ...     fetch_poms_dataset()</span>
+<span class="sd">    ...     .pipe(melt_multiple_test_dates, end_points=[&#39;HADS_anxiety&#39;, &#39;HADS_total&#39;])</span>
+<span class="sd">    ...     )</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    _______</span>
+<span class="sd">    pd.DataFrame</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">columns_quest_date</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df_quest</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="s2">&quot;m002_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;m002_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">checkpoints</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+        <span class="n">str_include_cols</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;|</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">end_points</span><span class="p">)</span>
+
+        <span class="n">df_checkpoint</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">df_quest</span>
+            <span class="c1"># uses replace function to remove default values in the date column.</span>
+            <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">replace_default_values_with_nan</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                <span class="n">regex</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;user_id|(^</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_.*date$)|^age$|gender|diagnosis_ms|^</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_&quot;</span>
+                <span class="o">+</span> <span class="n">str_include_cols</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">code</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="n">df_checkpoint</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df_checkpoint</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Check if all end_points consider &quot;Questionnaires_completiondate&quot; as test date</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">end_point</span> <span class="ow">in</span> <span class="n">columns_quest_date</span> <span class="k">for</span> <span class="n">end_point</span> <span class="ow">in</span> <span class="n">end_points</span><span class="p">):</span>
+            <span class="n">df_checkpoint</span> <span class="o">=</span> <span class="n">df_checkpoint</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+                <span class="n">test_date</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;Questionnaires_completiondate&quot;</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;The test date originates from the questionnaires_completiondate column&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Check if all end_points consider &quot;visit_date&quot; as test date</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="n">end_point</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">columns_quest_date</span> <span class="k">for</span> <span class="n">end_point</span> <span class="ow">in</span> <span class="n">end_points</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">df_checkpoint</span> <span class="o">=</span> <span class="n">df_checkpoint</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">test_date</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;visitdate&quot;</span><span class="p">])</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;The test date originates from the visitdate column&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;The endpoint list can only contain endpoints that either share the visidate or the questionnaires completiondate column.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">end_point</span> <span class="ow">in</span> <span class="n">end_points</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">end_point</span> <span class="ow">in</span> <span class="n">df_checkpoint</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_checkpoint</span><span class="p">)</span>
+
+    <span class="n">df_melted</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Questionnaires_completiondate&quot;</span><span class="p">,</span> <span class="s2">&quot;visitdate&quot;</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">test_date</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;test_date&quot;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-%Y&quot;</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_melted</span></div>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

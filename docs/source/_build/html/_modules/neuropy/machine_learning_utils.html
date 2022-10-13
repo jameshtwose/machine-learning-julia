@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neuropy.machine_learning_utils &#8212; neuropy v1.5.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+
+                <li><a href="../../index.html">Home</a></li>
+
+
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html"><code class="docutils literal notranslate"><span class="pre">neuropy.anomaly_detection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.cluster_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.cluster_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.config"><code class="docutils literal notranslate"><span class="pre">neuropy.config</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.correlation"><code class="docutils literal notranslate"><span class="pre">neuropy.correlation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.dimensionality_reduction"><code class="docutils literal notranslate"><span class="pre">neuropy.dimensionality_reduction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequency_domain"><code class="docutils literal notranslate"><span class="pre">neuropy.frequency_domain</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.frequentist_statistics"><code class="docutils literal notranslate"><span class="pre">neuropy.frequentist_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.group_analysis"><code class="docutils literal notranslate"><span class="pre">neuropy.group_analysis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_composite"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_composite</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.internal_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.internal_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_classification"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_classification</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_regression"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_regression</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.machine_learning_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.machine_learning_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.utils"><code class="docutils literal notranslate"><span class="pre">neuropy.utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html#module-neuropy.vumc_utils"><code class="docutils literal notranslate"><span class="pre">neuropy.vumc_utils</span></code></a></li>
+</ul>
+</ul>
+</li>
+
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+
+
+
+
+
+
+          </ul>
+
+
+
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+
+  <h1>Source code for neuropy.machine_learning_utils</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Submodule machine_learning_utils.py includes the following functions. &lt;br&gt;</span>
+<span class="sd">- **summary_grid_search():** Plot train and test performance of models for values of hyperparameter &lt;br&gt;</span>
+<span class="sd">- **plot_splits_grid_search():** Plot train and test performance at each split in CV for (best) model &lt;br&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="c1"># flake8: noqa: C901</span>
+<div class="viewcode-block" id="summary_grid_search"><a class="viewcode-back" href="../../usage.html#neuropy.machine_learning_utils.summary_grid_search">[docs]</a><span class="k">def</span> <span class="nf">summary_grid_search</span><span class="p">(</span>
+    <span class="n">grid</span><span class="p">,</span>
+    <span class="n">x_param</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">selection</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">add_std</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">hspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot train and test performance of models for values of hyperparameter in GridSearchCV / RandomizedSearchCV</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    grid: fitted sklearn.model_selection.GridSearchCV or sklearn.model_selection.RandomizedSearchCV object</span>
+<span class="sd">    x_param: str</span>
+<span class="sd">        Hyperparameter to be used on x axis of the plot(s), e.g. &#39;n_neighbors&#39; or &#39;C&#39;</span>
+<span class="sd">    step: str (default: &#39;&#39;)</span>
+<span class="sd">        The named step in the sklearn pipeline with the hyperparameter of interest. E.g. &#39;regression&#39; or, when a voting</span>
+<span class="sd">        regressor is used &#39;regression__svr&#39; to indicate the svr wihthin the voting regressor.</span>
+<span class="sd">    selection: None or list (default: None)</span>
+<span class="sd">        Select only those models from the GridSearchCV object for which the hyperparameter (first element of the list)</span>
+<span class="sd">        is equal to value (second element of the list), hyperparameter should be available at &#39;step&#39; in the sklearn</span>
+<span class="sd">        pipeline. E.g. [&#39;weights&#39;, &#39;uniform&#39;]</span>
+<span class="sd">    scoring: str or list (default: &#39;score&#39;)</span>
+<span class="sd">        Scoring method to be plotted. If one scoring method was used in the grid search, this should be</span>
+<span class="sd">        &#39;score&#39;, but if multiple scoring methods were added, choose one or more of them. E.g. &#39;accuracy&#39;, &#39;r2&#39; or a list</span>
+<span class="sd">        [&#39;accuracy&#39;, &#39;f1&#39;]. If scoring is a list, multiple subplots will be added.</span>
+<span class="sd">    figsize: tuple (default: (15,10))</span>
+<span class="sd">        Size of the figure</span>
+<span class="sd">    ylim: tuple or list or None(default: None)</span>
+<span class="sd">        Limits for the y axis in all plots. If a tuple, this will be repeated for every subplot. If a list of tuples, it</span>
+<span class="sd">        should have the length of &#39;scoring&#39;. Different ylims can be used for different subplots, e.g. [(0,1), (-1, 1)]</span>
+<span class="sd">    add_std: bool (default: True)</span>
+<span class="sd">        Whether to areas should be added that show the standard deviation for the different cross validations.</span>
+<span class="sd">    hspace: float (default: 0.2)</span>
+<span class="sd">        Space between subplots</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    fig: matplotlib.figure.Figure</span>
+<span class="sd">        plot with performance in train and test splits for grid search. Note that the &#39;best hyperparameters&#39; can be</span>
+<span class="sd">        defined in two ways. First, the value for the hyperparamter from the best model from the grid search (labelled</span>
+<span class="sd">        with &#39;best test within CV sklearn&#39;) is shown in the plot and summary. Second, the results were grouped by all</span>
+<span class="sd">        available values of the hyperparameters and avaraged. The hyperparamter value with avarage best performance is</span>
+<span class="sd">        shown in the plot and summary too.</span>
+<span class="sd">    summary: pd.Dataframe</span>
+<span class="sd">        dataframe with results best models: optimal parameters and corrsponding performance</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.pipeline import Pipeline</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.ensemble import VotingRegressor</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.svm import SVR</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.neighbors import KNeighborsRegressor</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.model_selection import RandomizedSearchCV, KFold, GridSearchCV</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.datasets import load_boston</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.machine_learning_utils import summary_grid_search</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+
+<span class="sd">    # Get training data regression</span>
+<span class="sd">    &gt;&gt;&gt; X_train_reg, y_train_reg = load_boston(return_X_y=True)</span>
+
+<span class="sd">    # Example1: Pipeline with voting regressor</span>
+<span class="sd">    &gt;&gt;&gt; pipeline = Pipeline([(&#39;regression&#39;, VotingRegressor([</span>
+<span class="sd">    ...                     (&#39;svr&#39;, SVR(gamma=&#39;scale&#39;)),</span>
+<span class="sd">    ...                     (&#39;knn&#39;, KNeighborsRegressor())]))])</span>
+
+<span class="sd">    # set hyperparameter range</span>
+<span class="sd">    &gt;&gt;&gt; param_grid = {</span>
+<span class="sd">    ... &#39;regression__svr__C&#39;: np.linspace(0.1, 2, 19),</span>
+<span class="sd">    ... &#39;regression__knn__n_neighbors&#39;: [2, 3, 4, 5, 6],</span>
+<span class="sd">    ... &#39;regression__knn__weights&#39;: [&#39;uniform&#39;, &#39;distance&#39;],</span>
+<span class="sd">    ... }</span>
+
+<span class="sd">    # Example with Full grid search with multiple scoring methods</span>
+<span class="sd">    &gt;&gt;&gt; gridCV = GridSearchCV(estimator=pipeline,</span>
+<span class="sd">    ... param_grid = param_grid,</span>
+<span class="sd">    ... n_jobs = -4,</span>
+<span class="sd">    ... cv = KFold(n_splits=3, shuffle=True, random_state=42),</span>
+<span class="sd">    ... refit = &#39;r2&#39;,</span>
+<span class="sd">    ... scoring = [&#39;neg_mean_absolute_error&#39;, &#39;r2&#39;, &#39;neg_mean_squared_error&#39;],</span>
+<span class="sd">    ... return_train_score = True,</span>
+<span class="sd">    ...               )</span>
+<span class="sd">    &gt;&gt;&gt; _ = gridCV.fit(X_train_reg, y_train_reg)</span>
+
+<span class="sd">    # Below will throw a warning becaause &#39;scoring&#39; differs from &#39;refit&#39; in the GridSearchCV</span>
+<span class="sd">    &gt;&gt;&gt; fig, summary = summary_grid_search(gridCV, step=&#39;regression__knn&#39;, x_param=&#39;n_neighbors&#39;, scoring=&#39;r2&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; _ = plt.ylim((0,1))</span>
+<span class="sd">    &gt;&gt;&gt; _ = plt.grid()</span>
+<span class="sd">    &gt;&gt;&gt; # _ = plt.show()</span>
+
+<span class="sd">    # Example1: simple Pipeline ========================</span>
+<span class="sd">    &gt;&gt;&gt; pipeline = Pipeline([</span>
+<span class="sd">    ...                         (&#39;knn&#39;, KNeighborsRegressor())])</span>
+<span class="sd">    &gt;&gt;&gt; param_grid = {</span>
+<span class="sd">    ... &#39;knn__n_neighbors&#39;: [2, 3, 4, 5, 6],</span>
+<span class="sd">    ... &#39;knn__weights&#39;: [&#39;uniform&#39;, &#39;distance&#39;],</span>
+<span class="sd">    ... }</span>
+
+<span class="sd">    # Random grid search with single scoring method</span>
+<span class="sd">    &gt;&gt;&gt; randomCV = RandomizedSearchCV(estimator=pipeline,</span>
+<span class="sd">    ... param_distributions = param_grid,</span>
+<span class="sd">    ... n_iter = 10,</span>
+<span class="sd">    ... n_jobs = -4,</span>
+<span class="sd">    ... cv = KFold(n_splits=5, shuffle=True, random_state=50),</span>
+<span class="sd">    ... refit = True,</span>
+<span class="sd">    ... scoring = &#39;r2&#39;,</span>
+<span class="sd">    ... return_train_score = True,</span>
+<span class="sd">    ... random_state = 15</span>
+<span class="sd">    ... )</span>
+<span class="sd">    &gt;&gt;&gt; _ = randomCV.fit(X_train_reg, y_train_reg)</span>
+<span class="sd">    &gt;&gt;&gt; _, _ = summary_grid_search(randomCV, x_param=&#39;n_neighbors&#39;, step=&#39;knn&#39;, scoring=&#39;score&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; # _ = plt.show()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Get cv results from the sklearn object</span>
+    <span class="n">plot_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">grid</span><span class="o">.</span><span class="n">best_index_</span><span class="p">]</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span><span class="o">~</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;split|time|rank&quot;</span><span class="p">)]</span>
+
+    <span class="k">if</span> <span class="n">step</span><span class="p">:</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">+</span> <span class="s2">&quot;__&quot;</span>
+
+    <span class="c1"># Select the rows for which selection is True</span>
+    <span class="k">if</span> <span class="n">selection</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;param_&quot;</span> <span class="o">+</span> <span class="n">step</span> <span class="o">+</span> <span class="n">selection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Combination of step (if using a pipeline) and/or hyperparameter for selection not valid. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Got </span><span class="si">{</span><span class="n">step</span> <span class="o">+</span> <span class="n">selection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="c1"># Select for plotting</span>
+        <span class="n">plot_df</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">plot_df</span><span class="p">[</span><span class="s2">&quot;param_&quot;</span> <span class="o">+</span> <span class="n">step</span> <span class="o">+</span> <span class="n">selection</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">==</span> <span class="n">selection</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="c1"># Add to summary</span>
+        <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;selection for plotting&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;param_&quot;</span> <span class="o">+</span> <span class="n">step</span> <span class="o">+</span> <span class="n">selection</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">selection</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Value to select (</span><span class="si">{</span><span class="n">selection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">) not available for </span><span class="si">{</span><span class="n">step</span> <span class="o">+</span> <span class="n">selection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+    <span class="c1"># Get the mean performance for each of the values of the hyperparameter</span>
+    <span class="k">if</span> <span class="s2">&quot;param_&quot;</span> <span class="o">+</span> <span class="n">step</span> <span class="o">+</span> <span class="n">x_param</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Combination of step (if using a pipeline) and/or hyperparameter for x_param not valid. &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Got </span><span class="si">{</span><span class="n">step</span> <span class="o">+</span> <span class="n">x_param</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="n">plot_df</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;param_&quot;</span> <span class="o">+</span> <span class="n">step</span> <span class="o">+</span> <span class="n">x_param</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="c1"># Get best test for average test results from x_param</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scoring</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">determine_performance</span> <span class="o">=</span> <span class="n">scoring</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">refit</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">determine_performance</span> <span class="o">=</span> <span class="n">scoring</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;One of &#39;scoring&#39; passed to this function or &#39;refit&#39; passed to the grid search should be a &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;string. Got </span><span class="si">{</span><span class="n">scoring</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">grid</span><span class="o">.</span><span class="n">refit</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">best_results_x_param</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span>
+        <span class="n">plot_df</span><span class="p">[</span><span class="s2">&quot;mean_test_&quot;</span> <span class="o">+</span> <span class="n">determine_performance</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">(),</span> <span class="p">:</span>
+    <span class="p">]</span>
+    <span class="c1"># Remove unneccesary information</span>
+    <span class="n">best_results_x_param</span> <span class="o">=</span> <span class="n">best_results_x_param</span><span class="p">[</span>
+        <span class="o">~</span><span class="n">best_results_x_param</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;split|time|rank&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="c1"># Add a second column to the summary</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">summary</span><span class="p">,</span> <span class="n">best_results_x_param</span><span class="p">],</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;overall&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;regarding </span><span class="si">{</span><span class="n">x_param</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">refit</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="n">grid</span><span class="o">.</span><span class="n">refit</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">scoring</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Best overall performance according to sklearn determined by </span><span class="si">{</span><span class="n">grid</span><span class="o">.</span><span class="n">refit</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;whereas performance in the plot is shown for </span><span class="si">{</span><span class="n">scoring</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">add_to_label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">using </span><span class="si">{</span><span class="n">grid</span><span class="o">.</span><span class="n">refit</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">add_to_label</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="c1"># Different values for the hyperparameter on the x-axis</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">[</span><span class="s2">&quot;param_&quot;</span> <span class="o">+</span> <span class="n">step</span> <span class="o">+</span> <span class="n">x_param</span><span class="p">]</span>
+
+    <span class="c1"># Scoring method in a list</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scoring</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">scoring</span> <span class="o">=</span> <span class="p">[</span><span class="n">scoring</span><span class="p">]</span>
+    <span class="c1"># Limits y-axis in a list (and repeated for all subplots)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ylim</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="n">ylim</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scoring</span><span class="p">]</span>
+
+    <span class="c1"># Subplots for number of scoring methods</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">scoring</span><span class="p">))</span>
+
+    <span class="c1"># Loop over the scoring methods</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scoring</span><span class="p">)):</span>
+        <span class="n">scoring_method</span> <span class="o">=</span> <span class="n">scoring</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">scoring</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">current_ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Get the one and only axis if only one scoring method</span>
+            <span class="n">current_ax</span> <span class="o">=</span> <span class="n">ax</span>
+
+        <span class="c1"># Plot both train and test performance with different colors</span>
+        <span class="k">for</span> <span class="n">sample</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;train_&quot;</span><span class="p">,</span> <span class="s2">&quot;test_&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;#2167C5&quot;</span><span class="p">,</span> <span class="s2">&quot;#EB5E23&quot;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="s2">&quot;train_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Make sure training scores are returned by the grid search, return_train_score = True&quot;</span>
+                <span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">[</span><span class="s2">&quot;mean_&quot;</span> <span class="o">+</span> <span class="n">sample</span> <span class="o">+</span> <span class="n">scoring_method</span><span class="p">]</span>
+            <span class="n">std</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">[</span><span class="s2">&quot;std_&quot;</span> <span class="o">+</span> <span class="n">sample</span> <span class="o">+</span> <span class="n">scoring_method</span><span class="p">]</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">add_std</span><span class="p">:</span>
+                <span class="c1"># Add a semi-transparent area to the plot</span>
+                <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">std</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1"># Set the limits for the y-axis</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span>
+            <span class="n">x_param</span>
+        <span class="p">)</span>  <span class="c1"># Add the hyperparameter as label to the x-axis</span>
+
+        <span class="c1"># Add dashed horizontal and vertical lines to indicate best test performance</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span>
+            <span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;param_&quot;</span> <span class="o">+</span> <span class="n">step</span> <span class="o">+</span> <span class="n">x_param</span><span class="p">,</span> <span class="s2">&quot;overall&quot;</span><span class="p">],</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4A4A4A&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;best test within CV sklearn&quot;</span> <span class="o">+</span> <span class="n">add_to_label</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span>
+            <span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;mean_&quot;</span> <span class="o">+</span> <span class="s2">&quot;test_&quot;</span> <span class="o">+</span> <span class="n">scoring_method</span><span class="p">,</span> <span class="s2">&quot;overall&quot;</span><span class="p">],</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4A4A4A&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Add dashed horizontal and vertical lines to indicate best test performance regarding x_param</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span>
+            <span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;param_&quot;</span> <span class="o">+</span> <span class="n">step</span> <span class="o">+</span> <span class="n">x_param</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;regarding </span><span class="si">{</span><span class="n">x_param</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>  <span class="c1"># &quot;dotted&quot;,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#BBDEFB&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;best test in plot using </span><span class="si">{</span><span class="n">scoring_method</span><span class="si">}</span><span class="se">\n</span><span class="s2">averaged across </span><span class="si">{</span><span class="n">x_param</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span>
+            <span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;mean_&quot;</span> <span class="o">+</span> <span class="s2">&quot;test_&quot;</span> <span class="o">+</span> <span class="n">scoring_method</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;regarding </span><span class="si">{</span><span class="n">x_param</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>  <span class="c1"># &quot;dotted&quot;,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#BBDEFB&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Create title for (sub)plot (always includes the hyperparameter)</span>
+        <span class="n">current_title</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">scoring_method</span> <span class="o">!=</span> <span class="s2">&quot;score&quot;</span><span class="p">:</span>
+            <span class="c1"># If not default scoring method, add the specific scoring method in title</span>
+            <span class="n">current_title</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">current_title</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;Optimal </span><span class="si">{</span><span class="n">scoring_method</span><span class="si">}</span><span class="s2"> = &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;mean_&#39;</span> <span class="o">+</span> <span class="s1">&#39;test_&#39;</span> <span class="o">+</span> <span class="n">scoring_method</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;regarding </span><span class="si">{</span><span class="n">x_param</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_title</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">current_title</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;Standard scoring method, optimal value =&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;mean_&#39;</span> <span class="o">+</span> <span class="s1">&#39;test_&#39;</span> <span class="o">+</span> <span class="n">scoring_method</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;regarding </span><span class="si">{</span><span class="n">x_param</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">current_title</span> <span class="o">=</span> <span class="n">current_title</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;when results are averaged across </span><span class="si">{</span><span class="n">x_param</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">selection</span><span class="p">:</span>
+            <span class="c1"># If a selection was made, add this info to the title</span>
+            <span class="n">current_title</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">current_title</span>
+                <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">but only </span><span class="si">{</span><span class="n">selection</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> was selected from </span><span class="si">{</span><span class="n">selection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">current_title</span><span class="p">)</span>  <span class="c1"># Add title to the plot</span>
+        <span class="n">leg</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># Add legend to the plot</span>
+        <span class="k">for</span> <span class="n">line</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">leg</span><span class="o">.</span><span class="n">get_lines</span><span class="p">(),</span> <span class="n">leg</span><span class="o">.</span><span class="n">get_texts</span><span class="p">()):</span>
+            <span class="n">text</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>  <span class="c1"># Match text color to line color</span>
+
+    <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="n">hspace</span><span class="p">)</span>  <span class="c1"># Add space between subplots</span>
+
+    <span class="c1"># Round all floats in the summary to 3 decimal places</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">value</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">value</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">summary</span></div>
+
+
+<div class="viewcode-block" id="plot_splits_grid_search"><a class="viewcode-back" href="../../usage.html#neuropy.machine_learning_utils.plot_splits_grid_search">[docs]</a><span class="k">def</span> <span class="nf">plot_splits_grid_search</span><span class="p">(</span>
+    <span class="n">grid</span><span class="p">,</span> <span class="n">model_index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot train and test performance at each split in CV for (best) model in GridSearchCV / RandomizedSearchCV</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    grid: fitted sklearn.model_selection.GridSearchCV or RandomizedSearchCV object</span>
+<span class="sd">    model_index: int or None (default: None)</span>
+<span class="sd">        Index of the chosen model. If None, grid.best_index_ will be used</span>
+<span class="sd">    scoring: str or list (default: &#39;score&#39;)</span>
+<span class="sd">        Scoring method to be plotted. If one scoring method was used in the grid search, this should be</span>
+<span class="sd">        &#39;score&#39;, but if multiple scoring methods were added, choose one or more of them. E.g. &#39;accuracy&#39;, &#39;r2&#39; or a list</span>
+<span class="sd">        [&#39;accuracy&#39;, &#39;f1&#39;]. If scoring is a list, multiple subplots will be added.</span>
+<span class="sd">    figsize: tuple (default: (15,10))</span>
+<span class="sd">        Size of the figure</span>
+<span class="sd">    ylim: tuple or list or None(default: None)</span>
+<span class="sd">        Limits for the y axis in all plots. If a tuple, this will be repeated for every subplot. If a list of tuples, it</span>
+<span class="sd">        should have the length of &#39;scoring&#39;. Different ylims can be used for different subplots, e.g. [(0,1), (-1, 1)]</span>
+<span class="sd">    hspace: float (default: 0.2)</span>
+<span class="sd">        Space between subplots</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    fig: matplotlib.figure.Figure</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.pipeline import Pipeline</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.neighbors import KNeighborsClassifier</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.model_selection import GridSearchCV</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.datasets import load_breast_cancer</span>
+<span class="sd">    &gt;&gt;&gt; from neuropy.machine_learning_utils import plot_splits_grid_search</span>
+<span class="sd">    &gt;&gt;&gt; from sklearn.model_selection import KFold</span>
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+
+<span class="sd">    &gt;&gt;&gt; # Get training data</span>
+<span class="sd">    &gt;&gt;&gt; X_train, y_train = load_breast_cancer(return_X_y=True)</span>
+<span class="sd">    &gt;&gt;&gt; # Simple pipeline</span>
+<span class="sd">    &gt;&gt;&gt; pipeline = Pipeline([</span>
+<span class="sd">    ...    (&#39;knn&#39;, KNeighborsClassifier())])</span>
+<span class="sd">    &gt;&gt;&gt; param_grid = {</span>
+<span class="sd">    ... &#39;knn__n_neighbors&#39;: [2, 3, 4, 5, 6],</span>
+<span class="sd">    ... &#39;knn__leaf_size&#39;: [10,20,30, 40]</span>
+<span class="sd">    ... }</span>
+<span class="sd">    &gt;&gt;&gt; # Grid search for pipeline with 5 splits</span>
+<span class="sd">    &gt;&gt;&gt; gridCV = GridSearchCV(pipeline,</span>
+<span class="sd">    ... param_grid = param_grid,</span>
+<span class="sd">    ... n_jobs = -4,</span>
+<span class="sd">    ... cv = KFold(n_splits=5, shuffle=True, random_state=50),</span>
+<span class="sd">    ... refit = &#39;f1&#39;,</span>
+<span class="sd">    ... scoring = [&#39;f1&#39;, &#39;roc_auc&#39;],</span>
+<span class="sd">    ... return_train_score = True)</span>
+<span class="sd">    &gt;&gt;&gt; _ = gridCV.fit(X_train, y_train)</span>
+<span class="sd">    &gt;&gt;&gt; fig = plot_splits_grid_search(gridCV, scoring=[&#39;f1&#39;, &#39;roc_auc&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; _ = fig.axes[0].set_ylim((0.5, 1))</span>
+<span class="sd">    &gt;&gt;&gt; _ = fig.axes[1].set_ylim((0.5, 1))</span>
+<span class="sd">    &gt;&gt;&gt; # _ = plt.show()</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model_index</span><span class="p">:</span>
+        <span class="n">model_index</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_index_</span>
+
+    <span class="c1"># Get cv results from the sklearn object</span>
+    <span class="n">plot_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">grid</span><span class="o">.</span><span class="n">best_index_</span><span class="p">]</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span><span class="o">~</span><span class="n">summary</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;split|time|rank&quot;</span><span class="p">)]</span>
+
+    <span class="c1"># Get the results from the chosen model</span>
+    <span class="n">plot_df</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="n">model_index</span><span class="p">]]</span>
+    <span class="c1"># Reshape data frame to get the results for each split and scoring method below each other</span>
+    <span class="n">plot_df</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">value_vars</span><span class="o">=</span><span class="n">plot_df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="s2">&quot;^split&quot;</span><span class="p">))</span>
+    <span class="c1"># Get numbers of the splits</span>
+    <span class="n">plot_df</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">variable</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;([a-z]*\d)&quot;</span><span class="p">)</span>
+    <span class="c1"># Get scoring methods</span>
+    <span class="n">plot_df</span><span class="p">[</span><span class="s2">&quot;scorers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">variable</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;([a-z]*\d_)&quot;</span><span class="p">,</span> <span class="n">repl</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="c1"># Reshape data frame for plotting</span>
+    <span class="n">plot_df</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;scorers&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;split&quot;</span><span class="p">)[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+
+    <span class="c1"># Different splits of the data on x-axis</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">index</span>
+
+    <span class="c1"># Scoring method in a list</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scoring</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">scoring</span> <span class="o">=</span> <span class="p">[</span><span class="n">scoring</span><span class="p">]</span>
+    <span class="c1"># Limits y-axis in a list (and repeated for all subplots)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ylim</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="n">ylim</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scoring</span><span class="p">]</span>
+
+    <span class="c1"># Subplots for number of scoring methods</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">scoring</span><span class="p">))</span>
+
+    <span class="c1"># Loop over the scoring methods</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scoring</span><span class="p">)):</span>
+        <span class="n">scoring_method</span> <span class="o">=</span> <span class="n">scoring</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">scoring</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">current_ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Get the one and only axis if only one scoring method</span>
+            <span class="n">current_ax</span> <span class="o">=</span> <span class="n">ax</span>
+
+        <span class="c1"># Plot both train and test performance with different colors</span>
+        <span class="k">for</span> <span class="n">sample</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;train_&quot;</span><span class="p">,</span> <span class="s2">&quot;test_&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;#2167C5&quot;</span><span class="p">,</span> <span class="s2">&quot;#EB5E23&quot;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="s2">&quot;train_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Make sure training scores are returned by the grid search, return_train_score = True&quot;</span>
+                <span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">[</span><span class="n">sample</span> <span class="o">+</span> <span class="n">scoring_method</span><span class="p">]</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="c1"># Add mean test performance as a dashed line</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span>
+            <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;mean_&quot;</span> <span class="o">+</span> <span class="s2">&quot;test_&quot;</span> <span class="o">+</span> <span class="n">scoring_method</span><span class="p">],</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4A4A4A&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;mean </span><span class="se">\n</span><span class="s2">test&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Create title for (sub)plot</span>
+        <span class="n">current_title</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">scoring_method</span> <span class="o">!=</span> <span class="s2">&quot;score&quot;</span><span class="p">:</span>
+            <span class="n">current_title</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">current_title</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">scoring_method</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> shown in plot</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_title</span> <span class="o">=</span> <span class="n">current_title</span> <span class="o">+</span> <span class="s2">&quot;Standard scoring method shown in plot</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">model_index</span> <span class="o">==</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_index_</span><span class="p">:</span>
+            <span class="n">current_title</span> <span class="o">=</span> <span class="n">current_title</span> <span class="o">+</span> <span class="s2">&quot;Best model was selected&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_title</span> <span class="o">=</span> <span class="n">current_title</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;Model </span><span class="si">{</span><span class="n">model_index</span><span class="si">}</span><span class="s2"> was selected&quot;</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">current_title</span><span class="p">)</span>  <span class="c1"># Add title to the plot</span>
+        <span class="n">leg</span> <span class="o">=</span> <span class="n">current_ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># Add legend to the plot</span>
+        <span class="k">for</span> <span class="n">line</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">leg</span><span class="o">.</span><span class="n">get_lines</span><span class="p">(),</span> <span class="n">leg</span><span class="o">.</span><span class="n">get_texts</span><span class="p">()):</span>
+            <span class="n">text</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>  <span class="c1"># Match text color to line color</span>
+
+    <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="n">hspace</span><span class="p">)</span>  <span class="c1"># Add space between subplots</span>
+    <span class="k">return</span> <span class="n">fig</span></div>
+</pre></div>
+
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+
+        <br/>
+
+
+    </p>
+    <p>
+        &copy; Copyright 2022, Neurocast Data Science Team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
