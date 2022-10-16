@@ -20,6 +20,19 @@ Data Wrangling Notebooks
 
    penguins_EDA.ipynb
 
+Machine Learning Classification Notebooks
+-----------------------------------------
+
+PIMA - diabetes
+---------------
+
+.. nbgallery::
+   :caption: Machine Learning Classification Notebooks
+   :name: machine-learning-classification-notebooks
+   :glob:
+
+   pima_EDA.ipynb
+
 
 NLTSA Notebooks
 -----------------------------------

@@ -1,0 +1,3 @@
+{
+  "path": "../../pima/pima_EDA.ipynb"
+}
